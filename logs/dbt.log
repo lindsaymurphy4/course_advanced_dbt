@@ -61,3 +61,45 @@ Happy modeling!
 [0m00:49:29.905350 [error] [MainThread]: Encountered an error:
 Runtime Error
   IO Error: Cannot open file "/Users/lindsaymurphy/Projects/advanced_dbt/file_path/database_name.duckdb": No such file or directory
+
+
+============================== 2023-04-28 15:11:33.944560 | 9601d792-c733-4ebd-abfd-6adc2874e829 ==============================
+[0m15:11:33.944560 [info ] [MainThread]: Running with dbt=1.4.0
+[0m15:11:33.955762 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/lindsaymurphy/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'indirect_selection': 'eager', 'resource_types': [], 'which': 'build', 'rpc_method': 'build'}
+[0m15:11:33.956414 [debug] [MainThread]: Tracking: tracking
+[0m15:11:34.023807 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1113245b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111324910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111324c40>]}
+[0m15:11:34.135691 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 9 files added, 0 files changed.
+[0m15:11:34.136364 [debug] [MainThread]: Partial parsing: added file: advanced_dbt://macros/list_to_where_in.sql
+[0m15:11:34.136822 [debug] [MainThread]: Partial parsing: added file: advanced_dbt://macros/standardize_province.sql
+[0m15:11:34.137279 [debug] [MainThread]: Partial parsing: added file: advanced_dbt://macros/sdc_deleted_at_exists.sql
+[0m15:11:34.137706 [debug] [MainThread]: Partial parsing: added file: advanced_dbt://macros/convert_timestamp_to_now.sql
+[0m15:11:34.138071 [debug] [MainThread]: Partial parsing: added file: advanced_dbt://macros/add_missing_stitch_column.sql
+[0m15:11:34.138458 [debug] [MainThread]: Partial parsing: added file: advanced_dbt://macros/cents_to_dollars.sql
+[0m15:11:34.138841 [debug] [MainThread]: Partial parsing: added file: advanced_dbt://macros/acquisition_channel.sql
+[0m15:11:34.139190 [debug] [MainThread]: Partial parsing: added file: advanced_dbt://macros/convert_empty_string_to_null.sql
+[0m15:11:34.139512 [debug] [MainThread]: Partial parsing: added file: advanced_dbt://macros/calculate_age.sql
+[0m15:11:34.210867 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9601d792-c733-4ebd-abfd-6adc2874e829', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1115879d0>]}
+[0m15:11:34.227355 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9601d792-c733-4ebd-abfd-6adc2874e829', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111555250>]}
+[0m15:11:34.228072 [info ] [MainThread]: Found 2 models, 4 tests, 0 snapshots, 0 analyses, 305 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m15:11:34.228699 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9601d792-c733-4ebd-abfd-6adc2874e829', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111555190>]}
+[0m15:11:34.231316 [info ] [MainThread]: 
+[0m15:11:34.233935 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m15:11:34.241445 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_database_name'
+[0m15:11:34.283335 [debug] [ThreadPool]: Using duckdb connection "list_database_name"
+[0m15:11:34.283794 [debug] [ThreadPool]: On list_database_name: /* {"app": "dbt", "dbt_version": "1.4.0", "profile_name": "advanced_dbt", "target_name": "dev", "connection_name": "list_database_name"} */
+
+    
+    select schema_name
+    from information_schema.schemata
+  
+  
+[0m15:11:34.284617 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:11:34.303068 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:11:34.303561 [debug] [MainThread]: Connection 'list_database_name' was properly closed.
+[0m15:11:34.304044 [info ] [MainThread]: 
+[0m15:11:34.304631 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.07 seconds (0.07s).
+[0m15:11:34.305592 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111587dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1115c85e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1115c81f0>]}
+[0m15:11:34.306062 [debug] [MainThread]: Flushing usage events
+[0m15:11:34.528522 [error] [MainThread]: Encountered an error:
+Runtime Error
+  IO Error: Cannot open file "/Users/lindsaymurphy/Projects/advanced_dbt/file_path/database_name.duckdb": No such file or directory
