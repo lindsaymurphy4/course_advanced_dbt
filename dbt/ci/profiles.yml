@@ -1,0 +1,29 @@
+config:
+  use_colors: false
+  send_anonymous_usage_stats: false
+
+maple:
+  target: ci
+  outputs:
+    ci:
+      type:  
+      threads: 10
+      host: 
+      port: 5439
+      user: "{{ env_var('USER') }}"
+      pass: "{{ env_var('PASSWORD') }}"
+      dbname: warehouse
+      schema: "{{ env_var('CI_SCHEMA') }}"
+      connect_timeout: 60
+      keepalives_idle: 60
+    production:
+      type:  
+      threads: 10
+      host: 
+      port: 5439
+      user: "{{ env_var('USER') }}"
+      pass: "{{ env_var('PASSWORD') }}"
+      dbname:  
+      schema:  
+      connect_timeout: 60
+      keepalives_idle: 60
