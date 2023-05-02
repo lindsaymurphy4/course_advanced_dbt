@@ -9,8 +9,10 @@ dbt-snowflake = "==1.5.0"
 sqlfluff = "==2.0.7"
 sqlfluff-templater-dbt = "==2.0.7"
 duckdb = "==0.7.1"
-Faker = "==18.6.0"
 jupyterlab = "3.6.3"
+pandas = "*"
+numpy = "*"
+faker = "*"
 
 [dev-packages]
 
