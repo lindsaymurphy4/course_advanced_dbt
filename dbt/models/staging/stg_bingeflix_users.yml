@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: stg_bingeflix_users
+    description: ""
+    quoting:
+      identifier: true
+    columns:
+      - name: user_id
+        description: ""
+        tests:
+          - not_null
+          - unique
+
+      - name: created_at
+        description: ""
+        tests:
+          - not_null
+
+      - name: phone_number
+        description: ""
+        tests:
+          - not_null
+
+      - name: email
+        description: ""
+        tests:
+          - not_null
+
+      - name: address
+        description: ""
+        tests:
+          - not_null
+
+      - name: deleted_at
+        description: ""
+        tests:
+          - not_null

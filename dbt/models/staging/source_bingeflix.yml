@@ -1,0 +1,9 @@
+sources:
+  - name: bingeflix
+    quoting:
+      identifier: true
+    tables:
+      - name: events
+      - name: subscription_plans
+      - name: subscriptions
+      - name: users
