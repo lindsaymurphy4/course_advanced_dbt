@@ -3,8 +3,6 @@ version: 2
 models:
   - name: stg_bingeflix_users
     description: ""
-    quoting:
-      identifier: true
     columns:
       - name: user_id
         description: ""
@@ -22,17 +20,42 @@ models:
         tests:
           - not_null
 
+      - name: deleted_at
+        description: ""
+
+      - name: username
+        description: ""
+        tests:
+          - not_null
+
+      - name: name
+        description: ""
+        tests:
+          - not_null
+
+      - name: sex
+        description: ""
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['M','F']
+
       - name: email
         description: ""
         tests:
           - not_null
 
-      - name: address
+      - name: birthdate
         description: ""
         tests:
           - not_null
 
-      - name: deleted_at
+      - name: region
+        description: ""
+        tests:
+          - not_null
+
+      - name: country
         description: ""
         tests:
           - not_null

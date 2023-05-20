@@ -1,10 +1,19 @@
-WITH
+with
 
-source AS (
-    SELECT
-        *
-    FROM
-        {{ source('bingeflix', 'users') }}
+source as (
+    select
+        user_id,
+        created_at,
+        phone_number,
+        deleted_at,
+        username,
+        name,
+        sex,
+        email,
+        birthdate,
+        region,
+        country
+    from {{ source('bingeflix', 'users') }}
 )
 
-SELECT * FROM source
+select * from source
