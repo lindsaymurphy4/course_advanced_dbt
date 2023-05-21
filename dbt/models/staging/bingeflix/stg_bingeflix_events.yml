@@ -1,0 +1,29 @@
+models:
+  - name: stg_bingeflix_events
+    description: ""
+    columns:
+      - name: session_id
+        description: ""
+        tests:
+          - not_null
+
+      - name: created_at
+        description: ""
+        tests:
+          - not_null
+
+      - name: user_id
+        description: ""
+        tests:
+          - not_null
+
+      - name: event_name
+        description: ""
+        tests:
+          - not_null
+
+      - name: event_id
+        description: ""
+        tests:
+          - not_null
+          - unique
