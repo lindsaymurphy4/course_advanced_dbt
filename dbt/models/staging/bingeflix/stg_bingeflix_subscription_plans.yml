@@ -1,0 +1,24 @@
+models:
+  - name: stg_bingeflix_subscription_plans
+    description: ""
+    columns:
+      - name: subscription_plan_id
+        description: ""
+        tests:
+          - not_null
+          - unique
+
+      - name: plan_name
+        description: ""
+        tests:
+          - not_null
+
+      - name: pricing
+        description: ""
+        tests:
+          - not_null
+
+      - name: payment_period
+        description: ""
+        tests:
+          - not_null

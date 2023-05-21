@@ -1,5 +1,7 @@
 sources:
   - name: bingeflix
+    schema: public
+    database: raw
     tables:
       - name: events
       - name: subscription_plans

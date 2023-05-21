@@ -1,0 +1,28 @@
+models:
+  - name: stg_ads_platform_daily_ads
+    description: ""
+    columns:
+      - name: date
+        description: ""
+        tests:
+          - not_null
+
+      - name: campaign_id
+        description: ""
+        tests:
+          - not_null
+
+      - name: spend
+        description: ""
+        tests:
+          - not_null
+
+      - name: cpm
+        description: ""
+        tests:
+          - not_null
+
+      - name: ctr
+        description: ""
+        tests:
+          - not_null
