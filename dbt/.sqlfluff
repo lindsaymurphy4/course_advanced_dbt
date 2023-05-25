@@ -1,0 +1,48 @@
+[sqlfluff]
+dialect = snowflake
+exclude_rules = L001,L003,L007,L008,L009,L027,L029,L031,L034,L035,L036,L037,L043,L044,L057,L059,L068
+ignore = parsing
+processes = 0
+#templater = dbt ## commented out until this bug is resolved: https://github.com/sqlfluff/sqlfluff/issues/4841
+max_line_length = 999
+
+[sqlfluff:templater:dbt]
+#apply_dbt_builtins = true
+#profile = advanced_dbt
+#project_dir = dbt
+
+[sqlfluff:indentation]
+# https://docs.sqlfluff.com/en/stable/layout.html#configuring-indent-locations
+indent_unit = space
+indented_ctes = False
+indented_joins = True
+indented_using_on = True
+indented_on_contents = True
+tab_space_size = 4
+template_blocks_indent = True
+
+[sqlfluff:layout:type:comma]
+# https://docs.sqlfluff.com/en/stable/layout.html#configuring-layout-and-spacing
+spacing_before = touch
+line_position = trailing
+
+[sqlfluff:templater]
+unwrap_wrapped_queries = true
+
+[sqlfluff:templater:jinja]
+apply_dbt_builtins = true
+
+[sqlfluff:rules]
+capitalisation_policy = upper
+single_table_references = consistent
+
+[sqlfluff:rules:L038]
+# Trailing commas in SELECT clause
+# https://docs.sqlfluff.com/en/stable/rules.html#sqlfluff.rules.Rule_L038
+select_clause_trailing_comma = forbid
+
+[sqlfluff:rules:L054]
+# Inconsistent column references in GROUP BY/ORDER BY clauses.
+# This rule asserts that all clauses need to use either numbers or strings, but not a mix of both within the same file.
+# https://docs.sqlfluff.com/en/stable/rules.html#sqlfluff.rules.Rule_L054
+group_by_and_order_by_style = consistent

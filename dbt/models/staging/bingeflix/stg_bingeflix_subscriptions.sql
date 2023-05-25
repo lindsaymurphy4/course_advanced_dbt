@@ -13,10 +13,10 @@ renamed as (
         ends_at,
         subscription_id
 
-    FROM
+    from
         
         source
 
 )
 
-SELECT * FROM renamed
+select * from renamed
