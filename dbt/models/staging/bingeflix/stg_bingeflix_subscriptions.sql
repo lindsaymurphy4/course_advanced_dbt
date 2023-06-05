@@ -14,7 +14,7 @@ renamed as (
         subscription_id
 
     from
-        
+
         source
 
 )
