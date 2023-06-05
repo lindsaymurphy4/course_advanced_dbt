@@ -1,0 +1,6 @@
+dbt/target/
+# dbt <1.0.0
+dbt/dbt_modules/
+# dbt >=1.0.0
+dbt/dbt_packages/
+dbt/macros/
