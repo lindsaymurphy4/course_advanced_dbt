@@ -13,6 +13,7 @@ jupyterlab = "3.6.3"
 pandas = "*"
 numpy = "*"
 faker = "*"
+imdbpy = "*"
 
 [dev-packages]
 
