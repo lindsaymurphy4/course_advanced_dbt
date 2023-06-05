@@ -1,0 +1,49 @@
+models:
+  - name: dates
+    description: ""
+    columns:
+      - name: calendar_date
+        description: ""
+        tests:
+          - unique
+          - not_null
+
+      - name: date_week
+        description: ""
+        tests:
+          - not_null
+
+      - name: date_month
+        description: ""
+        tests:
+          - not_null
+
+      - name: date_quarter
+        description: ""
+        tests:
+          - not_null
+
+      - name: date_year
+        description: ""
+        tests:
+          - not_null
+
+      - name: day_of_month
+        description: ""
+        tests:
+          - not_null
+
+      - name: year_num
+        description: ""
+        tests:
+          - not_null
+
+      - name: quarter_num
+        description: ""
+        tests:
+          - not_null
+
+      - name: month_num
+        description: ""
+        tests:
+          - not_null
