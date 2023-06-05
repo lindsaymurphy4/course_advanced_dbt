@@ -1,14 +1,32 @@
 models:
-  - name: stg_bingeflix_subscription_plans
+  - name: dim_subscriptions
     description: ""
     columns:
-      - name: subscription_plan_id
+      - name: subscription_id
         description: ""
         tests:
           - not_null
           - unique
+
+      - name: subscription_plan_id
+        description: ""
+        tests:
+          - not_null
           - accepted_values:
               values: [1, 2, 3]
+
+      - name: user_id
+        description: ""
+        tests:
+          - not_null
+
+      - name: starts_at
+        description: ""
+        tests:
+          - not_null
+
+      - name: ends_at
+        description: ""
 
       - name: plan_name
         description: ""
@@ -20,7 +38,7 @@ models:
         tests:
           - not_null
 
-      - name: payment_period
+      - name: billing_period
         description: ""
         tests:
           - not_null
