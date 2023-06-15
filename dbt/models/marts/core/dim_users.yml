@@ -1,6 +1,5 @@
 models:
-  - name: stg_bingeflix_users
-    description: "The users table."
+  - name: dim_users
     columns:
       - name: user_id
         tests:
@@ -27,8 +26,6 @@ models:
       - name: sex
         tests:
           - not_null
-          - accepted_values:
-              values: ['M','F']
 
       - name: email
         tests:

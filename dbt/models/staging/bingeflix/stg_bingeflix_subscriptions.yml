@@ -3,25 +3,25 @@ models:
     description: ""
     columns:
       - name: subscription_plan_id
-        description: ""
+        description: "The subscription identifier."
         tests:
           - not_null
 
       - name: user_id
-        description: ""
+        description: "The unique identifier for the user."
         tests:
           - not_null
 
       - name: starts_at
-        description: ""
+        description: "When the subscription started."
         tests:
           - not_null
 
       - name: ends_at
-        description: ""
+        description: "When the subscription ends. This value is NULL if the subscription is active."
 
       - name: subscription_id
-        description: ""
+        description: "The unique identifier for the subscription."
         tests:
           - not_null
           - unique

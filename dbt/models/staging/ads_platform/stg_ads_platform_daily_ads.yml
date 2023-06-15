@@ -1,28 +1,28 @@
 models:
   - name: stg_ads_platform_daily_ads
-    description: ""
+    description: "The daily ad campaigns table."
     columns:
       - name: date
-        description: ""
+        description: "The calendar date of the campaign reporting period."
         tests:
           - not_null
 
       - name: campaign_id
-        description: ""
+        description: "The unique identifier for the campaign."
         tests:
           - not_null
 
       - name: spend
-        description: ""
+        description: "The amount spent on the campaign."
         tests:
           - not_null
 
       - name: cpm
-        description: ""
+        description: "The cost charged by the ads platform per thousand impressions."
         tests:
           - not_null
 
       - name: ctr
-        description: ""
+        description: "The click through rate on the campaign impressions."
         tests:
           - not_null
