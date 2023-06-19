@@ -3,7 +3,7 @@ models:
     description: ""
     columns:
       - name: subscription_plan_id
-        description: ""
+        description: "The unique identifier of the subscription plan."
         tests:
           - not_null
           - unique
@@ -11,16 +11,16 @@ models:
               values: [1, 2, 3]
 
       - name: plan_name
-        description: ""
+        description: "The name of the subscription plan."
         tests:
           - not_null
 
       - name: pricing
-        description: ""
+        description: "The price of the subscription."
         tests:
           - not_null
 
       - name: payment_period
-        description: ""
+        description: "The recurring payment period for the subscription."
         tests:
           - not_null
