@@ -22,3 +22,5 @@ clean-targets:
 models:
   advanced_dbt:
     +materialized: view
+    +grants:
+      select: ['transformer', 'reporter']
