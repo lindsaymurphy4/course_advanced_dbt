@@ -1,0 +1,49 @@
+models:
+  - name: mrr_with_unit_test
+    description: ""
+    tests:
+        - dbt_utils.equality:
+            compare_model: ref('unit_test_expected_output_mrr')
+            tags: ['unit_testing']
+    columns:
+      - name: surrogate_key
+        description: ""
+        tests:
+          - not_null
+          - unique
+
+      - name: date_month
+        description: ""
+
+      - name: user_id
+        description: ""
+
+      - name: subscription_id
+        description: ""
+
+      - name: starts_at
+        description: ""
+
+      - name: ends_at
+        description: ""
+
+      - name: plan_name
+        description: ""
+
+      - name: mrr_amount
+        description: ""
+
+      - name: mrr_change
+        description: ""
+
+      - name: retained_mrr_amount
+        description: ""
+
+      - name: previous_month_mrr_amount
+        description: ""
+
+      - name: change_category
+        description: ""
+
+      - name: month_retained_number
+        description: ""

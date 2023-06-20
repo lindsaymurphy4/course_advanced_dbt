@@ -1,0 +1,16 @@
+models:
+  - name: agg_mrr
+    tests:
+        - dbt_utils.equality:
+            compare_model: ref('unit_test_expected_output_agg_mrr')
+            tags: ['unit_testing']
+    columns:
+      - name: date_month
+        tests:
+          - not_null
+
+      - name: mrr
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"

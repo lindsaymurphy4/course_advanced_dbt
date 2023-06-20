@@ -8,12 +8,12 @@ models:
           - not_null
 
       - name: campaign_id
-        description: "The unique identifier for the campaign."
+        description: The unique identifier for the campaign.
         tests:
           - not_null
 
       - name: spend
-        description: "The amount spent on the campaign."
+        description: The amount spent on the campaign.
         tests:
           - not_null
 
