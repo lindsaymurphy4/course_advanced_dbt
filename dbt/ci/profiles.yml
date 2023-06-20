@@ -2,28 +2,16 @@ config:
   use_colors: false
   send_anonymous_usage_stats: false
 
-maple:
+advanced_dbt:
   target: ci
   outputs:
     ci:
-      type:
-      threads: 10
-      host:
-      port: 5439
-      user: "{{ env_var('USER') }}"
-      pass: "{{ env_var('PASSWORD') }}"
-      dbname: warehouse
+      type: snowflake
+      account: efruuit-zh04827
+      user: "{{ env_var('DBT_ENV_SECRET_USER') }}"
+      pass: "{{ env_var('DBT_ENV_SECRET_PASSWORD') }}"
+      role: transformer
+      database: dev
+      warehouse: transforming
       schema: "{{ env_var('CI_SCHEMA') }}"
-      connect_timeout: 60
-      keepalives_idle: 60
-    production:
-      type:
       threads: 10
-      host:
-      port: 5439
-      user: "{{ env_var('USER') }}"
-      pass: "{{ env_var('PASSWORD') }}"
-      dbname:
-      schema:
-      connect_timeout: 60
-      keepalives_idle: 60

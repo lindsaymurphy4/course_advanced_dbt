@@ -1,5 +1,5 @@
 models:
-  - name: dates
+  - name: dim_dates
     description: ""
     columns:
       - name: calendar_date
