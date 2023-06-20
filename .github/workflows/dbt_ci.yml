@@ -1,36 +1,104 @@
-# This is a basic workflow to help you get started with Actions
+name: dbt CI
 
-name: dbt_ci
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+ push:
+   branches:
+     - main
+   paths:
+     - 'dbt/**'
+ pull_request:
+   paths:
+     - 'dbt/**'
+   types:
+     - opened
+     - reopened
+     - synchronize
+     - ready_for_review
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+env:
+ CI_SCHEMA: dbt_ci_run_${{ github.run_number }}
+ DBT_PROFILES_DIR: ./ci/
+ DBT_PROJECT_EVALUATOR_SEVERITY: error
+ SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+ SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+
+
+defaults:
+ run:
+   shell: bash
+   working-directory: dbt
+
+
+concurrency:
+ group: ${{ github.workflow }}-${{ github.ref }}
+ cancel-in-progress: true
+
+
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+ lint-run-test:
+   name: Lint, run, and test
+   runs-on: ubuntu-latest
+   timeout-minutes: 60
+   permissions:
+     id-token: write
+     contents: read
+   # Only execute this job when the trigger is a push or the pull request is not a draft
+   if: ${{ github.event_name == 'push' || github.event.pull_request.draft == false }}
+   steps:
+     - name: Checkout
+       uses: actions/checkout@v3
+       with:
+         fetch-depth: 0
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+     - name: Setup Python environment
+       uses: actions/setup-python@v4
+       with:
+         python-version: "3.10"
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+     - name: Install pipenv
+       run: python -m pip install --upgrade pipenv wheel
+
+
+     - name: Remove existing pipenv environment
+       run: pipenv --rm || true
+
+
+     - name: Install pipfile packages
+       run: pipenv install
+
+
+     - name: Install dbt deps
+       run: pipenv run dbt deps
+
+
+     # Lindsay temporarily disabled this step as she makes changes to run SQLFluff throughout the repo.
+     # - name: Lint the dbt SQL files
+     #  run: ./ci/lint_dbt_sql.sh
+
+     - name: Load seed data
+       run: pipenv run dbt seed --full-refresh
+
+
+     - name: Build the models
+       run: pipenv run dbt run
+
+
+     - name: Execute the tests
+       run: pipenv run dbt test
+
+
+     - name: Run dbt_project_evaluator checks
+       run: pipenv run dbt build --select package:dbt_project_evaluator dbt_project_evaluator_exceptions
+
+
+     - name: Drop the dbt schema
+       if: always()
+       run: pipenv run dbt run-operation drop_schema --args "{schema":" ${{ env.CI_SCHEMA }}}"
+
+
+    #  - name: Drop the elementary schema
+    #    if: always()
+    #    run: pipenv run dbt run-operation drop_schema --args "{schema":" ${{ env.CI_SCHEMA }}_elementary}"
