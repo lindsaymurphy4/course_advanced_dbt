@@ -1,9 +1,16 @@
 models:
   - name: dim_users
+    meta:
+      priority: high
+      owner:
+        - lindsay
     columns:
       - name: user_id
+        meta:
+          priority: high
         tests:
           - not_null
+          - unique
 
       - name: created_at
         tests:

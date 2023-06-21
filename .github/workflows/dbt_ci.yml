@@ -1,4 +1,4 @@
-name: dbt CI
+name: dbt_ci
 
 
 on:
@@ -37,13 +37,10 @@ concurrency:
 
 
 jobs:
- lint-run-test:
+ ci_checks:
    name: Lint, run, and test
    runs-on: ubuntu-latest
-   timeout-minutes: 60
-   permissions:
-     id-token: write
-     contents: read
+
    # Only execute this job when the trigger is a push or the pull request is not a draft
    if: ${{ github.event_name == 'push' || github.event.pull_request.draft == false }}
    steps:

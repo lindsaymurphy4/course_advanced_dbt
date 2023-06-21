@@ -14,7 +14,7 @@
         THEN 'Paid Social'
 
         -- REFERRAL
-        WHEN {{referrer_user_id}} IS NOT NULL THEN 'Maple User Referral'
+        WHEN {{referrer_user_id}} IS NOT NULL THEN 'User Referral'
 
         WHEN (LOWER({{referral_medium}}) IN ('website', 'referral', 'affinity')
             AND LOWER({{referral_source}}) NOT LIKE '%google%'
