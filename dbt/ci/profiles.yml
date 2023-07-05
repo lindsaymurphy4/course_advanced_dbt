@@ -8,10 +8,10 @@ advanced_dbt:
     ci:
       type: snowflake
       account: efruuit-zh04827
-      user: "${{ secrets.SNOWFLAKE_PASSWORD }}"
-      pass: "${{ secrets.SNOWFLAKE_PASSWORD }}"
+      user: "{{ env_var('DBT_ENV_SECRET_USER') }}"
+      pass: "{{ env_var('DBT_ENV_SECRET_PASSWORD') }}"
       role: transformer
       database: dev
       warehouse: transforming
-      schema: "dbt_ci_run_${{ github.run_number }}"
+      schema: "{{ env_var('CI_SCHEMA') }}"
       threads: 10
