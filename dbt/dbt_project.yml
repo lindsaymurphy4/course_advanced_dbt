@@ -35,3 +35,6 @@ seeds:
           starts_at: DATE
           ends_at: DATE
           pricing: FLOAT
+
+tests:
+  +store_failures: true

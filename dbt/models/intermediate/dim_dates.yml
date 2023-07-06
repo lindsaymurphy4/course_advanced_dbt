@@ -1,6 +1,7 @@
 models:
   - name: dim_dates
-    description: ""
+    description: This is a calendar table including all the consecutive dates between the 2019-01-01 and 2030-01-01.
+      It also includes week, month, quarter, year, and other values associated with a specific date.
     columns:
       - name: calendar_date
         description: "The calendar date."
@@ -24,7 +25,7 @@ models:
           - not_null
 
       - name: date_year
-        description: "The first date fo the calendar year."
+        description: "The first date of the calendar year."
         tests:
           - not_null
 

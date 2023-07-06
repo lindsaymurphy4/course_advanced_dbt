@@ -34,11 +34,6 @@
             -- If province value is set to NULL in case the source value is empty or NULL
             WHEN ''                                                                                     THEN NULL
             WHEN NULL                                                                                   THEN NULL
-
-            -- This case statement has been temporarily updated to set the unexpected province values
-            -- to Unknown due to a known engineering bug. Once the bug is resolved this value should
-            -- be reverted to NULL.
-            -- Slack thread to the engineering bug: https://getmaple-ca.atlassian.net/browse/ENG-17854
             ELSE 'Unknown'
     END
 

@@ -203,7 +203,6 @@ final AS (
 )
 
 SELECT
-    -- Add manual surrogate key, do not replace with dbt_utils surrogate_key (this is used in .yml to remove some edge case records)
-    date_month::TEXT || '-' || user_id::TEXT || '-' || change_category::TEXT AS surrogate_key,
+    date_month::TEXT || '-' || subscription_id::TEXT || '-' || change_category::TEXT AS surrogate_key,
     *
 FROM final
