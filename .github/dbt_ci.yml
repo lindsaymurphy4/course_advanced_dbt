@@ -1,5 +1,4 @@
 name: dbt CI
-
 on: push #remove this once done testing
   # push:
   #   branches:
@@ -10,60 +9,52 @@ on: push #remove this once done testing
   #     - reopened
   #     - synchronize
   #     - ready_for_review
-
 env:
-  DBT_PROFILE_TARGET: dev
-  DBT_CI_SCHEMA: DBT_CI_RUN
+  DBT_CI_SCHEMA: DBT_CI_RUN  # dbt_ci_run_${{ github.run_number }}
+  # DBT_PROJECT_EVALUATOR_SEVERITY: error
+  DBT_PROFILE_TARGET:   dev
   DBT_ENV_SECRET_USER: ${{ secrets.DBT_ENV_SECRET_USER }}
   DBT_ENV_SECRET_PASSWORD: ${{ secrets.DBT_ENV_SECRET_PASSWORD }}
 
-defaults:
-  run:
-    working-directory: ci_profiles # this tells GitHub Actions where to find the profiles.yml for Snowflake connection details
+# concurrency:
+#   group: ${{ github.workflow }}-${{ github.ref }}
+#   cancel-in-progress: true
 
+defaults:
+ run:
+   working-directory: ci_profiles  # this tells GitHub Actions where to find the profiles.yml for Snowflake connection details
 jobs:
   run-and-test:
     name: dbt run and test CI checks
-    runs_on: ubuntu-latest
-    timeout-minutes: 30
-
-    # Only executive this job when the trigger is a push or pull request (not a draft)
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    # Only execute this job when the trigger is a push or the pull request is not a draft
     if: ${{ github.event_name == 'push' || github.event.pull_request.draft == false }}
     steps:
     - name: Checkout
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
-
     - name: Setup Python environment
       uses: actions/setup-python@v4
       with:
         python-version: "3.11"
-
     - name: Install pipenv
       run: python -m pip install --upgrade pipenv wheel
-
     - name: Remove existing pipenv environment
       run: pipenv --rm || true
-
     - name: Install pipfile packages
       run: pipenv install
-
     - name: Install dbt deps
       run: pipenv run dbt deps
-
     - name: Load seed data
       run: pipenv run dbt seed --target dev --full-refresh
-
     - name: Build the models
       run: pipenv run dbt run --target dev
-
     - name: Execute the tests
       run: pipenv run dbt test
-
     # - name: Run dbt_project_evaluator checks
     #   run: pipenv run dbt build --select package:dbt_project_evaluator dbt_project_evaluator_exceptions
-
     - name: Drop the dbt schema
       if: always()
       run: pipenv run dbt run-operation drop_schema --args "{schema_name":" ${{ env.DBT_CI_SCHEMA }}, database_name":" dev}"
