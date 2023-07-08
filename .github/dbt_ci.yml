@@ -1,5 +1,6 @@
 name: dbt CI
-on: push #remove this once done testing
+on:
+  - push #remove this once done testing
   # push:
   #   branches:
   #     - main
