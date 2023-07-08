@@ -1,14 +1,14 @@
 name: dbt CI
-on: push #remove this once done testing
-  # push:
-  #   branches:
-  #     - main
-  # pull_request:
-  #   types:
-  #     - opened
-  #     - reopened
-  #     - synchronize
-  #     - ready_for_review
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
 env:
   DBT_CI_SCHEMA: DBT_CI_RUN  # dbt_ci_run_${{ github.run_number }}
   # DBT_PROJECT_EVALUATOR_SEVERITY: error
