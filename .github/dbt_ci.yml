@@ -23,6 +23,7 @@ env:
 defaults:
  run:
    working-directory: ci_profiles  # this tells GitHub Actions where to find the profiles.yml for Snowflake connection details
+
 jobs:
   run-and-test:
     name: dbt run and test CI checks
