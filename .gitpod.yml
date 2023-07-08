@@ -1,0 +1,13 @@
+tasks:
+  - command: |
+      ./gitpod-command.sh
+ports:
+  - port: 8000
+    onOpen: open-browser
+  - port: 8081
+    onOpen: open-preview
+  - port: 5432
+    onOpen: ignore
+vscode:
+  extensions:
+    - github.vscode-pull-request-github
