@@ -4,9 +4,9 @@ on: push
   #   - cron: '0 10 * * *' # Run at 10 AM UTC every day (6am EST)
 env:
   DBT_CI_SCHEMA: STAGING
-  DBT_PROFILE_TARGET:   production
-  DBT_ENV_SECRET_USER: ${{ secrets.DBT_ENV_SECRET_USER }}
-  DBT_ENV_SECRET_PASSWORD: ${{ secrets.DBT_ENV_SECRET_PASSWORD }}
+  DBT_PROFILE_TARGET: production
+  DBT_PROFILE_USER: ${{ secrets.DBT_PROFILE_USER }}
+  DBT_PROFILE_PASSWORD: ${{ secrets.DBT_PROFILE_PASSWORD }}
 
 defaults:
  run:

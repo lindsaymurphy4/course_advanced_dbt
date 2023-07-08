@@ -4,8 +4,8 @@ advanced_dbt:
     dev:
       type: snowflake
       account: efruuit-zh04827
-      user: "{{ env_var('DBT_ENV_SECRET_USER') }}"
-      pass: "{{ env_var('DBT_ENV_SECRET_PASSWORD') }}"
+      user: "{{ env_var('DBT_PROFILE_USER') }}"
+      pass: "{{ env_var('DBT_PROFILE_PASSWORD') }}"
       role: transformer
       warehouse: transforming
       database: dev
@@ -14,8 +14,8 @@ advanced_dbt:
     production:
       type: snowflake
       account: efruuit-zh04827
-      user: "{{ env_var('DBT_ENV_SECRET_USER') }}"
-      pass: "{{ env_var('DBT_ENV_SECRET_PASSWORD') }}"
+      user: "{{ env_var('DBT_PROFILE_USER') }}"
+      pass: "{{ env_var('DBT_PROFILE_PASSWORD') }}"
       role: transformer
       warehouse: transforming
       database: analytics
