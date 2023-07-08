@@ -8,14 +8,6 @@ dbt-core = "==1.5.0"
 dbt-snowflake = "==1.5.0"
 sqlfluff = "==2.1.1"
 sqlfluff-templater-dbt = "==2.1.1"
-duckdb = "==0.7.1"
-jupyterlab = "3.6.3"
-pandas = "*"
-numpy = "*"
-faker = "*"
-imdbpy = "*"
-
-[dev-packages]
 
 [requires]
-python_version = "3.11.2"
+python_version = "3.11"
