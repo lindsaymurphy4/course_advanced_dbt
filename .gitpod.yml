@@ -3,7 +3,6 @@ tasks:
       echo "Running the command script"
       mkdir -p /workspace/.dbt
       ln -snf /workspace/.dbt ~/.dbt
-      touch profiles.yml
 ports:
   - port: 8000
     onOpen: open-browser
