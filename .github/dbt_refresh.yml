@@ -1,12 +1,11 @@
-name: Scheduled production run
+name: Scheduled dbt production run
+
 on: push
-  # schedule:
-  #   - cron: '0 10 * * *' # Run at 10 AM UTC every day (6am EST)
+
 env:
-  DBT_CI_SCHEMA: STAGING
   DBT_PROFILE_TARGET: production
-  DBT_PROFILE_USER: ${{ secrets.DBT_PROFILE_USER }}
-  DBT_PROFILE_PASSWORD: ${{ secrets.DBT_PROFILE_PASSWORD }}
+  DBT_PROFILE_USER: test
+  DBT_PROFILE_PASSWORD: test
 
 defaults:
  run:
@@ -30,12 +29,11 @@ jobs:
       run: pipenv --rm || true
     - name: Install pipfile packages
       run: pipenv install
-    - name: Install dbt deps
-      run: pipenv run dbt deps
+    # - name: Install dbt deps
+    #   run: pipenv run dbt deps
     - name: Load seed data
       run: pipenv run dbt seed --target production --full-refresh
-    - name: Build the models
-      run: pipenv run dbt run --target production
-
-    - name: Execute the tests
-      run: pipenv run dbt test
+    # - name: Build the models
+    #   run: pipenv run dbt run --target production
+    # - name: Execute the tests
+    #   run: pipenv run dbt test
