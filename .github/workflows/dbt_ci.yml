@@ -13,8 +13,8 @@ env:
   DBT_CI_SCHEMA: DBT_CI_RUN  # dbt_ci_run_${{ github.run_number }}
   # DBT_PROJECT_EVALUATOR_SEVERITY: error
   DBT_PROFILE_TARGET:   dev
-  DBT_PROFILE_USER: ${{ secrets.DBT_PROFILE_USER }}
-  DBT_PROFILE_PASSWORD: ${{ secrets.DBT_PROFILE_PASSWORD }}
+  DBT_PROFILE_USER: test # {{ secrets.DBT_PROFILE_USER }}
+  DBT_PROFILE_PASSWORD: test #{{ secrets.DBT_PROFILE_PASSWORD }}
 
 # concurrency:
 #   group: ${{ github.workflow }}-${{ github.ref }}
