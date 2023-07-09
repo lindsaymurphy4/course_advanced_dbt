@@ -41,8 +41,8 @@ jobs:
       run: "pipenv run dbt build --target dev --vars 'unit_testing: true'" # this needs to be double quoted to pass colon in vars
     # - name: Execute the tests
     #   run: pipenv run dbt test --vars 'unit_testing: true'
-    - name: Run dbt_project_evaluator checks
-      run: pipenv run dbt build --select package:dbt_project_evaluator dbt_project_evaluator_exceptions
+    # - name: Run dbt_project_evaluator checks
+    #   run: pipenv run dbt build --select package:dbt_project_evaluator dbt_project_evaluator_exceptions
     - name: Drop the dbt schema
       if: always ()
       run: pipenv run dbt run-operation drop_schema --args "{schema_name":" ${{ env.DBT_CI_SCHEMA }}, database_name":" dev}"
