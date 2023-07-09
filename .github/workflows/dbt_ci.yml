@@ -4,12 +4,10 @@ on: push
 
 env:
   DBT_PROFILE_TARGET: dev
-  DBT_PROFILE_USER: test # {{ secrets.DBT_PROFILE_USER }}
-  DBT_PROFILE_PASSWORD: test #{{ secrets.DBT_PROFILE_PASSWORD }}
+  DBT_PROFILE_USER: ${{ secrets.DBT_PROFILE_USER }}
+  DBT_PROFILE_PASSWORD: ${{ secrets.DBT_PROFILE_PASSWORD }}
 
-# concurrency: #remove spaces in front of $
-#   group: $ {{ github.workflow }}-$ {{ github.ref }}
-#   cancel-in-progress: true
+# ADD CONCURRENCY
 
 defaults:
  run:
@@ -39,12 +37,12 @@ jobs:
       run: pipenv run dbt deps
     - name: Load seed data
       run: pipenv run dbt seed --target dev --full-refresh
-    # - name: Build the models
-    #   run: pipenv run dbt run --target dev
-    # - name: Execute the tests
-    #   run: pipenv run dbt test
-    # - name: Run dbt_project_evaluator checks
-    #   run: pipenv run dbt build --select package:dbt_project_evaluator dbt_project_evaluator_exceptions
-    # - name: Drop the dbt schema
-    #   i f: always ()
-    #   run: pipenv run dbt run-operation drop_schema --args "{schema_name":" $ {{ env.DBT_CI_SCHEMA }}, database_name":" dev}"
+    - name: Build the models
+      run: pipenv run dbt run --target dev
+    - name: Execute the tests
+      run: pipenv run dbt test
+    - name: Run dbt_project_evaluator checks
+      run: pipenv run dbt build --select package:dbt_project_evaluator dbt_project_evaluator_exceptions
+    - name: Drop the dbt schema
+      if: always ()
+      run: pipenv run dbt run-operation drop_schema --args "{schema_name":" $ {{ env.DBT_CI_SCHEMA }}, database_name":" dev}"
