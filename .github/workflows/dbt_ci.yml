@@ -35,8 +35,8 @@ jobs:
       run: pipenv --rm || true
     - name: Install pipfile packages
       run: pipenv install
-    # - name: Install dbt deps
-    #   run: pipenv run dbt deps
+    - name: Install dbt deps
+      run: pipenv run dbt deps
     - name: Load seed data
       run: pipenv run dbt seed --target dev --full-refresh
     # - name: Build the models
