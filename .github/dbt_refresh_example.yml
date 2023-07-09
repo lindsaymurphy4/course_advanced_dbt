@@ -1,28 +1,26 @@
-name: dbt CI
+name: Scheduled dbt production run
 
-on: push
+on:
+  schedule:
+    - cron: '0 10 * * *' # Run refresh at 10am UTC everyday (6am EST)
 
 env:
-  DBT_PROFILE_TARGET: dev
+  DBT_PROFILE_TARGET: production
   DBT_PROFILE_USER: ${{ secrets.DBT_PROFILE_USER }}
   DBT_PROFILE_PASSWORD: ${{ secrets.DBT_PROFILE_PASSWORD }}
 
-# ADD CONCURRENCY
-
 defaults:
  run:
-   working-directory: ci_profiles  # this tells GitHub Actions where to find the profiles.yml for Snowflake connection details
+   working-directory: ci_profiles
 
 jobs:
-  run-and-test:
-    name: dbt run and test CI checks
+  prod:
+    name: Scheduled dbt refresh and test
     runs-on: ubuntu-latest
-
+    timeout-minutes: 90
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
     - name: Setup Python environment
       uses: actions/setup-python@v4
       with:
@@ -36,13 +34,8 @@ jobs:
     - name: Install dbt deps
       run: pipenv run dbt deps
     - name: Load seed data
-      run: pipenv run dbt seed --target dev --full-refresh
+      run: pipenv run dbt seed --target production --full-refresh
     - name: Build the models
-      run: pipenv run dbt run --target dev
+      run: pipenv run dbt run --target production
     - name: Execute the tests
       run: pipenv run dbt test
-    - name: Run dbt_project_evaluator checks
-      run: pipenv run dbt build --select package:dbt_project_evaluator dbt_project_evaluator_exceptions
-    - name: Drop the dbt schema
-      if: always ()
-      run: pipenv run dbt run-operation drop_schema --args "{schema_name":" ${{ env.DBT_CI_SCHEMA }}, database_name":" dev}"
