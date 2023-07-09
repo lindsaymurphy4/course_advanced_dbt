@@ -38,4 +38,4 @@ jobs:
     - name: Build the models
       run: pipenv run dbt run --target production
     - name: Execute the tests
-      run: pipenv run dbt test
+      run: pipenv run dbt test --exclude tag:unit_testing
