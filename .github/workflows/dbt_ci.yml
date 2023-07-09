@@ -38,7 +38,7 @@ jobs:
     - name: Load seed data
       run: pipenv run dbt seed --target dev --full-refresh
     - name: Build the models
-      run: pipenv run dbt build --target dev
+      run: pipenv run dbt run --target dev
     - name: Execute the tests
       run: "pipenv run dbt test --vars 'unit_testing: true'" # this needs to be double quoted to pass colon in vars
     # - name: Run dbt_project_evaluator checks
