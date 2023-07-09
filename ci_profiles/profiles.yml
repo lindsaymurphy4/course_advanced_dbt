@@ -10,7 +10,7 @@ advanced_dbt:
       warehouse: transforming
       database: dev
       schema: dbt_lindsay_ci_run
-      threads: 1
+      threads: 10
     production:
       type: snowflake
       account: efruuit-zh04827
@@ -20,4 +20,4 @@ advanced_dbt:
       warehouse: transforming
       database: analytics
       schema: dbt_lindsay
-      threads: 1
+      threads: 10
