@@ -1,13 +1,20 @@
 name: dbt CI
 
-on: push
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
 
 env:
   DBT_PROFILE_TARGET: dev
   DBT_PROFILE_USER: ${{ secrets.DBT_PROFILE_USER }}
   DBT_PROFILE_PASSWORD: ${{ secrets.DBT_PROFILE_PASSWORD }}
-
-# ADD CONCURRENCY
 
 defaults:
  run:
