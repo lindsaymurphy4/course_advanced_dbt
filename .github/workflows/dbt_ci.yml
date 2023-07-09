@@ -46,5 +46,5 @@ jobs:
     # - name: Run dbt_project_evaluator checks
     #   run: pipenv run dbt build --select package:dbt_project_evaluator dbt_project_evaluator_exceptions
     # - name: Drop the dbt schema
-    #   if: always()
-    #   run: pipenv run dbt run-operation drop_schema --args "{schema_name":" ${{ env.DBT_CI_SCHEMA }}, database_name":" dev}"
+    #   i f: always ()
+    #   run: pipenv run dbt run-operation drop_schema --args "{schema_name":" $ {{ env.DBT_CI_SCHEMA }}, database_name":" dev}"
