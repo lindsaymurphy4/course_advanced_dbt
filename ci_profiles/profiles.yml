@@ -5,7 +5,7 @@ advanced_dbt:
       type: snowflake
       account: efruuit-zh04827
       user: test #"{{ env_var('DBT_PROFILE_USER') }}"
-      pass: test #"{{ env_var('DBT_PROFILE_PASSWORD') }}"
+      password: test #"{{ env_var('DBT_PROFILE_PASSWORD') }}"
       role: transformer
       warehouse: transforming
       database: dev
@@ -15,7 +15,7 @@ advanced_dbt:
       type: snowflake
       account: efruuit-zh04827
       user: test #"{{ env_var('DBT_PROFILE_USER') }}"
-      pass: test #"{{ env_var('DBT_PROFILE_PASSWORD') }}"
+      password: test #"{{ env_var('DBT_PROFILE_PASSWORD') }}"
       role: transformer
       warehouse: transforming
       database: analytics
