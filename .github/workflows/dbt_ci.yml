@@ -1,0 +1,54 @@
+name: dbt CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+
+env:
+  DBT_PROFILE_TARGET: dev
+  DBT_PROFILE_USER: ${{ secrets.DBT_PROFILE_USER }}
+  DBT_PROFILE_PASSWORD: ${{ secrets.DBT_PROFILE_PASSWORD }}
+
+defaults:
+ run:
+   working-directory: ci_profiles  # this tells GitHub Actions where to find the profiles.yml for Snowflake connection details
+
+jobs:
+  run-and-test:
+    name: dbt run and test CI checks
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Setup Python environment
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+    - name: Install pipenv
+      run: python -m pip install --upgrade pipenv wheel
+    - name: Remove existing pipenv environment
+      run: pipenv --rm || true
+    - name: Install pipfile packages
+      run: pipenv install
+    - name: Install dbt deps
+      run: pipenv run dbt deps
+    - name: Load seed data
+      run: pipenv run dbt seed --target dev --full-refresh
+    - name: Build the models
+      run: pipenv run dbt run --target dev
+    - name: Execute the tests
+      run: pipenv run dbt test --exclude tag:unit_testing
+    - name: Build unit testing models
+      run: "pipenv run dbt run --target dev --vars 'unit_testing: true'" # this needs to be double quoted to pass colon in vars
+    - name: Run unit tests
+      run: "pipenv run dbt test --select tag:unit_testing" # this needs to be double quoted to pass colon in vars

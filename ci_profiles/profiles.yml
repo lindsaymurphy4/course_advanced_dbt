@@ -1,0 +1,23 @@
+advanced_dbt:
+  target: "{{ env_var('DBT_PROFILE_TARGET') }}"
+  outputs:
+    dev:
+      type: snowflake
+      account: efruuit-zh04827
+      user: "{{ env_var('DBT_PROFILE_USER') }}"
+      password: "{{ env_var('DBT_PROFILE_PASSWORD') }}"
+      role: transformer
+      warehouse: transforming
+      database: dev
+      schema: dbt_lindsay_ci_run
+      threads: 10
+    production:
+      type: snowflake
+      account: efruuit-zh04827
+      user: "{{ env_var('DBT_PROFILE_USER') }}"
+      password: "{{ env_var('DBT_PROFILE_PASSWORD') }}"
+      role: transformer
+      warehouse: transforming
+      database: analytics
+      schema: dbt_lindsay
+      threads: 10
