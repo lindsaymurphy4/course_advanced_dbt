@@ -28,6 +28,8 @@ final AS (
         sex,
         email,
         birthdate,
+        TRUNCATE(DATEDIFF(month, birthdate, CURRENT_DATE)/12) AS current_age,
+        TRUNCATE(DATEDIFF(month, birthdate, created_at)/12) AS age_at_acquisition,
         region,
         country,
         usf.first_subscription_starts_at,
