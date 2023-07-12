@@ -42,6 +42,14 @@ models:
         tests:
           - not_null
 
+      - name: current_age
+        tests:
+          - not_null
+
+      - name: age_at_acquisition
+        tests:
+          - not_null
+
       - name: region
         tests:
           - not_null
