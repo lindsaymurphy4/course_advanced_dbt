@@ -25,6 +25,7 @@ models:
     +grants:
       select: ['transformer', 'reporter']
 
+#TODO: remove for Bingeflix repo
 seeds:
   advanced_dbt:
     unit_testing:
@@ -36,5 +37,6 @@ seeds:
           ends_at: DATE
           pricing: FLOAT
 
+#TODO: remove for Bingeflix repo
 tests:
   +store_failures: true

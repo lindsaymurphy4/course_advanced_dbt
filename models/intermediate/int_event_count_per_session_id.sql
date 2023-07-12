@@ -3,7 +3,7 @@
 SELECT
     session_id,
     {%- for event_name in event_names %}
-    SUM(CASE WHEN event_name = '{{ event_name }}' THEN 1 ELSE 0 END) AS {{ event_name|replace(" ", "_")|lower }}_present
+    SUM(CASE WHEN event_name = '{{ event_name }}' THEN 1 ELSE 0 END) AS {{ event_name|replace(" ", "_")|lower }}_count
     {%- if not loop.last %},{% endif -%}
     {% endfor %}
 FROM

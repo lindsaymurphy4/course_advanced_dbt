@@ -4,7 +4,8 @@
 
 SELECT
     date_month,
-    SUM(mrr_amount) AS mrr
+    SUM(mrr_amount) AS mrr,
+    {{ dbt_utils.generate_surrogate_key(['date_month', 'mrr']) }} AS surrogate_key
 FROM
     {{ import_revenue }} -- We add the Jinja variable here to replace the ref function
 GROUP BY 1

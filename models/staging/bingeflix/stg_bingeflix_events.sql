@@ -1,8 +1,9 @@
 WITH source AS (
 
     SELECT * FROM {{ source('bingeflix', 'events') }}
-    WHERE
-        {{ limit_data_in_dev(ref_date = 'created_at') }}
+    -- TODO: Remove for Bingeflix repo
+    -- WHERE
+    --     {{ limit_data_in_dev(ref_date = 'created_at') }}
 
 ),
 

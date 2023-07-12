@@ -1,16 +1,26 @@
 models:
   - name: agg_mrr
+    description: This model contains the aggregate monthly recurring revenue for Bingeflix.
     tests:
+        #TODO: remove for Bingeflix repo
         - dbt_utils.equality:
             compare_model: ref('unit_test_expected_output_agg_mrr')
             tags: ['unit_testing']
     columns:
       - name: date_month
+        description: The calendar month.
         tests:
           - not_null
 
       - name: mrr
+        description: The total monthly recurring revenue.
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               expression: ">= 0"
+
+      - name: surrogate_key
+        description: The surrogate key.
+        tests:
+          - not_null
+          - unique
