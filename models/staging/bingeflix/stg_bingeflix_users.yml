@@ -1,47 +1,59 @@
 models:
   - name: stg_bingeflix_users
-    description: "The users table."
+    description: "This is table contains information about Bingeflix users."
     columns:
       - name: user_id
+        description: The unique identifier of the user.
         tests:
           - not_null
+          - unique
 
       - name: created_at
+        description: When the user was created.
         tests:
           - not_null
 
       - name: phone_number
+        description: The user's phone number.
         tests:
           - not_null
 
       - name: deleted_at
+        description: When the user's account was deleted. The value is NULL if the account has not been deleted.
 
       - name: username
+        description: The username for login to Bingeflix.
         tests:
           - not_null
 
       - name: name
+        description: The name of the user.
         tests:
           - not_null
 
       - name: sex
+        description: The user's sex at birth.
         tests:
           - not_null
           - accepted_values:
               values: ['M','F']
 
       - name: email
+        description: The user's email address.
         tests:
           - not_null
 
       - name: birthdate
+        description: The user's birthdate.
         tests:
           - not_null
 
       - name: region
+        description: Where the user resides (i.e. the state or province).
         tests:
           - not_null
 
       - name: country
+        description: Where the user resides.
         tests:
           - not_null

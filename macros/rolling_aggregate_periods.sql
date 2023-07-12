@@ -1,3 +1,4 @@
+-- TODO: Remove from Bingeflix repo
 {% macro rolling_aggregate_periods(column_name, partition_by, agg_type = 'AVG', num_periods = 7 , order_by = 'created_at') %}
     {{ agg_type }}( {{ column_name }} ) OVER (
                 PARTITION BY {{ partition_by }}

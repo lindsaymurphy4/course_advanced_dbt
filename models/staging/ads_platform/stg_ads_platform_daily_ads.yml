@@ -12,6 +12,12 @@ models:
         tests:
           - not_null
 
+      - name: surrogate_key
+        description: The surrogate key.
+        tests:
+          - not_null
+          - unique
+
       - name: spend
         description: The amount spent on the campaign.
         tests:

@@ -9,6 +9,7 @@ renamed as (
     select
         date,
         campaign_id,
+        { dbt_utils.generate_surrogate_key(['date', 'campaign_id']) }} AS surrogate_key,
         spend,
         cpm,
         ctr
