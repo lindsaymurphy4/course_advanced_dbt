@@ -1,9 +1,19 @@
+{{
+    config(
+        materialized='incremental',
+        unique_key='event_id'
+    )
+}}
+
 WITH source AS (
 
     SELECT * FROM {{ source('bingeflix', 'events') }}
-    -- TODO: Remove for Bingeflix repo
-    -- WHERE
-    --     {{ limit_data_in_dev(ref_date = 'created_at') }}
+
+{% if is_incremental() %}
+
+  where created_at > (select max(created_at) from {{ this }})
+
+{% endif %}
 
 ),
 
