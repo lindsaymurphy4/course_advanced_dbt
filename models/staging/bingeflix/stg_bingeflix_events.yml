@@ -13,7 +13,7 @@ models:
           - not_null
 
       - name: user_id
-        description: The unique identifier of the user.
+        description: '{{ doc("bingeflix_user_id") }}'
         tests:
           - not_null
 

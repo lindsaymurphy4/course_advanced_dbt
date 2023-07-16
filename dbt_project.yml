@@ -1,8 +1,8 @@
-name: 'advanced_dbt'
+name: 'course_advanced_dbt'
 version: '1.0.0'
 config-version: 2
 
-profile: 'advanced_dbt'
+profile: 'course_advanced_dbt'
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
@@ -19,35 +19,8 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
-dispatch:
-  - macro_namespace: dbt
-    search_order:
-      - advanced_dbt
-      - dbt_snowflake_monitoring
-      - dbt
-
-query-comment:
-  comment: '{{ dbt_snowflake_monitoring.get_query_comment(node) }}'
-  append: true # Snowflake removes prefixed comments.
-
 models:
   advanced_dbt:
     +materialized: view
     +grants:
       select: ['transformer', 'reporter']
-
-#TODO: remove for Bingeflix repo
-seeds:
-  advanced_dbt:
-    unit_testing:
-      +schema: unit_testing
-      +tags: unit_testing
-      unit_test_input_dim_subscriptions:
-        +column_types:
-          starts_at: DATE
-          ends_at: DATE
-          pricing: FLOAT
-
-#TODO: remove for Bingeflix repo
-tests:
-  +store_failures: true
