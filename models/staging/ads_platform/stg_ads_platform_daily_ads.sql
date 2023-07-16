@@ -9,7 +9,7 @@ renamed as (
     select
         date,
         campaign_id,
-        {{ dbt_utils.generate_surrogate_key(['date', 'campaign_id']) }} AS surrogate_key,
+        {{ dbt_utils.generate_surrogate_key(['date', 'campaign_id']) }} as surrogate_key,
         spend,
         cpm,
         ctr
