@@ -1,4 +1,4 @@
-advanced_dbt:
+course_advanced_dbt:
   target: "{{ env_var('DBT_PROFILE_TARGET') }}"
   outputs:
     dev:

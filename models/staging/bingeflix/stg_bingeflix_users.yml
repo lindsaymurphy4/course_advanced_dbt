@@ -3,7 +3,7 @@ models:
     description: "This is table contains information about Bingeflix users."
     columns:
       - name: user_id
-        description: The unique identifier of the user.
+        description: '{{ doc("bingeflix_user_id") }}'
         tests:
           - not_null
           - unique

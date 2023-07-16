@@ -1,12 +1,12 @@
-with source as (
+WITH source AS (
 
-    select * from {{ source('ads_platform', 'daily_ads') }}
+    SELECT * FROM {{ source('ads_platform', 'daily_ads') }}
 
 ),
 
-renamed as (
+renamed AS (
 
-    select
+    SELECT
         date,
         campaign_id,
         {{ dbt_utils.generate_surrogate_key(['date', 'campaign_id']) }} AS surrogate_key,
@@ -14,8 +14,8 @@ renamed as (
         cpm,
         ctr
 
-    from source
+    FROM source
 
 )
 
-select * from renamed
+SELECT * FROM renamed

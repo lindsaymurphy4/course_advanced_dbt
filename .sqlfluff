@@ -8,8 +8,7 @@ max_line_length = 999
 
 [sqlfluff:templater:dbt]
 apply_dbt_builtins = true
-profile = advanced_dbt
-project_dir = dbt
+profile = course_advanced_dbt
 
 [sqlfluff:indentation]
 indent_unit = space
@@ -31,8 +30,10 @@ unwrap_wrapped_queries = true
 apply_dbt_builtins = true
 
 [sqlfluff:rules]
-capitalisation_policy = upper
 single_table_references = consistent
+
+[sqlfluff:capitalisation.keywords]
+capitalisation_policy = upper
 
 [sqlfluff:convention.select_trailing_comma]
 select_clause_trailing_comma = forbid

@@ -1,6 +1,6 @@
-dbt/target/
+target/
 # dbt <1.0.0
-dbt/dbt_modules/
+dbt_modules/
 # dbt >=1.0.0
-dbt/dbt_packages/
-dbt/macros/
+dbt_packages/
+macros/

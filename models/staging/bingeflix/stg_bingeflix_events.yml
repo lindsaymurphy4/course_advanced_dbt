@@ -1,6 +1,6 @@
 models:
   - name: stg_bingeflix_events
-    description: This table contains information about the behavioral events of users while they interact with the Bingeflix platform.
+    description: This table contains information about the behavioral events.
     columns:
       - name: session_id
         description: The unique identifier of the session in the Bingeflix application.
@@ -13,7 +13,7 @@ models:
           - not_null
 
       - name: user_id
-        description: The unique identifier of the user.
+        description: '{{ doc("bingeflix_user_id") }}'
         tests:
           - not_null
 
