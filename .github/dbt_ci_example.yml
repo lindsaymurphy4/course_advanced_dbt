@@ -49,6 +49,6 @@ jobs:
     - name: Execute the tests
       run: pipenv run dbt test --exclude tag:unit_testing
     - name: Build unit testing models
-      run: "pipenv run dbt run --target dev --vars 'unit_testing: true'" # this needs to be double quoted to pass colon in vars
+      run: "pipenv run dbt run --target dev --vars 'unit_testing: true'" # TODO: remove unit testing # this needs to be double quoted to pass colon in vars
     - name: Run unit tests
-      run: "pipenv run dbt test --select tag:unit_testing" # this needs to be double quoted to pass colon in vars
+      run: "pipenv run dbt test --select tag:unit_testing" # TODO: remove unit testing # this needs to be double quoted to pass colon in vars

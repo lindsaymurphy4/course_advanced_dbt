@@ -19,6 +19,17 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
+dispatch:
+  - macro_namespace: dbt
+    search_order:
+      - advanced_dbt
+      - dbt_snowflake_monitoring
+      - dbt
+
+query-comment:
+  comment: '{{ dbt_snowflake_monitoring.get_query_comment(node) }}'
+  append: true # Snowflake removes prefixed comments.
+
 models:
   advanced_dbt:
     +materialized: view

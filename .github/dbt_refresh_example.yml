@@ -34,8 +34,8 @@ jobs:
     - name: Install dbt deps
       run: pipenv run dbt deps
     - name: Load seed data
-      run: pipenv run dbt seed --target production --full-refresh
+      run: pipenv run dbt seed
     - name: Build the models
-      run: pipenv run dbt run --target production
+      run: pipenv run dbt run
     - name: Execute the tests
-      run: pipenv run dbt test --exclude tag:unit_testing
+      run: pipenv run dbt test
