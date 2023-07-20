@@ -37,11 +37,10 @@ Next, you'll set up Gitpod using the repo fork you just created. Follow the step
 
 #### Part 4: Install dbt inside of a virtual environment
 We'll go over virtual environments in more detail during week 1, but for now, you can follow these instructions to get dbt installed:
-- In the terminal, run `cd /workspace/` to navigate to the workspace directory of Gitpod (important: this ensures the virtual environment will be retained across Gitpod sessions)
-- Run `touch Pipfile` to create the Pipfile
-- Run `open Pipfile` to open the file you just created
-
-Copy and paste the following into the Pipfile:
+- Ensure you're in the root directory of the repo (/workspace/course_advanced_dbt)
+- Run touch Pipfile to create a blank Pipfile (this should not have a file extension)
+- Run open Pipfile. This will open the blank file in the editor window.
+- Copy and paste the following into the Pipfile:
 
 ```
 [[source]]
@@ -50,10 +49,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-dbt-core = "==1.5.0"
-dbt-snowflake = "==1.5.0"
-sqlfluff = "==2.1.1"
-sqlfluff-templater-dbt = "==2.1.1"
+dbt-core = "==1.5.2"
+dbt-snowflake = "==1.5.2"
+sqlfluff = "==2.1.2"
+sqlfluff-templater-dbt = "==2.1.2"
+pre-commit = "==3.3.3"
 
 [requires]
 python_version = "3.11"
@@ -67,17 +67,12 @@ python_version = "3.11"
 
 #### Part 5: Setup your profiles.yml file
 
-Create the profiles.yml file
-
-While still within the /workspace/ directory, navigate to the hidden folder by running cd .dbt
-
-Run ls -a to list all contents, including hidden folders, inside a directory.
-
-Run touch profiles.yml to create a new file
-
-Run open profiles.yml to open the file you just created
-
-Copy and paste the following credentials into the new profiles.yml file you just created:
+- Run  cd .. to move up from the project root folder to the /workspace directory
+- Run ls -a to list the contents of this folder, including hidden folders–you should see a folder in the list called .dbt (if you don't, run mkdir .dbt to create it)
+- Run cd .dbt to open this hidden folder
+- Run touch profiles.yml to create a new profiles.yml file
+- Run open profiles.yml to open the file you just created.
+- Copy and paste the following credentials into the new profiles.yml file you just created:
 
 ```
 advanced_dbt:
@@ -94,22 +89,10 @@ advanced_dbt:
       schema: dbt_<YOUR SNOWFLAKE USERNAME>
       threads: 4
 ```
-Open your dbt_project.yml file and add the following to the bottom of the file (this will tell dbt where to look for the profiles.yml file)
-
-```
-vars:
-  # This tells dbt where to look for the profiles.yml file.
-  # profiles.yml must be stored in /workspace/.dbt to persist across Gitpod sessions
-  DBT_PROFILES_DIR: /workspace/.dbt/
-```
 
 Run cd /workspace/advanced_dbt to navigate to the folder that contains the dbt_project.yml file
 
 Validate that dbt can connect with Snowflake by running dbt debug
-
-Since we're not storing the profiles.yml file in the standard place that dbt looks for it (at the root folder in a .dbt hidden folder), you may need to tell Gitpod where to find the profiles.yml file. You can specify this by running:
-
-`export DBT_PROFILES_DIR=/workspace/.dbt/`
 
 Awesome! You are now ready to start the course! 🚀🚀🚀
 
@@ -119,7 +102,6 @@ Awesome! You are now ready to start the course! 🚀🚀🚀
 - Use trailing commas in SELECT statements
 - Use Snowflake dialect
 - Use consistent style in GROUP BY and ORDER BY (either names or numbers, not both)
-
 
 
 ### Testing Conventions
