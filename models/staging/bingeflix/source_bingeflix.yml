@@ -1,34 +1,34 @@
 sources:
   - name: bingeflix
     schema: public
-    description: This source contains tables from the Bingeflix production database
+    description: '{{ doc("bingeflix_source_description") }}'
     database: raw
     tables:
       - name: events
-        description: '{{ doc("table_events") }}'
+        description: '{{ doc("bingeflix_events") }}'
         columns:
           - name: session_id
-            description: '{{ doc("bingeflix_event_session_id") }}'
+            description: '{{ doc("bingeflix_events_session_id") }}'
             tests:
               - not_null
 
           - name: created_at
-            description: '{{ doc("bingeflix_event_created_at") }}'
+            description: '{{ doc("bingeflix_events_created_at") }}'
             tests:
               - not_null
 
           - name: user_id
-            description: '{{ doc("bingeflix_user_id") }}'
+            description: '{{ doc("bingeflix_users_user_id") }}'
             tests:
               - not_null
 
           - name: event_name
-            description: '{{ doc("bingeflix_event_name") }}'
+            description: '{{ doc("bingeflix_events_event_name") }}'
             tests:
               - not_null
 
           - name: event_id
-            description: '{{ doc("bingeflix_event_id") }}'
+            description: '{{ doc("bingeflix_events_event_id") }}'
             tests:
               - not_null
               - unique
