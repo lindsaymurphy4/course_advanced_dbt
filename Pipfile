@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+dbt-core = "==1.5.2"
+dbt-snowflake = "==1.5.2"
+sqlfluff = "==2.1.2"
+sqlfluff-templater-dbt = "==2.1.2"
+pre-commit = "==3.3.3"
+
+[requires]
+python_version = "3.11"

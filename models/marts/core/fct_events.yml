@@ -1,0 +1,27 @@
+models:
+  - name: fct_events
+    description: Table with user sessions and their events
+    
+    columns:
+      - name: event_id
+        description: Unique identifier of the event
+        tests:
+          - not_null
+          - unique
+
+      - name: event_name
+        description: Name of the event
+      
+      - name: session_id
+        description: Session identifier
+        tests:
+          - not_null
+
+      - name: created_at
+        description: Event timestamp
+
+      - name: user_id
+        description: "{{ doc('bingeflix_user_id') }}"
+
+
+      
