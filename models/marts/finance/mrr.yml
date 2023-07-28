@@ -1,5 +1,5 @@
 models:
-  - name: mrr
+  - name: fct_mrr
     description: This model contains calculations for the monthly recurring revenue generated per user and subscription for each month.
     columns:
       - name: surrogate_key

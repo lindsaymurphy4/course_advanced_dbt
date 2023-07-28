@@ -19,8 +19,4 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
-models:
-  advanced_dbt:
-    +materialized: view
-    +grants:
-      select: ['transformer', 'reporter']
+

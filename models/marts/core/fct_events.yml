@@ -1,6 +1,6 @@
 models:
-  - name: stg_bingeflix_events
-    description: This table contains information about the behavioral events.
+  - name: fct_events
+    description: This table contains information about the behavioral events. `SELECT *` of Bingeflix event data.
     columns:
       - name: session_id
         description: '{{ doc("bingeflix_session_id")}}'
