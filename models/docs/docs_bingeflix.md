@@ -14,7 +14,7 @@ This section contains documentation from the Bingeflix Users table.
 This table contains information about the behavioral events of users while they interact with the Bingeflix platform.
 {% enddocs %}
 
-{% docs bingeflix_users_user_id %}
+{% docs bingeflix_user_id %}
 The unique identifier of the Bingeflix user.
 {% enddocs %}
 
@@ -44,7 +44,4 @@ The unique identifier of the event.
 ## Subscription Plans
 This section contains documentation from the Bingeflix Subscription Plans table.
 
-{% docs bingeflix_user_id %}
-The unique identifier of the Bingeflix user.
-{% enddocs %}
 
