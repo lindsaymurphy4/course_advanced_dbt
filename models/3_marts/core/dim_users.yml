@@ -74,8 +74,6 @@ models:
       
       - name: first_subscription_starts_at
         description: 'When the users first subscription started.'
-        tests:
       
       - name: count_of_subscriptions
         description: 'The number of subscriptions the user has had.'
-        tests:
