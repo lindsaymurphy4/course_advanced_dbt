@@ -3,8 +3,6 @@ models:
     description: This model contains information about Bingeflix users.
     meta:
       priority: high
-      owner:
-        - lindsay
     columns:
       - name: user_id
         description: '{{ doc("bingeflix_user_id") }}'
@@ -15,40 +13,40 @@ models:
           - unique
 
       - name: created_at
-        description: When the user account was created.
+        description: '{{ doc("user_created_at") }}'
         tests:
           - not_null
 
       - name: phone_number
-        description: the user's phone number.
+        description: '{{ doc("user_phone_number") }}'
         tests:
           - not_null
 
       - name: deleted_at
-        description: When the user's account was deleted.
+        description: '{{ doc("user_deleted_at") }}'
 
       - name: username
-        description: The username associated with the user.
+        description: '{{ doc("user_username") }}'
         tests:
           - not_null
 
       - name: name
-        description: The full name of the user (first and last).
+        description: '{{ doc("user_name") }}'
         tests:
           - not_null
 
       - name: sex
-        description: The user's gender.
+        description: '{{ doc("user_sex") }}'
         tests:
           - not_null
 
       - name: email
-        description: The user's email address.
+        description: '{{ doc("user_email") }}'
         tests:
           - not_null
 
       - name: birthdate
-        description: The user's bithdate.
+        description: '{{ doc("user_birthdate") }}'
         tests:
           - not_null
 
@@ -63,11 +61,11 @@ models:
           - not_null
 
       - name: region
-        description: Where the user lives.
+        description: '{{ doc("user_region") }}'
         tests:
           - not_null
 
       - name: country
-        description: Where the user lives.
+        description: '{{ doc("user_country") }}'
         tests:
           - not_null
