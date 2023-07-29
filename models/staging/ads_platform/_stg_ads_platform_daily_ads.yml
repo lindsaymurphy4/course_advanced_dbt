@@ -1,3 +1,4 @@
+version: 2
 models:
   - name: stg_ads_platform_daily_ads
     description: "The daily ad campaigns table."
@@ -32,3 +33,4 @@ models:
         description: "The click through rate on the campaign impressions."
         tests:
           - not_null
+sources: []

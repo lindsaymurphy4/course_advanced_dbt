@@ -1,6 +1,7 @@
+version: 2
 models:
   - name: stg_bingeflix_users
-    description: "This is table contains information about Bingeflix users."
+    description: "This table contains information about Bingeflix users."
     columns:
       - name: user_id
         description: '{{ doc("bingeflix_user_id") }}'
@@ -9,51 +10,52 @@ models:
           - unique
 
       - name: created_at
-        description: When the user was created.
+        description: '{{ doc("bingeflix_user_created_at") }}'
         tests:
           - not_null
 
       - name: phone_number
-        description: The user's phone number.
+        description: '{{ doc("bingeflix_user_phone_number") }}'
         tests:
           - not_null
 
       - name: deleted_at
-        description: When the user's account was deleted. The value is NULL if the account has not been deleted.
+        description: '{{ doc("bingeflix_user_deleted_at") }}'
 
       - name: username
-        description: The username for login to Bingeflix.
+        description: '{{ doc("bingeflix_user_username") }}'
         tests:
           - not_null
 
       - name: name
-        description: The name of the user.
+        description: '{{ doc("bingeflix_user_name") }}'
         tests:
           - not_null
 
       - name: sex
-        description: The user's sex at birth.
+        description: '{{ doc("bingeflix_user_sex") }}'
         tests:
           - not_null
           - accepted_values:
-              values: ['M','F']
+              values: ['M', 'F']
 
       - name: email
-        description: The user's email address.
+        description: '{{ doc("bingeflix_user_email") }}'
         tests:
           - not_null
 
       - name: birthdate
-        description: The user's birthdate.
+        description: '{{ doc("bingeflix_user_birthdate") }}'
         tests:
           - not_null
 
       - name: region
-        description: Where the user resides (i.e. the state or province).
+        description: '{{ doc("bingeflix_user_region") }}'
         tests:
           - not_null
 
       - name: country
-        description: Where the user resides.
+        description: '{{ doc("bingeflix_user_country") }}'
         tests:
           - not_null
+sources: []

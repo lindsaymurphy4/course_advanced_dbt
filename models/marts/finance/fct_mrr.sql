@@ -25,7 +25,7 @@ months AS (
     SELECT
         calendar_date AS date_month
     FROM
-        {{ ref('dim_dates') }}
+        {{ ref('util_dates') }}
     WHERE
         day_of_month = 1
 ),

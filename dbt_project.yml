@@ -19,8 +19,25 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
+vars:
+  dbt_project_evaluator:
+    model_types: ['staging', 'intermediate', 'marts', 'other', 'util']
+    util_folder_name: 'utilities'
+    util_prefixes: ['util_']
+
+
 models:
-  advanced_dbt:
+  dbt_project_evaluator:
+    schema: 'dbt_project_evaluator'
+  course_advanced_dbt:
+    +dbt-osmosis: '_{model}.yml'
     +materialized: view
     +grants:
       select: ['transformer', 'reporter']
+
+on-run-end: "{{ dbt_project_evaluator.print_dbt_project_evaluator_issues() }}"
+
+seeds:
+  dbt_project_evaluator:
+    dbt_project_evaluator_exceptions:
+      +enabled: false

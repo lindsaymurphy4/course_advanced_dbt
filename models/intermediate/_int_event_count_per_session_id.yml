@@ -1,9 +1,10 @@
+version: 2
 models:
   - name: int_event_count_per_session_id
     description: This is an intermediate model that counts the total number of events tracked per session_id.
     columns:
       - name: session_id
-        description: The unique identifier for the session.
+        description: '{{ doc("bingeflix_event_session_id") }}'
         tests:
           - not_null
           - unique
@@ -16,3 +17,4 @@ models:
 
       - name: video_watched_count
         description: The number of times the user watched videos during the specified session.
+sources: []

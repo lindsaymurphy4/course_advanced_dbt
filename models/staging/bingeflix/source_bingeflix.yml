@@ -124,7 +124,7 @@ sources:
             tests:
               - not_null
               - accepted_values:
-                  values: ['M','F']
+                  values: ['M', 'F']
 
           - name: email
             description: The user's email address.
