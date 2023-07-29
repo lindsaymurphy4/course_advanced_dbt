@@ -24,3 +24,13 @@ models:
     +materialized: view
     +grants:
       select: ['transformer', 'reporter']
+
+on-run-end: "{{ dbt_project_evaluator.print_dbt_project_evaluator_issues() }}"
+
+vars:
+  exclude_paths_from_project: ["/stg_dates.sql"]
+
+seeds:
+  dbt_project_evaluator:
+    dbt_project_evaluator_exceptions:
+      +enabled: false
