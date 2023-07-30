@@ -1,55 +1,67 @@
 # Bingeflix Docs
 This file contains docs blocks for Bingeflix sources
 
+# Bingeflix - Source Description
+{% docs bingeflix_source_description %}
+This source contains tables from the Bingeflix production database.
+{% enddocs %}
+
 ## Users
 This section contains documentation from the Bingeflix Users table.
+
+{% docs bingeflix_users %}
+This table contains information about the behavioral events of users while they interact with the Bingeflix platform.
+{% enddocs %}
 
 {% docs bingeflix_user_id %}
 The unique identifier of the Bingeflix user.
 {% enddocs %}
 
--- Added by prabhu
-{% docs bingeflix_created_at %}
+{% docs bingeflix_users_created_at %}
 When the user was created.
 {% enddocs %}
 
-{% docs bingeflix_phone_number %}
+{% docs bingeflix_users_phone_number %}
 The user's phone number.
 {% enddocs %}
 
-{% docs bingeflix_deleted_at %}
+{% docs bingeflix_users_deleted_at %}
 When the user's account was deleted. The value is NULL if the account has not been deleted.
 {% enddocs %}
 
-{% docs bingeflix_username %}
+{% docs bingeflix_users_username %}
 The username for login to Bingeflix.
 {% enddocs %}
 
-{% docs bingeflix_name %}
+{% docs bingeflix_users_name %}
 The name of the user.
 {% enddocs %}
 
-{% docs bingeflix_sex %}
+{% docs bingeflix_users_sex %}
 The user's sex at birth.
 {% enddocs %}
 
-{% docs bingeflix_email %}
+{% docs bingeflix_users_email %}
 The user's email address.
 {% enddocs %}
 
-{% docs bingeflix_birthdate %}
+{% docs bingeflix_users_birthdate %}
 The user's birthdate.
 {% enddocs %}
 
-{% docs bingeflix_region %}
+{% docs bingeflix_users_region %}
 Where the user resides (i.e. the state or province).
 {% enddocs %}
 
-{% docs bingeflix_country %}
+{% docs bingeflix_users_country %}
 Where the user resides.
 {% enddocs %}
 
 ## Subscriptions
+
+{% docs bingeflix_subscriptions %}
+This model contains information about Bingeflix subscriptions.
+{% enddocs %}
 
 {% docs bingeflix_subscription_starts_at %}
 When the subscription started.
@@ -64,6 +76,10 @@ The unique identifier for the subscription.
 {% enddocs %}
 
 ## Subscription Plans
+
+{% docs bingeflix_subscription_plans %}
+This table contains information about various subscription plans available on Bingeflix.
+{% enddocs %}
 
 {% docs bingeflix_subscription_plan_id %}
  The unique identifier of the subscription plan.
@@ -82,6 +98,10 @@ The cadence of the payment period for the subscription plan (e.g., monthly, annu
 {% enddocs %}
 
 ## Events
+
+{% docs bingeflix_events %}
+This table contains information about the behavioral events of users while they interact with the Bingeflix platform.
+{% enddocs %}
 
 {% docs bingeflix_events_session_id %}
 The unique identifier of the session in the Bingeflix application.
