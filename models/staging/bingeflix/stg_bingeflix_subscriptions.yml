@@ -21,7 +21,7 @@ models:
         description: When the subscription ends. This value is NULL if the subscription is active.
 
       - name: subscription_id
-        description: The unique identifier for the subscription.
+        description: '{{ doc("bingeflix_subscription_id") }}'
         tests:
           - not_null
           - unique

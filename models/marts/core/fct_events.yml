@@ -1,0 +1,9 @@
+models:
+  - name: fct_events
+    description: This model contains information about Bingeflix events.
+    columns:
+      - name: event_id
+        description: '{{ doc("bingeflix_event_id") }}'
+        tests:
+          - not_null
+          - unique

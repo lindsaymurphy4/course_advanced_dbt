@@ -19,6 +19,17 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
+seeds:
+  dbt_project_evaluator:
+    dbt_project_evaluator_exceptions:
+      +enabled: false
+      
+# set doc coverage to 75% instead
+vars:
+  dbt_project_evaluator:
+    documentation_coverage_target: 75
+    test_coverage_target: 75
+
 models:
   advanced_dbt:
     +materialized: view

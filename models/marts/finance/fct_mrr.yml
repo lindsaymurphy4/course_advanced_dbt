@@ -1,5 +1,5 @@
 models:
-  - name: mrr
+  - name: fct_mrr
     description: This model contains calculations for the monthly recurring revenue generated per user and subscription for each month.
     columns:
       - name: surrogate_key
@@ -13,9 +13,13 @@ models:
 
       - name: user_id
         description: '{{ doc("bingeflix_user_id") }}'
+        tests:
+          - not_null
 
       - name: subscription_id
-        description: The unique identifier for the subscription.
+        description: '{{ doc("bingeflix_subscription_id") }}'
+        tests:
+          - not_null
 
       - name: starts_at
         description: When the subscription started.
