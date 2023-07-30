@@ -51,10 +51,6 @@ Where the user resides.
 
 ## Subscriptions
 
-{% docs bingeflix_subscription_plan_id %}
-The subscription identifier.
-{% enddocs %}
-
 {% docs bingeflix_subscription_starts_at %}
 When the subscription started.
 {% enddocs %}
