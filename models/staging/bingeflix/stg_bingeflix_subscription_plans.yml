@@ -3,7 +3,7 @@ models:
     description: This table contains information about various subscription plans available on Bingeflix.
     columns:
       - name: subscription_plan_id
-        description: The unique identifier of the subscription plan.
+        description: '{{ doc("bingeflix_subscription_plan_id") }}'
         tests:
           - not_null
           - unique
@@ -11,16 +11,16 @@ models:
               values: [1, 2, 3]
 
       - name: plan_name
-        description: The name of the subscription plan.
+        description: '{{ doc("bingeflix_subscription_plan_name") }}'
         tests:
           - not_null
 
       - name: pricing
-        description: The price of the subscription.
+        description: '{{ doc("bingeflix_subscription_plan_pricing") }}'
         tests:
           - not_null
 
       - name: payment_period
-        description: The recurring payment period for the subscription.
+        description: '{{ doc("bingeflix_subscription_plan_payment_period") }}'
         tests:
           - not_null
