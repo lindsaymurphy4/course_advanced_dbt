@@ -1,5 +1,5 @@
 models:
-  - name: stg_util_mrr
+  - name: fct_mrr
     description: This model contains calculations for the monthly recurring revenue generated per user and subscription for each month.
     columns:
       - name: surrogate_key
@@ -12,19 +12,19 @@ models:
         description: The calendar month.
 
       - name: user_id
-        description: '{{ doc("bingeflix_user_id") }}'
+        description: '{{ doc("bingeflix_user_id") }}' 
 
       - name: subscription_id
-        description: The unique identifier for the subscription.
+        description: '{{ doc("bingeflix_subscription_id") }}'
 
       - name: starts_at
-        description: When the subscription started.
+        description: '{{ doc("bingeflix_subscription_starts_at") }}'
 
       - name: ends_at
-        description: When the subscription ended. This value is NULL if the subscription has not had auto-renew turned off.
+        description: '{{ doc("bingeflix_subscription_ends_at") }}'
 
       - name: plan_name
-        description: The name of the subscription plan.
+        description: '{{ doc("bingeflix_subscription_plan_name") }}'
 
       - name: mrr_amount
         description: The amount of monthly recurring revenue generated from the subscription in a given month.

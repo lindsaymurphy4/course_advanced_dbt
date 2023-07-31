@@ -25,7 +25,7 @@ months AS (
     SELECT
         calendar_date AS date_month
     FROM
-        {{ ref('stg_util_dates') }}
+        {{ ref('stg_bingeflix_dates') }}
     WHERE
         day_of_month = 1
 ),
