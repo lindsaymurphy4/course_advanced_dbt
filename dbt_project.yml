@@ -15,6 +15,11 @@ log-path: 'logs'
 target-path: 'target'
 packages-install-path: 'dbt_packages'
 
+seeds:
+  dbt_project_evaluator:
+    dbt_project_evaluator_exceptions:
+      +enabled: false
+
 clean-targets:
   - "target"
   - "dbt_packages"

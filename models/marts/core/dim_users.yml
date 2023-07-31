@@ -15,40 +15,40 @@ models:
           - unique
 
       - name: created_at
-        description: When the user account was created.
+        description: '{{ doc("bingeflix_user_created_at") }}'
         tests:
           - not_null
 
       - name: phone_number
-        description: the user's phone number.
+        description: '{{ doc("bingeflix_user_phone_number") }}'
         tests:
           - not_null
 
       - name: deleted_at
-        description: When the user's account was deleted.
+        description: '{{ doc("bingeflix_user_deleted_at") }}'
 
       - name: username
-        description: The username associated with the user.
+        description: '{{ doc("bingeflix_user_username") }}'
         tests:
           - not_null
 
       - name: name
-        description: The full name of the user (first and last).
+        description: '{{ doc("bingeflix_user_name") }}'
         tests:
           - not_null
 
       - name: sex
-        description: The user's gender.
+        description: '{{ doc("bingeflix_user_sex") }}'
         tests:
           - not_null
 
       - name: email
-        description: The user's email address.
+        description: '{{ doc("bingeflix_user_email") }}'
         tests:
           - not_null
 
       - name: birthdate
-        description: The user's bithdate.
+        description: '{{ doc("bingeflix_user_birthdate") }}'
         tests:
           - not_null
 
@@ -63,11 +63,11 @@ models:
           - not_null
 
       - name: region
-        description: Where the user lives.
+        description: '{{ doc("bingeflix_user_region") }}'
         tests:
           - not_null
 
       - name: country
-        description: Where the user lives.
+        description: '{{ doc("bingeflix_user_country") }}'
         tests:
           - not_null
