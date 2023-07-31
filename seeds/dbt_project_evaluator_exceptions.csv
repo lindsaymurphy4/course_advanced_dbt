@@ -1,2 +1,2 @@
 fct_name,column_name,id_to_exclude,comment
-fct_root_models,child,dim_dates,Date Spine model doesn't have a source
+fct_root_models,child,stg_bingeflix_dates,Date Spine model doesn't have a source
