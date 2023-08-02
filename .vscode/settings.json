@@ -1,0 +1,24 @@
+{
+    "sqltools.connections": [
+        {
+            "authenticator": "SNOWFLAKE",
+            "ocspOptions": {
+                "ocspFailOpen": true
+            },
+            "snowflakeOptions": {
+                "clientSessionKeepAlive": true,
+                "clientSessionKeepAliveHeartbeatFrequency": 3600,
+                "schema": "dbt_lindsay",
+                "role": "transformer"
+            },
+            "previewLimit": 50,
+            "driver": "Snowflake",
+            "name": "course_advanced_dbt",
+            "account": "efruuit-zh04827",
+            "username": "lindsaymurphy4",
+            "password": "Law842}fat}Meat",
+            "database": "dev",
+            "warehouse": "transforming"
+        }
+    ]
+}

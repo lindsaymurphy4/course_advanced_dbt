@@ -10,7 +10,7 @@ renamed as (
         subscription_plan_id,
         user_id,
         starts_at,
-        ends_at,
+        NULLIF(ends_at, '') AS ends_at,
         subscription_id
 
     from
