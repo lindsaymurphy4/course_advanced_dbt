@@ -1,0 +1,2 @@
+fct_name,column_name,id_to_exclude,comment
+fct_multiple_sources_joined,child,stg_%_unioned,Models called _unioned can union multiple sources
