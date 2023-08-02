@@ -71,9 +71,9 @@ models:
         description: '{{ doc("bingeflix_users_country") }}'
         tests:
           - not_null
-      
+
       - name: first_subscription_starts_at
         description: 'When the users first subscription started.'
-      
+
       - name: count_of_subscriptions
         description: 'The number of subscriptions the user has had.'

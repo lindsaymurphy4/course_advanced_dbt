@@ -4,4 +4,5 @@ sources:
     database: raw
     tables:
       - name: daily_ads
+        description: "The source daily ad campaigns table."
         identifier: ads
