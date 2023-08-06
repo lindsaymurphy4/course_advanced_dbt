@@ -5,3 +5,4 @@ sources:
     tables:
       - name: daily_ads
         identifier: ads
+        description: "Daily ad spend data at the campaign level. Downstream we use [date, campaign-id] as a surrogate key."
