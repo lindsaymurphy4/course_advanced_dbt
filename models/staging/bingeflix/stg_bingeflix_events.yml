@@ -3,7 +3,7 @@ models:
     description: This table contains information about the behavioral events.
     columns:
       - name: session_id
-        description: The unique identifier of the session in the Bingeflix application.
+        description: '{{ doc("bingeflix_session_id") }}'
         tests:
           - not_null
 
@@ -23,7 +23,7 @@ models:
           - not_null
 
       - name: event_id
-        description: The unique identifier of the event.
+        description: '{{ doc("bingeflix_event_id") }}'
         tests:
           - not_null
           - unique

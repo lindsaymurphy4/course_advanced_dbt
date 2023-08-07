@@ -3,20 +3,20 @@ models:
     description: This model contains information about Bingeflix subscriptions.
     columns:
       - name: subscription_id
-        description: The unique identifier of the subscription.
+        description: '{{ doc("bingeflix_subscription_id") }}'
         tests:
           - not_null
           - unique
 
       - name: subscription_plan_id
-        description: The subscription plan identifier.
+        description: '{{ doc("bingeflix_subscription_plan_id") }}'
         tests:
           - not_null
           - accepted_values:
               values: [1, 2, 3]
 
       - name: user_id
-        description: The identifier of the user.
+        description: '{{ doc("bingeflix_user_id") }}'
         tests:
           - not_null
 
