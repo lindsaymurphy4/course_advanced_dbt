@@ -180,7 +180,7 @@ final AS (
             order_by = 'mrr_with_changes.date_month',
             n ='7'
         )
-        }} AS rolling_agg_n_periods,
+        }} ,
         mrr_change,
         LEAST(mrr, previous_month_mrr_amount) AS retained_mrr_amount,
         previous_month_mrr_amount,
