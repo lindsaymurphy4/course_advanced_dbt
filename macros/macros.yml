@@ -1,0 +1,8 @@
+version: 2
+
+macros:
+  - name: rolling_aggregation_n_periods
+    description: A general macro for window functions with an option to choose the type of aggregation and day intervals.
+
+  - name: date_trunc
+    description: Macro to substitute for sql date_trunc function

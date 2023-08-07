@@ -12,8 +12,8 @@ monthly_subscriptions AS (
         ends_at,
         plan_name,
         pricing,
-        DATE(DATE_TRUNC('month', starts_at)) AS start_month,
-        DATE(DATE_TRUNC('month', ends_at)) AS end_month
+        DATE({{ date_truncate('month', 'starts_at') }}) as start_month,
+        DATE({{ date_truncate('month', 'ends_at') }}) as end_month
     FROM
         {{ ref('dim_subscriptions') }}
     WHERE
@@ -203,5 +203,6 @@ final AS (
 
 SELECT
     date_month::TEXT || '-' || subscription_id::TEXT || '-' || change_category::TEXT AS surrogate_key,
-    *
+    *,
+    {{ rolling_aggregation_n_periods('mrr_amount', 'user_id', 'date_month', '7', 'avg') }}
 FROM final

@@ -23,7 +23,7 @@ seeds:
   dbt_project_evaluator:
     dbt_project_evaluator_exceptions:
       +enabled: false
-      
+
 # set doc coverage to 75% instead
 vars:
   dbt_project_evaluator:

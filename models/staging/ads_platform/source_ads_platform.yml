@@ -19,7 +19,7 @@ sources:
               - not_null
 
           - name: spend
-            description: The amount spent on the ad campaign 
+            description: The amount spent on the ad campaign
             tests:
               - not_null
 
