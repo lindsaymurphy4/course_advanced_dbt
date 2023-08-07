@@ -1,0 +1,18 @@
+version: 2
+
+macros:
+  - name: rolling_agg_n_periods.sql
+    description: A macro to create rolling average for a given period.
+    arguments:
+      - name: column_name
+        type: string
+        description: The name of the column you want to get the rolling aggregation
+      - name: partition_by
+        type: string
+        description: The partition by column
+      - name: order_by
+        type: string
+        description: The order by column
+      - name: n
+        type: integer
+        description: Number of periods

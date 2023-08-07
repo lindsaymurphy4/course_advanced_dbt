@@ -173,6 +173,14 @@ final AS (
         subscription_periods.ends_at,
         subscription_periods.plan_name,
         mrr AS mrr_amount,
+        {{ rolling_agg_n_periods(
+            agg = 'SUM',
+            column_name = 'mrr',
+            partition_by = ' mrr_with_changes.user_id',
+            order_by = 'mrr_with_changes.date_month',
+            n ='7'
+        )
+        }} AS rolling_agg_n_periods,
         mrr_change,
         LEAST(mrr, previous_month_mrr_amount) AS retained_mrr_amount,
         previous_month_mrr_amount,
