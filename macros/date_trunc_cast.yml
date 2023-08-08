@@ -1,0 +1,3 @@
+macros:
+  - name: date_trunc_cast
+    description: This macro can be used to truncate a date to your desired date interval and then cast the output as a date.
