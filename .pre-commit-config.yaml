@@ -25,6 +25,7 @@ repos:
   rev: v1.1.1
   hooks:
   - id: dbt-compile # Compiles dbt (necessary for future hooks)
+    files: models/
   # - id: dbt-docs-generate # Generates the dbt docs (necessary for some future hooks)
   - id: check-source-table-has-description # Ensures all source tables have descriptions
   - id: check-model-has-tests # Ensures all models have at least 2 tests

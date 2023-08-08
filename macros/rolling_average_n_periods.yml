@@ -1,0 +1,3 @@
+macros:
+  - name: rolling_average_n_periods
+    description: This macro can be used to calculate the average of a numeric column over a specified number of periods, partitioned and ordered by column you specify.
