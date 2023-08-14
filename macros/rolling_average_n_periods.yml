@@ -1,0 +1,18 @@
+version: 2
+
+macros:
+  - name: rolling_average_n_periods
+    description: A macro to create a rolling average over the past n periods
+    arguments:
+      - name: column_name
+        type: string
+        description: The name of the column for which you want to create the average
+      - name: partition_by
+        type: string
+        description: If you want to average within a partition (eg, by a specific campaign or product), put the column name here
+      - name: order_by
+        type: string
+        description: Generally this is 'date desc', if you want to look at the most recent trends.
+      - name: n_periods
+        type: integer
+        description: The number of periods to look back - 1. For a 3 window lookback period, enter the number 2. For 30 days, enter 29.

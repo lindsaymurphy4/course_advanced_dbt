@@ -1,0 +1,49 @@
+models:
+  - name: fct_mrr
+    description: This model contains calculations for the monthly recurring revenue generated per user and subscription for each month.
+    tests:
+      - dbt_utils.equality:
+          compare_model: ref('unit_test_expected_output_fct_mrr')
+          tags: ['unit_testing']
+    columns:
+      - name: surrogate_key
+        description: The surrogate key. This acts as a primary key for this model.
+        tests:
+          - not_null
+          - unique
+
+      - name: date_month
+        description: The calendar month.
+
+      - name: user_id
+        description: '{{ doc("bingeflix_user_id") }}'
+
+      - name: subscription_id
+        description: '{{ doc("subscription_id") }}'
+
+      - name: starts_at
+        description: '{{ doc("starts_at") }}'
+
+      - name: ends_at
+        description: '{{ doc("ends_at") }}'
+
+      - name: plan_name
+        description: '{{ doc("plan_name") }}'
+
+      - name: mrr_amount
+        description: The amount of monthly recurring revenue generated from the subscription in a given month.
+
+      - name: mrr_change
+        description: The change in monthly recurring revenue from the associated subscription versus last month.
+
+      - name: retained_mrr_amount
+        description: The amount of monthly recurring revenue associated with the subscription retained from the previous month.
+
+      - name: previous_month_mrr_amount
+        description: The amount of monthly recurring revenue associated with the subscription earned in the previous month.
+
+      - name: change_category
+        description: The category the subscription falls into based on the current month (e.g. new, churned, retained, reactivated)
+
+      - name: month_retained_number
+        description: The number of months the subscription has been retained since it was started (first month = 0).

@@ -19,6 +19,7 @@ models:
         description: The price of the subscription.
         tests:
           - not_null
+          - column_is_positive
 
       - name: payment_period
         description: The recurring payment period for the subscription.

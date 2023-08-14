@@ -1,0 +1,16 @@
+version: 2
+
+
+macros:
+  - name: subscription_ending_month_date_cleanup
+    description: |
+          Corrects month end dates by
+          1. For users that cancel in the first month, set their end_month to next month because the subscription remains active until the end of the first month
+          2. For users who haven't ended their subscription yet (end_month is NULL) set the end_month to one month from the current date (these rows will be removed from the final CTE)
+    arguments:
+      - name: start_month
+        type: string
+        description: The start_month of the user's subscription.
+      - name: end_month
+        type: string
+        description: The original end_month of the user's subscription. May be NULL.

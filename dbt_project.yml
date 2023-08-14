@@ -24,3 +24,46 @@ models:
     +materialized: view
     +grants:
       select: ['transformer', 'reporter']
+
+seeds:
+  course_advanced_dbt:
+    +schema: unit_testing
+    +tags: unit_testing
+    unit_test_input_util_dates:
+      +column_types:
+        CALENDAR_DATE: DATE
+        DATE_WEEK: DATE
+        DATE_MONTH: DATE
+        DATE_QUARTER: DATE
+        DATE_YEAR: DATE
+        DAY_OF_MONTH: NUMBER(2,0)
+        YEAR_NUM: NUMBER(4,0)
+        QUARTER_NUM: NUMBER(2,0)
+        MONTH_NUM: NUMBER(2,0)
+    unit_test_input_dim_subscriptions:
+      +column_types:
+        SUBSCRIPTION_ID: NUMBER(38,0)
+        SUBSCRIPTION_PLAN_ID: NUMBER(38,0)
+        USER_ID: NUMBER(38,0)
+        STARTS_AT: TIMESTAMP_NTZ(9)
+        ENDS_AT: TIMESTAMP_NTZ(9)
+        PLAN_NAME: VARCHAR(16777216)
+        PRICING: NUMBER(38,0)
+        BILLING_PERIOD: VARCHAR(16777216)
+    unit_test_expected_output_fct_mrr:
+      +column_types:
+        SURROGATE_KEY: VARCHAR(16777216)
+        AVG_7_PERIODS_MRR_AMOUNT: NUMBER(38,5)
+        SUM_UNBOUNDED_PERIODS_MRR_AMOUNT: NUMBER(38,2)
+        DATE_MONTH: DATE
+        USER_ID: NUMBER(38,0)
+        SUBSCRIPTION_ID: NUMBER(38,0)
+        STARTS_AT: TIMESTAMP_NTZ(9)
+        ENDS_AT: TIMESTAMP_NTZ(9)
+        PLAN_NAME: VARCHAR(16777216)
+        MRR_AMOUNT: NUMBER(38,2)
+        MRR_CHANGE: NUMBER(38,2)
+        RETAINED_MRR_AMOUNT: NUMBER(38,2)
+        PREVIOUS_MONTH_MRR_AMOUNT: NUMBER(38,2)
+        CHANGE_CATEGORY: VARCHAR(12)
+        MONTH_RETAINED_NUMBER: NUMBER(9,0)

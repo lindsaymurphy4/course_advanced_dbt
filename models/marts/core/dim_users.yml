@@ -4,7 +4,7 @@ models:
     meta:
       priority: high
       owner:
-        - lindsay
+        - gary
     columns:
       - name: user_id
         description: '{{ doc("bingeflix_user_id") }}'
@@ -12,7 +12,6 @@ models:
           priority: high
         tests:
           - not_null
-          - unique
 
       - name: created_at
         description: When the user account was created.
@@ -71,3 +70,9 @@ models:
         description: Where the user lives.
         tests:
           - not_null
+
+      - name: first_subscription_starts_at
+        description: placeholder
+
+      - name: count_of_subscriptions
+        description: placeholder

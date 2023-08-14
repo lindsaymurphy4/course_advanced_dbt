@@ -1,0 +1,31 @@
+models:
+  - name: stg_ads_platform_rolling_avgs
+    description: "Provides rolling averages of spend for specific campaigns."
+    columns:
+      - name: date
+        description: '{{ doc("campaign_date") }}'
+        tests:
+          - not_null
+      - name: campaign_id
+        description: '{{ doc("campaign_id") }}'
+
+      - name: surrogate_key
+        description: The surrogate key.
+        tests:
+          - not_null
+          - unique
+
+      - name: spend
+        description: '{{ doc("campaign_spend") }}'
+        tests:
+          - not_null
+
+      - name: avg_7_periods_spend
+        description: Average spend by campaign over the past 7 days
+        tests:
+          - not_null
+
+      - name: avg_3_periods_spend
+        description: Average spend by campaign over the past 3 days
+        tests:
+          - not_null

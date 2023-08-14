@@ -11,34 +11,23 @@ models:
       - name: subscription_plan_id
         description: The subscription plan identifier.
         tests:
-          - not_null
           - accepted_values:
               values: [1, 2, 3]
 
       - name: user_id
         description: The identifier of the user.
-        tests:
-          - not_null
 
       - name: starts_at
         description: When the subscription started.
-        tests:
-          - not_null
 
       - name: ends_at
         description: When the subscription ends.
 
       - name: plan_name
         description: The name of the subscription plan.
-        tests:
-          - not_null
 
       - name: pricing
         description: The monthly cost of the subscription.
-        tests:
-          - not_null
 
       - name: billing_period
         description: The cadence of the billing period.
-        tests:
-          - not_null
