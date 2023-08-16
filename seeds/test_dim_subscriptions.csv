@@ -1,0 +1,11 @@
+subscription_id,subscription_plan_id,user_id,starts_at,ends_at,plan_name,pricing,billing_period
+0,2,46344,2019-01-02T02:49:50Z,2019-01-06T02:49:50Z,Basic,10,monthly
+1,1,81160,2019-01-02T15:13:05Z,2019-02-14T15:13:05Z,Standard with Ads,6,monthly
+2,1,77735,2019-01-02T17:02:22Z,2019-02-05T17:02:22Z,Standard with Ads,6,monthly
+3,2,60659,2019-01-02T20:24:36Z,2019-03-22T20:24:36Z,Basic,10,monthly
+4,1,31935,2019-01-03T04:50:46Z,2019-01-30T04:50:46Z,Standard with Ads,6,monthly
+5,2,2761,2019-01-03T10:00:44Z,2019-04-07T10:00:44Z,Basic,10,monthly
+6,1,86534,2019-01-03T18:43:58Z,2019-04-02T18:43:58Z,Standard with Ads,6,monthly
+7,1,51817,2019-01-03T19:20:55Z,2019-02-10T19:20:55Z,Standard with Ads,6,monthly
+8,2,7110,2019-01-03T21:53:11Z,2019-01-26T21:53:11Z,Basic,10,monthly
+9,1,85029,2019-01-04T00:40:13Z,2019-01-21T00:40:13Z,Standard with Ads,6,monthly
