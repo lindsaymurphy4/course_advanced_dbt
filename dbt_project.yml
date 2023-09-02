@@ -29,3 +29,10 @@ models:
     +materialized: view
     +grants:
       select: ['transformer', 'reporter']
+
+
+seeds:
+  course_advanced_dbt:
+    unit_testing:
+      +schema: dbt_kaushikm_unit_testing
+      +tags: unit_testing

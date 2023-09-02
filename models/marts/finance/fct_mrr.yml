@@ -46,3 +46,8 @@ models:
 
       - name: rolling_sum_7_periods_mrr
         description: Rolling aggregations
+
+    tests:
+    - dbt_utils.equality:
+    compare_model: ref('unit_test_output_mrr')
+    tags: ['unit_testing']
