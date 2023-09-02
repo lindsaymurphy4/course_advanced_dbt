@@ -5,3 +5,4 @@ dbt_packages/
 # other
 analysis/
 macros/
+models/

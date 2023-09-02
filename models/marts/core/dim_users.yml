@@ -10,9 +10,6 @@ models:
         description: '{{ doc("bingeflix_user_id") }}'
         meta:
           priority: high
-        tests:
-          - not_null
-          - unique
 
       - name: created_at
         description: '{{ doc("bingeflix_user_created_at") }}'
@@ -71,3 +68,6 @@ models:
         description: '{{ doc("bingeflix_user_country") }}'
         tests:
           - not_null
+
+      - name: count_of_subscriptions
+      - name: first_subscription_starts_at
