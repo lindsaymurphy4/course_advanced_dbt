@@ -1,0 +1,18 @@
+models:
+  - name: fct_active_users
+    description: This model tracks which users have been active in each calendar week, and counts their total number of logins per week.
+    columns:
+      - name: surrogate_key
+        description: The primary key for the table. A concatenation of date_week and user_id hashed.
+        tests:
+          - not_null
+          - unique
+
+      - name: DATE_WEEK
+        description: The calendar week.
+
+      - name: USER_ID
+        description: The unique identifier of the Bingeflix user.
+
+      - name: LOGIN_COUNT
+        description: The total number of logins for a given user in a given week.

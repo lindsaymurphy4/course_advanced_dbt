@@ -13,4 +13,6 @@ ports:
     onOpen: ignore
 vscode:
   extensions:
-    - github.vscode-pull-request-github
+    - innoverio.vscode-dbt-power-user
+    - koszti.snowflake-driver-for-sqltools
+    - GitHub.vscode-pull-request-github
