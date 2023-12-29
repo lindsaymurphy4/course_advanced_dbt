@@ -1,6 +1,6 @@
 sources:
   - name: ads_platform
-    schema: public
+    schema: bingeflix
     database: raw
     tables:
       - name: daily_ads

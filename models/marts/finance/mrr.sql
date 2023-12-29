@@ -202,6 +202,6 @@ final AS (
 )
 
 SELECT
-    date_month::TEXT || '-' || subscription_id::TEXT || '-' || change_category::TEXT AS surrogate_key,
+    {{ dbt_utils.generate_surrogate_key(['date_month', 'subscription_id', 'change_category']) }} AS surrogate_key,
     *
 FROM final

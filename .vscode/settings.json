@@ -20,5 +20,6 @@
             "database": "dev",
             "warehouse": "transforming"
         }
-    ]
+    ],
+    "dbt.enableNewLineagePanel": true
 }
