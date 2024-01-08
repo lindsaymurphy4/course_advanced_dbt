@@ -24,6 +24,20 @@ models:
     +materialized: view
     +grants:
       select: ['transformer', 'reporter']
+    
+    staging:
+      +schema: staging
+    
+    intermediate:
+      +schema: intermediate
+
+    marts:
+      core:
+        +schema: core_reporting
+      finance:
+        +schema: finance
+      product:
+        +schema: product
 
 seeds:
   dbt_project_evaluator:

@@ -17,3 +17,4 @@ source as (
 )
 
 select * from source
+

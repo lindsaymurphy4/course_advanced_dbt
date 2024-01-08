@@ -1,4 +1,4 @@
-{% set event_names = dbt_utils.get_column_values(table=ref('stg_bingeflix_events'), column='event_name') -%}
+{% set event_names = dbt_utils.get_column_values(table=ref('stg_bingeflix__events'), column='event_name') -%}
 
 SELECT
     session_id,
@@ -8,6 +8,6 @@ SELECT
     {% if not loop.last %},{% endif -%}
     {% endfor %}
 FROM
-    {{ ref('stg_bingeflix_events') }}
+    {{ ref('stg_bingeflix__events') }}
 GROUP BY
     session_id, user_id

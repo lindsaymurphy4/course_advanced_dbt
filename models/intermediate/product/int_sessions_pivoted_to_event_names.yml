@@ -1,5 +1,5 @@
 models:
-  - name: int_event_count_per_session_id
+  - name: int_sessions_pivoted_to_event_names
     description: This is an intermediate model that counts the total number of events tracked per session_id.
     columns:
       - name: session_id
@@ -10,6 +10,8 @@ models:
 
       - name: user_logged_in_count
         description: The number of times the user logged in during the specified session.
+        tests:
+          - assert_column_is_positive
 
       - name: user_logged_out_count
         description: The number of times the user logged out during the specified session.

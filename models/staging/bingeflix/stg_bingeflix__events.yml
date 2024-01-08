@@ -1,5 +1,5 @@
 models:
-  - name: stg_bingeflix_events
+  - name: stg_bingeflix__events
     description: This table contains information about the behavioral events.
     columns:
       - name: session_id

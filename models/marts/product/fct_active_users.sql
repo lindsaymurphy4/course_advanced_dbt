@@ -6,7 +6,7 @@ events AS (
         DATE(created_at) AS created_date,
         event_id AS login_id
     FROM
-        {{ ref('stg_bingeflix_events')}}
+        {{ ref('stg_bingeflix__events')}}
     WHERE
         event_name = 'User Logged In'
 ),
@@ -16,7 +16,7 @@ date_spine AS (
         calendar_date,
         date_week
     FROM
-        {{ ref('dim_dates')}}
+        {{ ref('int_dates')}}
 ),
 
 final AS (

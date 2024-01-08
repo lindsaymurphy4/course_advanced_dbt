@@ -1,0 +1,7 @@
+event_name,event_category
+User Logged In,login
+User Logged Out,login
+Video Watched,engagement
+Page Viewed,view
+CTA Clicked,engagement
+Button Clicked,engagement

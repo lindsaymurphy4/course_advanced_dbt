@@ -11,8 +11,8 @@ final AS (
         sp.pricing,
         sp.payment_period AS billing_period
     FROM
-        {{ ref('stg_bingeflix_subscriptions') }} AS s
-        LEFT JOIN {{ ref('stg_bingeflix_subscription_plans') }} AS sp
+        {{ ref('stg_bingeflix__subscriptions') }} AS s
+        LEFT JOIN {{ ref('stg_bingeflix__subscription_plans') }} AS sp
             ON s.subscription_plan_id = sp.subscription_plan_id
 )
 

@@ -1,3 +1,6 @@
+{{ config(tags="p0") }}
+
+
 -- This model is created following the dbt MRR playbook: https://www.getdbt.com/blog/modeling-subscription-revenue/
 
 WITH
@@ -25,7 +28,7 @@ months AS (
     SELECT
         calendar_date AS date_month
     FROM
-        {{ ref('dim_dates') }}
+        {{ ref('int_dates') }}
     WHERE
         day_of_month = 1
 ),
