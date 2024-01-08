@@ -4,7 +4,7 @@ users AS (
     SELECT
         *
     FROM
-        {{ ref('stg_bingeflix_users') }}
+        {{ ref('stg_bingeflix__users') }}
 ),
 
 users_subscription_facts AS (
@@ -13,7 +13,7 @@ users_subscription_facts AS (
         MIN(starts_at) AS first_subscription_starts_at,
         COUNT(DISTINCT subscription_id) AS count_of_subscriptions
     FROM
-        {{ ref('stg_bingeflix_subscriptions') }}
+        {{ ref('stg_bingeflix__subscriptions') }}
     GROUP BY 1
 ),
 

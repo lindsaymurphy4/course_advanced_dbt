@@ -1,5 +1,5 @@
 models:
-  - name: dim_dates
+  - name: int_dates
     description: This is a calendar table including all the consecutive dates between the 2019-01-01 and 2030-01-01.
       It also includes week, month, quarter, year, and other values associated with a specific date.
     columns:

@@ -1,5 +1,5 @@
 models:
-  - name: stg_ads_platform_daily_ads
+  - name: stg_ads_platform__daily_ads
     description: The daily ad campaigns table.
     columns:
       - name: date

@@ -1,5 +1,5 @@
 models:
-  - name: stg_bingeflix_subscriptions
+  - name: stg_bingeflix__subscriptions
     description: This model contains information about Bingeflix subscriptions.
     columns:
       - name: subscription_plan_id

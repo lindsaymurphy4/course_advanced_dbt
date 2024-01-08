@@ -1,5 +1,5 @@
 models:
-  - name: stg_bingeflix_users
+  - name: stg_bingeflix__users
     description: "This is table contains information about Bingeflix users."
     columns:
       - name: user_id
