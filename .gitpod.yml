@@ -11,8 +11,3 @@ ports:
     onOpen: open-preview
   - port: 5432
     onOpen: ignore
-vscode:
-  extensions:
-    - innoverio.vscode-dbt-power-user
-    - koszti.snowflake-driver-for-sqltools
-    - GitHub.vscode-pull-request-github

@@ -6,11 +6,11 @@
 Use the information below to log in to the course Snowflake instance:
 
 - URL: https://efruuit-zh04827.snowflakecomputing.com/
-- Username: Your username will be the email you use to login to CoRise, with non-alphanumeric characters removed.
+- Username: Your username will be the email you use to login to Uplimit, with non-alphanumeric characters removed.
 
 Here are some examples of how to derive your username from your email.
-sourabh@corise.com  ➡ sourabhcorisecom
-sourabh.bajaj@corise.com ➡ sourabhbajajcorisecom
+sourabh@uplimit.com  ➡ sourabhuplimitcom
+sourabh.bajaj@uplimit.com ➡ sourabhbajajuplimitcom
 Sourabh.BAJAJ.1234@gmail.com ➡ SourabhBAJAJ1234gmailcom
 
 - Password: ADD PASSWORD (you'll be prompted to change this, remember to save this password)
@@ -33,7 +33,7 @@ Next, you'll set up Gitpod using the repo fork you just created. Follow the step
 - Select the editor you'd like to use (VSCode in Browser is our default, but you'll see you can choose others if you prefer)
 - Click Continue to open the workspace (this may take a few minutes)
 - Explore the workspace
-- You'll need to "Pin" your workspace so that it doesn't get Archived after 14 days, and always "Stop" your workspace so that you don't run out of hours. See video on CoRise week 0 for how to do so.
+- You'll need to "Pin" your workspace so that it doesn't get Archived after 14 days, and always "Stop" your workspace so that you don't run out of hours. See video in Week 0 for how to do so.
 
 #### Part 4: Install dbt inside of a virtual environment
 We'll go over virtual environments in more detail during week 1, but for now, you can follow these instructions to get dbt installed:
