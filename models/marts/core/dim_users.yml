@@ -7,7 +7,7 @@ models:
         - lindsay
     columns:
       - name: user_id
-        description: '{{ doc("user_id") }}'
+        description: '{{ doc("bingeflix_user_id") }}'
         meta:
           priority: high
         tests:

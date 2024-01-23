@@ -17,7 +17,7 @@ models:
         description: The calendar month.
 
       - name: user_id
-        description: '{{ doc("user_id") }}'
+        description: '{{ doc("bingeflix_user_id") }}'
 
       - name: subscription_id
         description: The unique identifier for the subscription.
