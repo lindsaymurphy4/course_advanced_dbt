@@ -1,29 +1,29 @@
 models:
   - name: stg_bingeflix__events
-    description: This table contains information about the behavioral events.
+    description: '{{ doc("table_events") }}'
     columns:
       - name: session_id
-        description: The unique identifier of the session in the Bingeflix application.
+        description: '{{ doc("events_session_id") }}'
         tests:
           - not_null
 
       - name: created_at
-        description: When the event was logged.
+        description: '{{ doc("events_created_at") }}'
         tests:
           - not_null
 
       - name: user_id
-        description: '{{ doc("bingeflix_column_user_id") }}'
+        description: '{{ doc("user_id") }}'
         tests:
           - not_null
 
       - name: event_name
-        description: The name of the event.
+        description: '{{ doc("events_event_name") }}'
         tests:
           - not_null
 
       - name: event_id
-        description: The unique identifier of the event.
+        description: '{{ doc("events_event_id") }}'
         tests:
           - not_null
           - unique
