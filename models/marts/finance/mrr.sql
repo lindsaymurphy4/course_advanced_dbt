@@ -81,7 +81,7 @@ subscriber_months AS (
             -- All months after start date
             ON months.date_month >= subscribers.first_start_month
                 -- and before end date
-                AND months.date_month < subscribers.last_end_month
+                AND subscribers.last_end_month > months.date_month
 ),
 
 -- Join together to create base CTE for MRR calculations
@@ -198,8 +198,8 @@ final AS (
     FROM
         mrr_with_changes
         LEFT JOIN subscription_periods
-            ON subscription_periods.user_id = mrr_with_changes.user_id
-                AND subscription_periods.subscription_id = mrr_with_changes.subscription_id
+            ON mrr_with_changes.user_id = subscription_periods.user_id
+                AND mrr_with_changes.subscription_id = subscription_periods.subscription_id
     WHERE
         date_month <= DATE_TRUNC('month', CURRENT_DATE)
 )
