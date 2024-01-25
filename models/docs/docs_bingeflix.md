@@ -85,7 +85,28 @@ The unique identifier for the subscription.
 
 ## ########################################################################
 ## Subscription Plans
-This section contains documentation from the Bingeflix Subscription Plans table.
+This table contains information about various subscription plans available on Bingeflix.
+
+{% docs bingeflix__table__subscription_plans %}
+This model contains information about Bingeflix subscriptions.
+{% enddocs %}
+
+{% docs bingeflix__subscription_plans__column__subscription_plan_id %}
+The unique identifier for the subscription plan.
+Primary Key.
+{% enddocs %}
+
+{% docs bingeflix__subscription_plans__column__plan_name %}
+The name of the subscription plan.
+{% enddocs %}
+
+{% docs bingeflix__subscription_plans__column__pricing %}
+The price of the subscription.
+{% enddocs %}
+
+{% docs bingeflix__subscription_plans__column__payment_period %}
+The recurring payment period for the subscription.
+{% enddocs %}
 
 ## ########################################################################
 ## Events
