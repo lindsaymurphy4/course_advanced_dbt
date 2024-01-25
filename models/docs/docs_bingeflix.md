@@ -1,6 +1,10 @@
 # Bingeflix Docs
 This file contains documentation for Bingeflix data sources.
 
+{% docs bingeflix_source %}
+This source contains tables from the Bingeflix production database
+{% enddocs %}
+
 ## Events
 This section contains documentation from the Bingeflix Events table.
 

@@ -1,5 +1,5 @@
 models:
-  - name: mrr
+  - name: rpt_mrr
     config:
       tags: p0
     description: '{{ doc("bingeflix_mrr_table") }}'

@@ -1,7 +1,7 @@
 sources:
   - name: bingeflix
     schema: bingeflix
-    description: This source contains tables from the Bingeflix production database
+    description: '{{ doc("bingeflix_source") }}'
     database: raw
     tables:
       - name: events
