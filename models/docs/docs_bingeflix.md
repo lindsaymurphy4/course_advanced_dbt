@@ -66,14 +66,6 @@ This model contains information about Bingeflix subscriptions.
 When the subscription was started.
 {% enddocs %}
 
-{% docs bingeflix__subscriptions__column__ends_at %}
- When the subscription ends. This value is NULL if the subscription is active.
-{% enddocs %}
-
-{% docs bingeflix__subscriptions__column__subscription_id %}
-The unique identifier for the subscription.
-{% enddocs %}
-
 ## ########################################################################
 ## Subscription Plans
 This table contains information about various subscription plans available on Bingeflix.

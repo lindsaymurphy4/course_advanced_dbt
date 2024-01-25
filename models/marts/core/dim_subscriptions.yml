@@ -1,44 +1,44 @@
 models:
   - name: dim_subscriptions
-    description: This model contains information about Bingeflix subscriptions.
+    description: '{{ docs("marts__table__dim_subscriptions)" }}'
     columns:
       - name: subscription_id
-        description: The unique identifier of the subscription.
+        description: '{{ docs("bingeflix__subscriptions__column__subscription_id") }}'
         tests:
           - not_null
           - unique
 
       - name: subscription_plan_id
-        description: The subscription plan identifier.
+        description: '{{ docs("bingeflix__subscription_plans__column__subscription_plan_id") }}'
         tests:
           - not_null
           - accepted_values:
               values: [1, 2, 3]
 
       - name: user_id
-        description: The identifier of the user.
+        description: '{{ docs("bingeflix__users__column__user_id") }}'
         tests:
           - not_null
 
       - name: starts_at
-        description: When the subscription started.
+        description: '{{ docs("bingeflix__subscriptions__column__starts_at") }}'
         tests:
           - not_null
 
       - name: ends_at
-        description: When the subscription ends.
+        description: '{{ docs("bingeflix__subscriptions__column__ends_at") }}'
 
       - name: plan_name
-        description: The name of the subscription plan.
+        description: '{{ docs("bingeflix__subscription_plans__column__plan_name") }}'
         tests:
           - not_null
 
       - name: pricing
-        description: The monthly cost of the subscription.
+        description: '{{ docs("bingeflix__subscription_plans__column__pricing") }}'
         tests:
           - not_null
 
       - name: billing_period
-        description: The cadence of the billing period.
+        description: '{{ docs("marts__dim_subscriptions__column__billing_period") }}'
         tests:
           - not_null

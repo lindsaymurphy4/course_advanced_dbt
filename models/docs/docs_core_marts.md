@@ -5,6 +5,7 @@ This file contains doumentation for Marts models.
 ## Core
 This section contains documentation from the Core mart.
 
+### Dim Users
 {% docs marts__table__dim_users %}
 This model contains information about Bingeflix users.
 {% enddocs %}
@@ -15,6 +16,20 @@ The user's current age.
 
 {% docs marts__dim_users__column__age_at_acquisition %}
 The age of the user when they became a Bingeflix user.
+{% enddocs %}
+
+### Dim Subscriptions
+{% docs marts__table__dim_subscriptions %}
+This model contains information about Bingeflix subscriptions.
+{% enddocs %}
+
+{% docs marts__dim_subscriptions__column__billing_period %}
+The cadence of the billing period.
+{% enddocs %}
+
+### Fct Events
+{% docs marts__table__fct_events %}
+This table contains information about the behavioral events.
 {% enddocs %}
 
 ## ########################################################################

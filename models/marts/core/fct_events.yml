@@ -1,0 +1,33 @@
+models:
+  - name: stg_bingeflix__events
+    description: '{{docs("marts__table__fct_events")}}'
+    meta:
+      priority: high
+      owner:
+        - jayne
+    columns:
+      - name: session_id
+        description: '{{ doc("bingeflix__events__column__session_id") }}'
+        tests:
+          - not_null
+
+      - name: created_at
+        description: '{{ doc("bingeflix__events__column__created_at") }}'
+        tests:
+          - not_null
+
+      - name: user_id
+        description: '{{ doc("bingeflix__users__column__user_id") }}'
+        tests:
+          - not_null
+
+      - name: event_name
+        description: '{{ doc("bingeflix__events__column__event_name") }}'
+        tests:
+          - not_null
+
+      - name: event_id
+        description: '{{ doc("bingeflix__events__column__event_id") }}'
+        tests:
+          - not_null
+          - unique
