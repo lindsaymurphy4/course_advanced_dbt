@@ -19,6 +19,11 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
+# set your model fanout threshold to 10 instead of 3
+vars:
+  dbt_project_evaluator:
+    models_fanout_threshold: 10
+
 models:
   course_advanced_dbt:
     +materialized: view
