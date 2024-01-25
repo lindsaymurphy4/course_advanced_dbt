@@ -1,13 +1,13 @@
 models:
   - name: dim_users
-    description: This model contains information about Bingeflix users.
+    description: '{{ doc("bingeflix_users_table") }}'
     meta:
       priority: high
       owner:
         - lindsay
     columns:
       - name: user_id
-        description: '{{ doc("bingeflix_column_user_id") }}'
+        description: '{{ doc("bingeflix_users_column_user_id") }}'
         meta:
           priority: high
         tests:
@@ -15,59 +15,65 @@ models:
           - unique
 
       - name: created_at
-        description: When the user account was created.
+        description: '{{ doc("bingeflix_users_column_created_at") }}'
         tests:
           - not_null
 
       - name: phone_number
-        description: the user's phone number.
+        description: '{{ doc("bingeflix_users_column_phone_number") }}'
         tests:
           - not_null
 
       - name: deleted_at
-        description: When the user's account was deleted.
+        description: '{{ doc("bingeflix_users_column_deleted_at") }}'
 
       - name: username
-        description: The username associated with the user.
+        description: '{{ doc("bingeflix_users_column_username") }}'
         tests:
           - not_null
 
       - name: name
-        description: The full name of the user (first and last).
+        description: '{{ doc("bingeflix_users_column_name") }}'
         tests:
           - not_null
 
       - name: sex
-        description: The user's gender.
+        description: '{{ doc("bingeflix_users_column_sex") }}'
         tests:
           - not_null
 
       - name: email
-        description: The user's email address.
+        description: '{{ doc("bingeflix_users_column_email") }}'
         tests:
           - not_null
 
       - name: birthdate
-        description: The user's bithdate.
+        description: '{{ doc("bingeflix_users_column_birthdate") }}'
         tests:
           - not_null
 
       - name: current_age
-        description: The user's current age.
+        description: '{{ doc("bingeflix_metrics_column_current_age") }}'
         tests:
           - not_null
 
       - name: age_at_acquisition
-        description: The age of the user when they became a Bingeflix user.
+        description: '{{ doc("bingeflix_metrics_column_age_at_acquisition") }}'
         tests:
           - not_null
 
       - name: region
-        description: Where the user lives.
+        description: '{{ doc("bingeflix_users_column_region") }}'
         tests:
           - not_null
 
       - name: country
-        description: Where the user lives.
+        description: '{{ doc("bingeflix_users_column_country") }}'
         tests:
           - not_null
+
+      - name: first_subscription_starts_at
+        description: '{{ doc("bingeflix_metrics_column_first_subscription_starts_at") }}'
+
+      - name: count_of_subscriptions
+        description: '{{ doc("bingeflix_metrics_column_count_of_subscriptions") }}'

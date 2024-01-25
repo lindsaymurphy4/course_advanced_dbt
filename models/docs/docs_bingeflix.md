@@ -1,5 +1,5 @@
 # Bingeflix Docs
-This file contains doumentation for Bingeflix data sources.
+This file contains documentation for Bingeflix data sources.
 
 ## Events
 This section contains documentation from the Bingeflix Events table.
@@ -8,20 +8,18 @@ This section contains documentation from the Bingeflix Events table.
 This table contains information about the behavioral events of users while they interact with the Bingeflix platform. It includes events such as logins, logouts, videos watched, and CTA/button clicks.
 {% enddocs %}
 
-{% docs bingeflix_events_column_created_at %}
-When the event was logged
-{% enddocs %}
-
+### Primary Key
 {% docs bingeflix_events_column_event_id %}
 The unique identifier of the event
 {% enddocs %}
 
-{% docs bingeflix_events_column_event_name %}
-The name of the event
+### Properties
+{% docs bingeflix_events_column_created_at %}
+When the event was logged
 {% enddocs %}
 
-{% docs bingeflix_events_column_user_id %}
-The unique identifier of the user
+{% docs bingeflix_events_column_event_name %}
+The name of the event
 {% enddocs %}
 
 {% docs bingeflix_events_column_session_id %}
@@ -35,6 +33,12 @@ This section contains documentation from the Bingeflix Subscription Plans table.
 This table contains information about the subscription plans available at Bingeflix.
 {% enddocs %}
 
+### Primary Key
+{% docs bingeflix_subscription_plans_column_subscription_plan_id %}
+The unique identifier of the subscription plan
+{% enddocs %}
+
+### Properties
 {% docs bingeflix_subscription_plans_column_payment_period %}
 The cadence of the payment period for the subscription plan (e.g., monthly, annually)
 {% enddocs %}
@@ -47,10 +51,6 @@ The name of the subscription plan
 The price of the subscription plan per payment period
 {% enddocs %}
 
-{% docs bingeflix_subscription_plans_column_subscription_plan_id %}
-The unique identifier of the subscription plan
-{% enddocs %}
-
 ## Subscriptions
 This section contains documentation from the Bingeflix Subscriptions table.
 
@@ -58,24 +58,18 @@ This section contains documentation from the Bingeflix Subscriptions table.
 This table contains subscription-related information, such as subscription plan IDs, subscription start dates, renewal dates, billing information, and any other relevant subscription details.
 {% enddocs %}
 
+### Primary Key
+{% docs bingeflix_subscriptions_column_subscription_id %}
+The unique identifier of the subscription
+{% enddocs %}
+
+### Properties
 {% docs bingeflix_subscriptions_column_ends_at %}
 When the subscription plan ends (The value is NULL if the subscription plan has auto-renew turned on/does not have a defined end date.)
 {% enddocs %}
 
 {% docs bingeflix_subscriptions_column_starts_at %}
 When the subscription plan starts
-{% enddocs %}
-
-{% docs bingeflix_subscriptions_column_subscription_id %}
-The unique identifier of the subscription
-{% enddocs %}
-
-{% docs bingeflix_subscriptions_column_user_id %}
-The unique identifier of the user
-{% enddocs %}
-
-{% docs bingeflix_subscriptions_column_subscription_plan_id %}
-The unique identifier of the subscription plan
 {% enddocs %}
 
 ## Users
@@ -85,7 +79,13 @@ This section contains documentation from the Bingeflix Users table.
 This table stores information about Bingeflix users, including user IDs, usernames, email addresses, subscription start dates, and other relevant user details.
 {% enddocs %}
 
-{% docs bingeflix_users_column_birthdatet %}
+### Primary Key
+{% docs bingeflix_users_column_user_id %}
+The unique identifier of the user
+{% enddocs %}
+
+### Properties
+{% docs bingeflix_users_column_birthdate %}
 The user's birthdate
 {% enddocs %}
 
@@ -123,9 +123,5 @@ The user's sex at birth
 
 {% docs bingeflix_users_column_username %}
 The username used for login
-{% enddocs %}
-
-{% docs bingeflix_users_column_user_id %}
-The unique identifier of the user
 {% enddocs %}
 
