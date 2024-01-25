@@ -1,6 +1,7 @@
 # Bingeflix Docs
 This file contains doumentation for Bingeflix data sources.
 
+## ########################################################################
 ## Users
 This section contains documentation from the Bingeflix Users table.
 
@@ -52,14 +53,44 @@ The state or region of the user's residence.
 The country of the user's residence.
 {% enddocs %}
 
+## ########################################################################
 ## Subscriptions
 This section contains documentation from the Bingeflix Subscriptions table.
 
+{% docs bingeflix__table__subscriptions %}
+This model contains information about Bingeflix subscriptions.
+{% enddocs %}
+
+{% docs bingeflix__subscriptions__column__subscription_plan_id %}
+The unique identifier for the subscription plan.
+Foreign Key.
+{% enddocs %}
+
+{% docs bingeflix__subscriptions__column__user_id %}
+The unique identifier for the user.
+Foreign Key.
+{% enddocs %}
+
+{% docs bingeflix__subscriptions__column__starts_at %}
+When the subscription was started.
+{% enddocs %}
+
+{% docs bingeflix__subscriptions__column__ends_at %}
+ When the subscription ends. This value is NULL if the subscription is active.
+{% enddocs %}
+
+{% docs bingeflix__subscriptions__column__subscription_id %}
+The unique identifier for the subscription.
+{% enddocs %}
+
+## ########################################################################
 ## Subscription Plans
 This section contains documentation from the Bingeflix Subscription Plans table.
 
+## ########################################################################
 ## Events
 This section contains documentation from the Bingeflix Events table.
 
+## ########################################################################
 ## Ads
 This section contains documentation from the Bingeflix Events table.
