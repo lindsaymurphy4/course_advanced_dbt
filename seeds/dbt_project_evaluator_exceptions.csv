@@ -1,3 +1,4 @@
 fct_name,column_name,id_to_exclude,comment
 fct_root_models,child,int_dates,calendar table does not need to have a source model
-
+fct_undocumented_source_tables,resource_name,ads_platform.daily_ads,-
+fct_undocumented_sources,source_name,ads_platform,-
