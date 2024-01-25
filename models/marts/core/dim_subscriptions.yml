@@ -1,6 +1,6 @@
 models:
   - name: dim_subscriptions
-    description: '{{ docs("marts__table__dim_subscriptions)" }}'
+    description: '{{ docs("marts__core__table__dim_subscriptions") }}'
     columns:
       - name: subscription_id
         description: '{{ docs("bingeflix__subscriptions__column__subscription_id") }}'
@@ -39,6 +39,6 @@ models:
           - not_null
 
       - name: billing_period
-        description: '{{ docs("marts__dim_subscriptions__column__billing_period") }}'
+        description: '{{ docs("marts__core__dim_subscriptions__column__billing_period") }}'
         tests:
           - not_null

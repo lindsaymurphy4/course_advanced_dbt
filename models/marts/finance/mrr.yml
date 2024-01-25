@@ -14,7 +14,7 @@ models:
                 tags: p0
 
       - name: date_month
-        description: 
+        description: '{{ docs("int__int_dates__column__date_month") }}'
 
       - name: user_id
         description: '{{ doc("bingeflix__users__column__user_id") }}'

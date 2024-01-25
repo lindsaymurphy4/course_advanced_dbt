@@ -9,7 +9,7 @@ models:
           - unique
 
       - name: DATE_WEEK
-        description: '{{ docs("marts__prodict__fct_active_users__column__date_week") }}'
+        description: '{{ docs("int__int_dates__column__date_week") }}'
 
       - name: USER_ID
         description: '{{ docs("bingeflix__users__column__user_id") }}'

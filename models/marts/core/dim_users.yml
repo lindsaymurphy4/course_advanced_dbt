@@ -1,6 +1,6 @@
 models:
   - name: dim_users
-    description: '{{ docs("marts__table__dim_users") }}'
+    description: '{{ docs("marts__core__table__dim_users") }}'
     meta:
       priority: high
       owner:
@@ -53,12 +53,12 @@ models:
           - not_null
 
       - name: current_age
-        description: '{{ doc("marts__dim_users__column_current_age") }}'
+        description: '{{ doc("marts__core__dim_users__column__current_age") }}'
         tests:
           - not_null
 
       - name: age_at_acquisition
-        description: '{{ doc("marts__dim_users__column__age_at_acquisition") }}'
+        description: '{{ doc("marts__core__dim_users__column__age_at_acquisition") }}'
         tests:
           - not_null
 

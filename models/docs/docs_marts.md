@@ -6,29 +6,29 @@ This file contains doumentation for Marts models.
 This section contains documentation from the Core mart.
 
 ### Dim Users
-{% docs marts__table__dim_users %}
+{% docs marts__core__table__dim_users %}
 This model contains information about Bingeflix users.
 {% enddocs %}
 
-{% docs marts__dim_users__column__current_age %}
+{% docs marts__core__dim_users__column__current_age %}
 The user's current age.
 {% enddocs %}
 
-{% docs marts__dim_users__column__age_at_acquisition %}
+{% docs marts__core__dim_users__column__age_at_acquisition %}
 The age of the user when they became a Bingeflix user.
 {% enddocs %}
 
 ### Dim Subscriptions
-{% docs marts__table__dim_subscriptions %}
+{% docs marts__core__table__dim_subscriptions %}
 This model contains information about Bingeflix subscriptions.
 {% enddocs %}
 
-{% docs marts__dim_subscriptions__column__billing_period %}
+{% docs marts__core__dim_subscriptions__column__billing_period %}
 The cadence of the billing period.
 {% enddocs %}
 
 ### Fct Events
-{% docs marts__table__fct_events %}
+{% docs marts__core__table__fct_events %}
 This table contains information about the behavioral events.
 {% enddocs %}
 
@@ -42,10 +42,6 @@ This model contains calculations for the monthly recurring revenue generated per
 
 {% docs marts__finance__mrr__column__surrogate_key %}
 The surrogate key. This acts as a primary key for this model.
-{% enddocs %}
-
-{% docs marts__finance__mrr__column__date_month %}
-The calendar month.
 {% enddocs %}
 
 {% docs marts__finance__mrr__column__mrr_amount %}
@@ -83,10 +79,6 @@ This model tracks which users have been active in each calendar week, and counts
 {% docs marts__prodict__fct_active_users__column__surrogate_key %}
 A concatenation of date_week and user_id hashed.
 Primary Key.
-{% enddocs %}
-
-{% docs marts__prodict__fct_active_users__column__date_week %}
-The calendar week.
 {% enddocs %}
 
 {% docs marts__prodict__fct_active_users__column__login_count %}

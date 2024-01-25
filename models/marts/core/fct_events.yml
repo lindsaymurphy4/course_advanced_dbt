@@ -1,6 +1,6 @@
 models:
-  - name: stg_bingeflix__events
-    description: '{{docs("marts__table__fct_events")}}'
+  - name: fct_events
+    description: '{{docs("marts__core__table__fct_events")}}'
     meta:
       priority: high
       owner:
