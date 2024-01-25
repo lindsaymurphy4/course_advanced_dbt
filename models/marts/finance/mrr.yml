@@ -20,7 +20,7 @@ models:
         description: '{{ doc("bingeflix_column_user_id") }}'
 
       - name: subscription_id
-        description: The unique identifier for the subscription.
+        description: '{{ doc("bingeflix_column_subscription_id") }}'
 
       - name: starts_at
         description: When the subscription started.

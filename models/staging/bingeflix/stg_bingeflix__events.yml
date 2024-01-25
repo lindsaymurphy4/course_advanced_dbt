@@ -23,7 +23,7 @@ models:
           - not_null
 
       - name: event_id
-        description: The unique identifier of the event.
+        description: '{{ doc("bingeflix_column_event_id") }}'
         tests:
           - not_null
           - unique
