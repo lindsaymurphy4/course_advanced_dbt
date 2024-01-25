@@ -27,17 +27,27 @@ models:
     
     staging:
       +schema: staging
+      +docs:
+        node_color: "green"
     
     intermediate:
       +schema: intermediate
+      +docs:
+        node_color: "blue"
 
     marts:
       core:
         +schema: core_reporting
+        +docs:
+          node_color: "orange"
       finance:
         +schema: finance
+        +docs:
+          node_color: "yellow"
       product:
         +schema: product
+        +docs:
+          node_color: "red"
 
 seeds:
   dbt_project_evaluator:
