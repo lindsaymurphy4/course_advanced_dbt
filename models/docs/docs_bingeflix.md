@@ -9,7 +9,7 @@ This section contains documentation from the Bingeflix Users table.
 This is table contains information about Bingeflix users.
 {% enddocs %}
 
-{% docs bingeflix__users__column_user_id %}
+{% docs bingeflix__users__column__user_id %}
 The unique identifier of the Bingeflix user. A user is created when initiates a subscription.
 Primary Key.
 {% enddocs %}

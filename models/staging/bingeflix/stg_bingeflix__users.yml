@@ -3,7 +3,7 @@ models:
     description: '{{ docs("bingeflix__table__users") }}'
     columns:
       - name: user_id
-        description: '{{ doc("bingeflix_column_user_id") }}'
+        description: '{{ doc("bingeflix__users__column__user_id") }}'
         tests:
           - not_null
           - unique

@@ -1,0 +1,38 @@
+# Marts Docs
+This file contains doumentation for Marts models.
+
+## ########################################################################
+## Core
+This section contains documentation from the Core mart.
+
+{% docs marts__table__dim_users %}
+This model contains information about Bingeflix users.
+{% enddocs %}
+
+{% docs marts__dim_users__column__current_age %}
+The user's current age.
+{% enddocs %}
+
+{% docs marts__dim_users__column__age_at_acquisition %}
+The age of the user when they became a Bingeflix user.
+{% enddocs %}
+
+## ########################################################################
+## Finance
+This section contains documentation from the Finance mart.
+
+{% docs bingeflix__table__users %}
+{% enddocs %}
+
+{% docs bingeflix__users__column__user_id %}
+{% enddocs %}
+
+## ########################################################################
+## Product
+This section contains documentation from the Product mart.
+
+{% docs bingeflix__table__users %}
+{% enddocs %}
+
+{% docs bingeflix__users__column__user_id %}
+{% enddocs %}
