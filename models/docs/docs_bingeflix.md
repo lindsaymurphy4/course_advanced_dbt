@@ -11,6 +11,7 @@ This is table contains information about Bingeflix users.
 
 {% docs bingeflix__users__column_user_id %}
 The unique identifier of the Bingeflix user. A user is created when initiates a subscription.
+Primary Key.
 {% enddocs %}
 
 {% docs bingeflix__users__column__created_at%}
@@ -61,16 +62,6 @@ This section contains documentation from the Bingeflix Subscriptions table.
 This model contains information about Bingeflix subscriptions.
 {% enddocs %}
 
-{% docs bingeflix__subscriptions__column__subscription_plan_id %}
-The unique identifier for the subscription plan.
-Foreign Key.
-{% enddocs %}
-
-{% docs bingeflix__subscriptions__column__user_id %}
-The unique identifier for the user.
-Foreign Key.
-{% enddocs %}
-
 {% docs bingeflix__subscriptions__column__starts_at %}
 When the subscription was started.
 {% enddocs %}
@@ -112,6 +103,23 @@ The recurring payment period for the subscription.
 ## Events
 This section contains documentation from the Bingeflix Events table.
 
-## ########################################################################
-## Ads
-This section contains documentation from the Bingeflix Events table.
+{% docs bingeflix__table__events %}
+This model contains information about Bingeflix subscriptions.
+{% enddocs %}
+
+{% docs bingeflix__events__column__session_id %}
+The unique identifier of the session in the Bingeflix application.
+{% enddocs %}
+
+{% docs bingeflix__events__column__created_at %}
+When the event was logged.
+{% enddocs %}
+
+{% docs bingeflix__events__column__event_name %}
+The name of the event.
+{% enddocs %}
+
+{% docs bingeflix__events__column__event_id %}
+The unique identifier of the event.
+Primary Key.
+{% enddocs %}

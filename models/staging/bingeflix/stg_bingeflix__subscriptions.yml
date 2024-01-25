@@ -3,12 +3,12 @@ models:
     description: '{{ docs("bingeflix__table__subscriptions") }}'
     columns:
       - name: subscription_plan_id
-        description: '{{ docs("bingeflix__subscriptions__column__subscription_plan_id") }}'
+        description: '{{ docs("bingeflix__subscription_plans__column__subscription_plan_id") }}'
         tests:
           - not_null
 
       - name: user_id
-        description: '{{ docs("bingeflix__subscriptions__column__user_id") }}'
+        description: '{{ docs("bingeflix__users__column_user_id") }}'
         tests:
           - not_null
 
