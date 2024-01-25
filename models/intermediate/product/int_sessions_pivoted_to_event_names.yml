@@ -3,10 +3,15 @@ models:
     description: This is an intermediate model that counts the total number of events tracked per session_id.
     columns:
       - name: session_id
-        description: The unique identifier for the session.
+        description: '{{ doc("bingeflix_column_session_id") }}'
         tests:
           - not_null
           - unique
+
+      - name: user_id
+        description: '{{ doc("bingeflix_column_user_id") }}'
+        tests:
+          - not_null
 
       - name: user_logged_in_count
         description: The number of times the user logged in during the specified session.

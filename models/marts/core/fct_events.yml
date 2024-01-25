@@ -1,12 +1,12 @@
 models:
-  - name: stg_bingeflix__events
+  - name: fct_events
     description: This table contains information about the behavioral events.
     columns:
       - name: session_id
         description: '{{ doc("bingeflix_column_session_id") }}'
         tests:
           - not_null
-
+        
       - name: created_at
         description: '{{ doc("bingeflix_column_created_at") }}'
         tests:
