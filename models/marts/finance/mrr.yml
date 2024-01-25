@@ -2,11 +2,11 @@ models:
   - name: mrr
     config:
       tags: p0
-    description: This model contains calculations for the monthly recurring revenue generated per user and subscription for each month.
+    description: '{{ docs("marts__finance__table__mrr") }}'
       
     columns:
       - name: surrogate_key
-        description: The surrogate key. This acts as a primary key for this model.
+        description: '{{ docs("marts__finance__mrr__column__surrogate_key") }}'
         tests:
           - not_null
           - unique:
@@ -14,37 +14,37 @@ models:
                 tags: p0
 
       - name: date_month
-        description: The calendar month.
+        description: 
 
       - name: user_id
-        description: '{{ doc("bingeflix_column_user_id") }}'
+        description: '{{ doc("bingeflix__users__column__user_id") }}'
 
       - name: subscription_id
-        description: The unique identifier for the subscription.
+        description: '{{ doc("bingeflix__subscriptions__column__subscription_id") }}'
 
       - name: starts_at
-        description: When the subscription started.
+        description: '{{ docs("bingeflix__subscriptions__column__starts_at") }}'
 
       - name: ends_at
-        description: When the subscription ended. This value is NULL if the subscription has not had auto-renew turned off.
+        description: '{{ docs("bingeflix__subscriptions__column__ends_at") }}'
 
       - name: plan_name
-        description: The name of the subscription plan.
+        description: '{{ docs("bingeflix__subscription_plans__column__plan_name") }}'
 
       - name: mrr_amount
-        description: The amount of monthly recurring revenue generated from the subscription in a given month.
+        description: '{{ docs("marts__finance__mrr__column__mrr_amount") }}'
 
       - name: mrr_change
-        description: The change in monthly recurring revenue from the associated subscription versus last month.
+        description: '{{ docs("marts__finance__mrr__column__mrr_change") }}'
 
       - name: retained_mrr_amount
-        description: The amount of monthly recurring revenue associated with the subscription retained from the previous month.
+        description: '{{ docs("marts__finance__mrr__column__retained_mrr_amount") }}'
 
       - name: previous_month_mrr_amount
-        description: The amount of monthly recurring revenue associated with the subscription earned in the previous month.
+        description: '{{ docs("marts__finance__mrr__column__previous_month_mrr_amount") }}'
 
       - name: change_category
-        description: The category the subscription falls into based on the current month (e.g. new, churned, retained, reactivated)
+        description: '{{ docs("marts__finance__mrr__column__change_category") }}'
 
       - name: month_retained_number
-        description: The number of months the subscription has been retained since it was started (first month = 0).
+        description: '{{ docs("marts__finance__mrr__column__month_retained_number") }}'
