@@ -1,18 +1,18 @@
 models:
   - name: fct_active_users
-    description: This model tracks which users have been active in each calendar week, and counts their total number of logins per week.
+    description: '{{ docs("marts__product__table__fct_active_users") }}'
     columns:
       - name: surrogate_key
-        description: The primary key for the table. A concatenation of date_week and user_id hashed.
+        description: '{{ docs("marts__prodict__fct_active_users__column__surrogate_key") }}'
         tests:
           - not_null
           - unique
 
       - name: DATE_WEEK
-        description: The calendar week.
+        description: '{{ docs("marts__prodict__fct_active_users__column__date_week") }}'
 
       - name: USER_ID
-        description: The unique identifier of the Bingeflix user.
-
+        description: '{{ docs("bingeflix__users__column__user_id") }}'
+        
       - name: LOGIN_COUNT
-        description: The total number of logins for a given user in a given week.
+        description: '{{ docs("marts__prodict__fct_active_users__column__login_count") }}'

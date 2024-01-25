@@ -76,8 +76,19 @@ The number of months the subscription has been retained since it was started (fi
 ## Product
 This section contains documentation from the Product mart.
 
-{% docs bingeflix__table__users %}
+{% docs marts__product__table__fct_active_users %}
+This model tracks which users have been active in each calendar week, and counts their total number of logins per week.
 {% enddocs %}
 
-{% docs bingeflix__users__column__user_id %}
+{% docs marts__prodict__fct_active_users__column__surrogate_key %}
+A concatenation of date_week and user_id hashed.
+Primary Key.
+{% enddocs %}
+
+{% docs marts__prodict__fct_active_users__column__date_week %}
+The calendar week.
+{% enddocs %}
+
+{% docs marts__prodict__fct_active_users__column__login_count %}
+The total number of logins for a given user in a given week.
 {% enddocs %}
