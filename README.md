@@ -23,3 +23,10 @@
 - Columns that should never be null must have a not_null schema test.
 - Columns that should be unique must have a unique schema test.
 - Where possible, use schema tests from the dbt_utils or dbt_expectations packages to perform extra verification.
+
+
+## Projects
+### Week 1
+- Task 2: Documentation added to doc blocks for all Bingeflix source models. Focussing on the subscriptions source table, documentation was added for all downstream models of subscriptions.
+- Task 3: Dbt Project Evaluator was run. All documentation and test issues were addressed, as these are important for project organisation. Only two exceptions were added to the exceptions file: (1) mrr will remain in the model/mart/finance folder as there was no need to add a new reporting folder for this model, (2) stg_events has multiple children models, this is acceptable / expected as the events table is a key table
+- Task 4: SQLFluff run and linting issues addressed
