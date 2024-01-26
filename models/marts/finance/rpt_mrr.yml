@@ -1,12 +1,12 @@
 models:
-  - name: mrr
+  - name: rpt_mrr
     config:
       tags: p0
-    description: This model contains calculations for the monthly recurring revenue generated per user and subscription for each month.
+    description: '{{ doc("rpt_mrr") }}'
       
     columns:
       - name: surrogate_key
-        description: The surrogate key. This acts as a primary key for this model.
+        description: '{{ doc("rpt_mrr__surrogate_key") }}'
         tests:
           - not_null
           - unique:
@@ -14,37 +14,37 @@ models:
                 tags: p0
 
       - name: date_month
-        description: The calendar month.
+        description: '{{ doc("int_dates__date_month") }}'
 
       - name: user_id
-        description: '{{ doc("bingeflix_column_user_id") }}'
+        description: '{{ doc("bingeflix__users__user_id") }}'
 
       - name: subscription_id
-        description: The unique identifier for the subscription.
+        description: '{{ doc("bingeflix__subscriptions__subscription_id") }}'
 
       - name: starts_at
-        description: When the subscription started.
+        description: '{{ doc("bingeflix__subscriptions__starts_at") }}'
 
       - name: ends_at
-        description: When the subscription ended. This value is NULL if the subscription has not had auto-renew turned off.
+        description: '{{ doc("bingeflix__subscriptions__ends_at") }}'
 
       - name: plan_name
-        description: The name of the subscription plan.
+        description: '{{ doc("bingeflix__subscription_plans__plan_name") }}'
 
       - name: mrr_amount
-        description: The amount of monthly recurring revenue generated from the subscription in a given month.
+        description: '{{ doc("rpt_mrr__mrr_amount") }}'
 
       - name: mrr_change
-        description: The change in monthly recurring revenue from the associated subscription versus last month.
+        description: '{{ doc("rpt_mrr__mrr_change") }}'
 
       - name: retained_mrr_amount
-        description: The amount of monthly recurring revenue associated with the subscription retained from the previous month.
+        description: '{{ doc("rpt_mrr__retained_mrr_amount") }}'
 
       - name: previous_month_mrr_amount
-        description: The amount of monthly recurring revenue associated with the subscription earned in the previous month.
+        description: '{{ doc("rpt_mrr__previous_month_mrr_amount") }}'
 
       - name: change_category
-        description: The category the subscription falls into based on the current month (e.g. new, churned, retained, reactivated)
+        description: '{{ doc("rpt_mrr__change_category") }}'
 
       - name: month_retained_number
-        description: The number of months the subscription has been retained since it was started (first month = 0).
+        description: '{{ doc("rpt_mrr__month_retained_number") }}'
