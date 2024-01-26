@@ -6,3 +6,4 @@ sources:
     tables:
       - name: daily_ads
         identifier: ads
+        description: '{{ doc("bingeflix_source_table_daily_ads") }}'

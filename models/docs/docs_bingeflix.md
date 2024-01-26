@@ -11,6 +11,10 @@ The unique identifier of the Bingeflix user. A user is created when...
 ## Events
 This section contains documentation from the Bingeflix Events table.
 
+{% docs bingeflix_source_table_daily_ads %}
+The daily ad campaigns table.
+{% enddocs %}
+
 {% docs bingeflix_column_created_at %}
 Timestamp of when the session was created.
 {% enddocs %}
