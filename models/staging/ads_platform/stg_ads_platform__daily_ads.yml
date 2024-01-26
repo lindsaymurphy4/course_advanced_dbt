@@ -1,34 +1,34 @@
 models:
   - name: stg_ads_platform__daily_ads
-    description: The daily ad campaigns table.
+    description: '{{ doc("ads_platform__daily_ads") }}'
     columns:
       - name: date
-        description: The calendar date of the campaign reporting period.
+        description: '{{ doc("ads_platform__daily_ads__date") }}'
         tests:
           - not_null
 
       - name: campaign_id
-        description: The unique identifier for the campaign.
+        description: '{{ doc("ads_platform__daily_ads__campaign_id") }}'
         tests:
           - not_null
 
       - name: surrogate_key
-        description: The surrogate key.
+        description: '{{ doc("stg_ads_platform__daily_ads__surrogate_key") }}'
         tests:
           - not_null
           - unique
 
       - name: spend
-        description: The amount spent on the campaign.
+        description: '{{ doc("ads_platform__daily_ads__spend") }}'
         tests:
           - not_null
 
       - name: cpm
-        description: The cost charged by the ads platform per thousand impressions.
+        description: '{{ doc("ads_platform__daily_ads__cpm") }}'
         tests:
           - not_null
 
       - name: ctr
-        description: The click through rate on the campaign impressions.
+        description: '{{ doc("ads_platform__daily_ads__ctr") }}'
         tests:
           - not_null
