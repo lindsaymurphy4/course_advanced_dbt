@@ -49,6 +49,10 @@ models:
           node_color: orange
 
 seeds:
+  course_advanced_dbt:
+    dbt_project_evaluator_exceptions:
+      +docs:
+        show: false
   dbt_project_evaluator:
     dbt_project_evaluator_exceptions:
       +enabled: false
