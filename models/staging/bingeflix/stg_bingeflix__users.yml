@@ -1,6 +1,6 @@
 models:
   - name: stg_bingeflix__users
-    description: "This is table contains information about Bingeflix users."
+    description: '{{ doc("bingeflix_users_description") }}'
     columns:
       - name: user_id
         description: '{{ doc("bingeflix_column_user_id") }}'
@@ -9,7 +9,7 @@ models:
           - unique
 
       - name: created_at
-        description: When the user was created.
+        description: '{{ doc("bingeflix_column_created_at") }}'
         tests:
           - not_null
 
