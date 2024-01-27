@@ -5,15 +5,18 @@ sources:
     database: raw
     tables:
       - name: events
-        description: This table contains information about the behavioral events of users while they interact with the Bingeflix platform.
+        description: '{{ doc("bingeflix_source_table_events") }}'
         columns:
-          - name: session_id
-            description: The unique identifier of the session in the Bingeflix application.
+        ## Primary key
+          - name: event_id
+            description: '{{ doc("bingeflix_column_event_id") }}'
             tests:
               - not_null
+              - unique
 
-          - name: created_at
-            description: When the event was logged.
+        ## Foreign keys              
+          - name: session_id
+            description: '{{ doc("bingeflix_column_session_id") }}'
             tests:
               - not_null
 
@@ -21,17 +24,18 @@ sources:
             description: '{{ doc("bingeflix_column_user_id") }}'
             tests:
               - not_null
+        
+        ## Timestamps
+          - name: created_at
+            description: '{{ doc("bingeflix_column_created_at") }}'
+            tests:
+              - not_null
 
+        ## Properties
           - name: event_name
-            description: The name of the event.
+            description: '{{ doc("bingeflix_column_event_name") }}'
             tests:
               - not_null
-
-          - name: event_id
-            description: The unique identifier of the event.
-            tests:
-              - not_null
-              - unique
 
       - name: subscription_plans
         description: This table contains information about various subscription plans available on Bingeflix.

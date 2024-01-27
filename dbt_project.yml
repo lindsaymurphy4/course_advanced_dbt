@@ -34,10 +34,19 @@ models:
     marts:
       core:
         +schema: core_reporting
+        +docs:
+          show: true
+          node_color: blue
       finance:
         +schema: finance
+        +docs:
+          show: true
+          node_color: purple
       product:
         +schema: product
+        +docs:
+          show: true
+          node_color: orange
 
 seeds:
   dbt_project_evaluator:

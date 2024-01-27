@@ -1,6 +1,6 @@
 models:
   - name: stg_bingeflix__events
-    description: This table contains information about the behavioral events.
+    description: '{{ doc("bingeflix_source_table_events") }}'
     columns:
     ## Primary key
       - name: event_id
