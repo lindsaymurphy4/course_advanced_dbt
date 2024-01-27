@@ -1,29 +1,17 @@
 models:
-  - name: stg_bingeflix__events
-    description: '{{ doc("bingeflix__events")}}'
+  - name: fct_events
+    description: '{{ doc("bingeflix__events") }}'
     columns:
       - name: session_id
         description: '{{ doc("bingeflix__events__session_id") }}'
-        tests:
-          - not_null
-
       - name: created_at
         description: '{{ doc("bingeflix__events__created_at") }}'
-        tests:
-          - not_null
-
       - name: user_id
         description: '{{ doc("bingeflix__users__user_id") }}'
-        tests:
-          - not_null
-
       - name: event_name
         description: '{{ doc("bingeflix__events__event_name") }}'
-        tests:
-          - not_null
-
       - name: event_id
         description: '{{ doc("bingeflix__events__event_id") }}'
         tests:
-          - not_null
           - unique
+          - not_null

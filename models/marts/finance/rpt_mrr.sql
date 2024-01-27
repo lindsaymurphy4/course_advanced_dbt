@@ -1,7 +1,8 @@
 {{ config(tags="p0") }}
 
 
--- This model is created following the dbt MRR playbook: https://www.getdbt.com/blog/modeling-subscription-revenue/
+-- This model is created following the dbt MRR playbook:
+-- https://www.getdbt.com/blog/modeling-subscription-revenue/
 
 WITH
 
@@ -45,8 +46,12 @@ subscription_periods AS (
         ends_at,
         start_month,
 
-        -- For users that cancel in the first month, set their end_month to next month because the subscription remains active until the end of the first month
-        -- For users who haven't ended their subscription yet (end_month is NULL) set the end_month to one month from the current date (these rows will be removed from the final CTE)
+        -- For users that cancel in the first month, set their end_month to next month
+        -- because the subscription remains active until the end of the first month
+
+        -- For users who haven't ended their subscription yet (end_month is NULL) set the end_month
+        -- to one month from the current date (these rows will be removed from the final CTE)
+
         CASE
             WHEN start_month = end_month THEN DATEADD('month', 1, end_month)
             WHEN end_month IS NULL THEN DATE(DATEADD('month', 1, DATE_TRUNC('month', CURRENT_DATE)))
@@ -81,7 +86,7 @@ subscriber_months AS (
             -- All months after start date
             ON months.date_month >= subscribers.first_start_month
                 -- and before end date
-                AND months.date_month < subscribers.last_end_month
+                AND subscribers.last_end_month > months.date_month
 ),
 
 -- Join together to create base CTE for MRR calculations
@@ -112,8 +117,12 @@ subscription_revenue_by_month AS (
         mrr > 0 AS is_subscribed_current_month,
 
         -- Find the subscriber's first month and last subscription month
-        MIN(CASE WHEN is_subscribed_current_month THEN date_month END) OVER (PARTITION BY user_id, subscription_id) AS first_subscription_month,
-        MAX(CASE WHEN is_subscribed_current_month THEN date_month END) OVER (PARTITION BY user_id, subscription_id) AS last_subscription_month,
+        MIN(CASE WHEN is_subscribed_current_month THEN date_month END)
+            OVER (PARTITION BY user_id, subscription_id)
+            AS first_subscription_month,
+        MAX(CASE WHEN is_subscribed_current_month THEN date_month END)
+            OVER (PARTITION BY user_id, subscription_id)
+            AS last_subscription_month,
         first_subscription_month = date_month AS is_first_subscription_month,
         last_subscription_month = date_month AS is_last_subscription_month,
         mrr
@@ -152,7 +161,8 @@ mrr_with_changes AS (
         *,
 
         COALESCE(
-            LAG(is_subscribed_current_month) OVER (PARTITION BY user_id, subscription_id ORDER BY date_month),
+            LAG(is_subscribed_current_month)
+                OVER (PARTITION BY user_id, subscription_id ORDER BY date_month),
             FALSE
         ) AS is_subscribed_previous_month,
 
@@ -183,7 +193,9 @@ final AS (
         CASE
             WHEN is_first_subscription_month THEN 'new'
             WHEN NOT(is_subscribed_current_month) AND is_subscribed_previous_month THEN 'churn'
-            WHEN is_subscribed_current_month AND NOT(is_subscribed_previous_month) THEN 'reactivation'
+            WHEN
+                is_subscribed_current_month AND NOT(is_subscribed_previous_month)
+                THEN 'reactivation'
             WHEN mrr_change > 0.0 THEN 'upgrade'
             WHEN mrr_change < 0.0 THEN 'downgrade'
             ELSE 'renewal'
@@ -198,13 +210,16 @@ final AS (
     FROM
         mrr_with_changes
         LEFT JOIN subscription_periods
-            ON subscription_periods.user_id = mrr_with_changes.user_id
-                AND subscription_periods.subscription_id = mrr_with_changes.subscription_id
+            ON mrr_with_changes.user_id = subscription_periods.user_id
+                AND mrr_with_changes.subscription_id = subscription_periods.subscription_id
     WHERE
         date_month <= DATE_TRUNC('month', CURRENT_DATE)
 )
 
 SELECT
-    {{ dbt_utils.generate_surrogate_key(['date_month', 'subscription_id', 'change_category']) }} AS surrogate_key,
+    
+        
+        {{ dbt_utils.generate_surrogate_key(['date_month', 'subscription_id', 'change_category']) }}
+        AS surrogate_key,
     *
 FROM final

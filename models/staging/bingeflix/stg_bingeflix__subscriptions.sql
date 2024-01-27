@@ -1,22 +1,22 @@
-with source as (
+WITH source AS (
 
-    select * from {{ source('bingeflix', 'subscriptions') }}
+    SELECT * FROM {{ source('bingeflix', 'subscriptions') }}
 
 ),
 
-renamed as (
+renamed AS (
 
-    select
+    SELECT
         subscription_plan_id,
         user_id,
         starts_at,
         ends_at,
         subscription_id
 
-    from
+    FROM
 
         source
 
 )
 
-select * from renamed
+SELECT * FROM renamed

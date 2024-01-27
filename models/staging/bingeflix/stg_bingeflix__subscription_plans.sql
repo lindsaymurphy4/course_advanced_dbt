@@ -1,20 +1,20 @@
-with source as (
+WITH source AS (
 
-    select * from {{ source('bingeflix', 'subscription_plans') }}
+    SELECT * FROM {{ source('bingeflix', 'subscription_plans') }}
 
 ),
 
-renamed as (
+renamed AS (
 
-    select
+    SELECT
         subscription_plan_id,
         plan_name,
         {{ cents_to_dollars('pricing') }} AS pricing,
         payment_period
 
-    from source
+    FROM source
 
 )
 
-select * from renamed
+SELECT * FROM renamed
 

@@ -1,7 +1,20 @@
 sources:
   - name: ads_platform
     schema: bingeflix
+    description: '{{ doc("ads_platform_source") }}'
     database: raw
     tables:
       - name: daily_ads
+        description: '{{ doc("ads_platform__daily_ads") }}'
         identifier: ads
+        columns:
+          - name: date
+            description: '{{ doc("ads_platform__daily_ads__date") }}'
+          - name: campaign_id
+            description: '{{ doc("ads_platform__daily_ads__campaign_id") }}'
+          - name: spend
+            description: '{{ doc("ads_platform__daily_ads__spend") }}'
+          - name: cpm
+            description: '{{ doc("ads_platform__daily_ads__cpm") }}'
+          - name: ctr
+            description: '{{ doc("ads_platform__daily_ads__ctr") }}'

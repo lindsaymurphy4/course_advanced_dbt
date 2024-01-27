@@ -1,27 +1,27 @@
 models:
   - name: stg_bingeflix__subscriptions
-    description: This model contains information about Bingeflix subscriptions.
+    description: '{{ doc("bingeflix__subscriptions") }}'
     columns:
       - name: subscription_plan_id
-        description: The subscription identifier.
+        description: '{{ doc("bingeflix__subscription_plans__subscription_plan_id") }}'
         tests:
           - not_null
 
       - name: user_id
-        description: '{{ doc("bingeflix_column_user_id") }}'
+        description: '{{ doc("bingeflix__users__user_id") }}'
         tests:
           - not_null
 
       - name: starts_at
-        description: When the subscription started.
+        description: '{{ doc("bingeflix__subscriptions__starts_at") }}'
         tests:
           - not_null
 
       - name: ends_at
-        description: When the subscription ends. This value is NULL if the subscription is active.
+        description: '{{ doc("bingeflix__subscriptions__ends_at") }}'
 
       - name: subscription_id
-        description: The unique identifier for the subscription.
+        description: '{{ doc("bingeflix__subscriptions__subscription_id") }}'
         tests:
           - not_null
           - unique

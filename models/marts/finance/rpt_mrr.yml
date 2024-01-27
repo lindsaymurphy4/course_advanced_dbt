@@ -1,0 +1,50 @@
+models:
+  - name: rpt_mrr
+    config:
+      tags: p0
+    description: '{{ doc("rpt_mrr") }}'
+      
+    columns:
+      - name: surrogate_key
+        description: '{{ doc("rpt_mrr__surrogate_key") }}'
+        tests:
+          - not_null
+          - unique:
+              config:
+                tags: p0
+
+      - name: date_month
+        description: '{{ doc("int_dates__date_month") }}'
+
+      - name: user_id
+        description: '{{ doc("bingeflix__users__user_id") }}'
+
+      - name: subscription_id
+        description: '{{ doc("bingeflix__subscriptions__subscription_id") }}'
+
+      - name: starts_at
+        description: '{{ doc("bingeflix__subscriptions__starts_at") }}'
+
+      - name: ends_at
+        description: '{{ doc("bingeflix__subscriptions__ends_at") }}'
+
+      - name: plan_name
+        description: '{{ doc("bingeflix__subscription_plans__plan_name") }}'
+
+      - name: mrr_amount
+        description: '{{ doc("rpt_mrr__mrr_amount") }}'
+
+      - name: mrr_change
+        description: '{{ doc("rpt_mrr__mrr_change") }}'
+
+      - name: retained_mrr_amount
+        description: '{{ doc("rpt_mrr__retained_mrr_amount") }}'
+
+      - name: previous_month_mrr_amount
+        description: '{{ doc("rpt_mrr__previous_month_mrr_amount") }}'
+
+      - name: change_category
+        description: '{{ doc("rpt_mrr__change_category") }}'
+
+      - name: month_retained_number
+        description: '{{ doc("rpt_mrr__month_retained_number") }}'
