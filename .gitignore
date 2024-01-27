@@ -1,3 +1,7 @@
+analyses/
 target/
 dbt_packages/
 logs/
+profiles.yml
+*.lock
+package-lock.yml

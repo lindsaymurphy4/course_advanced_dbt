@@ -1,0 +1,21 @@
+selectors:
+  - name: root_project_only
+    description: >
+        Only resources from the root project.
+        Excludes resources defined in installed packages.
+    default: "{{ target.type == 'snowflake' | as_bool }}"
+    definition:
+      method: package
+      value: course_advanced_dbt
+
+  - name: evaluate
+    description: >
+        Only resources from the dbt_project_evaluator package,
+        including the root project seed: dbt_project_evaluator_exceptions.
+    default: "{{ target.type == 'duckdb' | as_bool }}"
+    definition:
+      union:
+        - method: package
+          value: dbt_project_evaluator
+        - method: fqn
+          value: dbt_project_evaluator_exceptions
