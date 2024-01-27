@@ -8,7 +8,7 @@ selectors:
       method: package
       value: course_advanced_dbt
 
-  - name: evaluate
+  - name: evaluator
     description: >
         Only resources from the dbt_project_evaluator package,
         including the root project seed: dbt_project_evaluator_exceptions.
