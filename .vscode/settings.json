@@ -1,25 +1,7 @@
 {
     "dbt.enableNewLineagePanel": true,
-    "sqltools.connections": [
-        {
-            "authenticator": "SNOWFLAKE",
-            "ocspOptions": {
-                "ocspFailOpen": true
-            },
-            "snowflakeOptions": {
-                "clientSessionKeepAlive": true,
-                "clientSessionKeepAliveHeartbeatFrequency": 3600,
-                "schema": "dbt_lindsay",
-                "role": "transformer"
-            },
-            "previewLimit": 50,
-            "driver": "Snowflake",
-            "name": "course_advanced_dbt",
-            "account": "efruuit-zh04827",
-            "username": "dbt_lindsay",
-            "password": "Tymz8m6yV@WBq",
-            "database": "DEV",
-            "warehouse": "TRANSFORMING"
-        }
-    ]
+    "sqlfluff.linter.run": "onSave",
+    "sqlfluff.experimental.format.executeInTerminal": true,
+    "editor.formatOnSave": false,
+    "sqlfluff.executablePath": "/Users/ricardovieira/opt/miniconda3/envs/dbtenv/bin/sqlfluff",
 }
