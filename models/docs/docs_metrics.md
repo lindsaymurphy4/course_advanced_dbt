@@ -55,8 +55,20 @@ This is an intermediate model that counts the total number of events tracked per
 The number of times the user logged in during the specified session.
 {% enddocs %}
 
+{% docs intermediate__int_sessions_pivoted_to_event_names__column__button_clicked_count %}
+The number of times the user clicked on a button during the specified session.
+{% enddocs %}
+
+{% docs intermediate__int_sessions_pivoted_to_event_names__column__cta_clicked_count %}
+The number of times the user clicked on a CTA during the specified session.
+{% enddocs %}
+
 {% docs intermediate__int_sessions_pivoted_to_event_names__column__user_logged_out_count %}
 The number of times the user logged out during the specified session.
+{% enddocs %}
+
+{% docs intermediate__int_sessions_pivoted_to_event_names__column__page_viewed_count %}
+The number of times the user viewed a page during the specified session.
 {% enddocs %}
 
 {% docs intermediate__int_sessions_pivoted_to_event_names__column__video_watched_count %}
@@ -75,6 +87,14 @@ The user's current age.
 
 {% docs core__dim_users__column__age_at_acquisition %}
 The age of the user when they became a Bingeflix user.
+{% enddocs %}
+
+{% docs bingeflix__users__column__first_subscription_starts_at %}
+The date when the user's first Bingeflix subscription started.
+{% enddocs %}
+
+{% docs bingeflix__users__column__count_of_subscriptions %}
+The number of Bingeflix subscriptions this user has had.
 {% enddocs %}
 
 
