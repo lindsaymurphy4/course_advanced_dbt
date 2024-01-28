@@ -7,4 +7,4 @@ packages:
   version: 0.10.1
 - package: calogica/dbt_date
   version: 0.10.0
-sha1_hash: 2efc8a9e09d8fd9bb972ebfd676ab7670cecfae1
+sha1_hash: ced28ee8fae0d5dc5886589718973f524169f80d
