@@ -13,9 +13,7 @@ renamed as (
         ends_at,
         subscription_id
 
-    from
-
-        source
+    from source
 
 )
 

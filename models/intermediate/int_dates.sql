@@ -1,6 +1,6 @@
-WITH
+with
 
-date_spine AS (
+date_spine as (
 
 {{ dbt_utils.date_spine(
     datepart="day",
@@ -10,19 +10,19 @@ date_spine AS (
 }}
 ),
 
-final AS (
-    SELECT
-        date_day AS calendar_date,
-        CAST(DATE_TRUNC('week', date_day) AS DATE) AS date_week,
-        CAST(DATE_TRUNC('month', date_day) AS DATE) AS date_month,
-        CAST(DATE_TRUNC('quarter', date_day) AS DATE) AS date_quarter,
-        CAST(DATE_TRUNC('year', date_day) AS DATE) AS date_year,
-        DAY(date_day) AS day_of_month,
-        YEAR(date_day) AS year_num,
-        QUARTER(date_day) AS quarter_num,
-        MONTH(date_day) AS month_num
-    FROM
+final as (
+    select
+        date_day as calendar_date,
+        cast(date_trunc('week', date_day) as date) as date_week,
+        cast(date_trunc('month', date_day) as date) as date_month,
+        cast(date_trunc('quarter', date_day) as date) as date_quarter,
+        cast(date_trunc('year', date_day) as date) as date_year,
+        day(date_day) as day_of_month,
+        year(date_day) as year_num,
+        quarter(date_day) as quarter_num,
+        month(date_day) as month_num
+    from
         date_spine
 )
 
-SELECT * FROM final
+select * from final

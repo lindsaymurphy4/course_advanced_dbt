@@ -3,42 +3,42 @@ models:
     description: This model contains information about Bingeflix subscriptions.
     columns:
       - name: subscription_id
-        description: The unique identifier of the subscription.
+        description: '{{ doc("bingeflix_column_subscription_id") }}'
         tests:
           - not_null
           - unique
 
       - name: subscription_plan_id
-        description: The subscription plan identifier.
+        description: '{{ doc("bingeflix_column_plan_id") }}'
         tests:
           - not_null
           - accepted_values:
               values: [1, 2, 3]
 
       - name: user_id
-        description: The identifier of the user.
+        description: '{{ doc("bingeflix_column_user_id") }}'
         tests:
           - not_null
 
       - name: starts_at
-        description: When the subscription started.
+        description: '{{ doc("bingeflix_column_subscription__starts_at") }}'
         tests:
           - not_null
 
       - name: ends_at
-        description: When the subscription ends.
+        description: '{{ doc("bingeflix_column_subscription__ends_at") }}'
 
       - name: plan_name
-        description: The name of the subscription plan.
+        description: '{{ doc("bingeflix_column_plan_name") }}'
         tests:
           - not_null
 
       - name: pricing
-        description: The monthly cost of the subscription.
+        description: '{{ doc("bingeflix_column_pricing") }}'
         tests:
           - not_null
 
       - name: billing_period
-        description: The cadence of the billing period.
+        description: '{{ doc("bingeflix_column_billing_period") }}'
         tests:
           - not_null

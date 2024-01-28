@@ -6,11 +6,18 @@ processes = 0
 templater = dbt
 max_line_length = 999
 
+[sqlfluff:templater]
+unwrap_wrapped_queries = true
+
+[sqlfluff:templater:jinja]
+apply_dbt_builtins = true
+
 [sqlfluff:templater:dbt]
 apply_dbt_builtins = true
 profile = course_advanced_dbt
 project_dir = .
-profiles_dir = ~/.dbt
+profiles_dir = .
+target = dev
 
 [sqlfluff:indentation]
 indent_unit = space
@@ -25,14 +32,27 @@ template_blocks_indent = True
 spacing_before = touch
 line_position = trailing
 
-[sqlfluff:templater]
-unwrap_wrapped_queries = true
-
-[sqlfluff:templater:jinja]
-apply_dbt_builtins = true
-
 [sqlfluff:rules]
 single_table_references = consistent
+[sqlfluff:rules:capitalisation.identifiers] #L014
+capitalisation_policy = lower
+ignore_words = None
+
+[sqlfluff:rules:capitalisation.keywords] #L010
+capitalisation_policy = lower
+ignore_words = None
+
+[sqlfluff:rules:capitalisation.functions] #L030
+extended_capitalisation_policy = lower
+ignore_words = None
+
+[sqlfluff:rules:capitalisation.literals] #L040
+capitalisation_policy = lower
+ignore_words = None
+
+[sqlfluff:rules:capitalisation.types] #L063
+# Capitalisation of datatypes
+extended_capitalisation_policy = lower
 
 [sqlfluff:ambiguous.column_references]
 group_by_and_order_by_style = consistent

@@ -10,41 +10,41 @@ models:
           - not_null
 
       - name: date_week
-        description: The start date of the calendar week (week starting on Monday).
+        description: '{{ doc("dates_column_date_week") }}'
         tests:
           - not_null
 
       - name: date_month
-        description: The first date of the calendar month.
+        description: '{{ doc("dates_column_date_month") }}'
         tests:
           - not_null
 
       - name: date_quarter
-        description: The first date of the calendar quarter.
+        description: '{{ doc("dates_column_date_quarter") }}'
         tests:
           - not_null
 
       - name: date_year
-        description: The first date of the calendar year.
+        description: '{{ doc("dates_column_date_year") }}'
         tests:
           - not_null
 
       - name: day_of_month
-        description: The day of the month.
+        description: '{{ doc("dates_column_day_of_month") }}'
         tests:
           - not_null
 
       - name: year_num
-        description: The year number (e.g. 2018).
+        description: '{{ doc("dates_column_year_num") }}'
         tests:
           - not_null
 
       - name: quarter_num
-        description: The quarter number (between 1 and 4).
+        description: '{{ doc("dates_column_quarter_num") }}'
         tests:
           - not_null
 
       - name: month_num
-        description: The month number (between 1 and 12).
+        description: '{{ doc("dates_column_month_num") }}'
         tests:
           - not_null

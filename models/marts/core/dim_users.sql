@@ -1,24 +1,24 @@
-WITH
+with
 
-users AS (
-    SELECT
+users as (
+    select
         *
-    FROM
+    from
         {{ ref('stg_bingeflix__users') }}
 ),
 
-users_subscription_facts AS (
-    SELECT
+users_subscription_facts as (
+    select
         user_id,
-        MIN(starts_at) AS first_subscription_starts_at,
-        COUNT(DISTINCT subscription_id) AS count_of_subscriptions
-    FROM
+        min(starts_at) as first_subscription_starts_at,
+        count(distinct subscription_id) as count_of_subscriptions
+    from
         {{ ref('stg_bingeflix__subscriptions') }}
-    GROUP BY 1
+    group by 1
 ),
 
-final AS (
-    SELECT
+final as (
+    select
         u.user_id,
         created_at,
         phone_number,
@@ -28,15 +28,15 @@ final AS (
         sex,
         email,
         birthdate,
-        TRUNCATE(DATEDIFF(MONTH, birthdate, CURRENT_DATE)/12) AS current_age,
-        TRUNCATE(DATEDIFF(MONTH, birthdate, created_at)/12) AS age_at_acquisition,
+        truncate(datediff(month, birthdate, current_date)/12) as current_age,
+        truncate(datediff(month, birthdate, created_at)/12) as age_at_acquisition,
         region,
         country,
         usf.first_subscription_starts_at,
         usf.count_of_subscriptions
-    FROM
-        users AS u
-        LEFT JOIN users_subscription_facts AS usf ON u.user_id = usf.user_id
+    from
+        users as u
+        left join users_subscription_facts as usf on u.user_id = usf.user_id
 )
 
-SELECT * FROM final
+select * from final

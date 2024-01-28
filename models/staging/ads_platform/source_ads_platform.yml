@@ -2,6 +2,23 @@ sources:
   - name: ads_platform
     schema: bingeflix
     database: raw
+    description: "Source tables from BingFlix ads platform"
     tables:
       - name: daily_ads
         identifier: ads
+        description: The daily ad campaigns source table.
+        columns:
+          - name: date
+            description: The calendar date of the campaign reporting period.
+
+          - name: campaign_id
+            description: The unique identifier for the campaign.
+
+          - name: spend
+            description: The amount spent on the campaign.
+
+          - name: cpm
+            description: The cost charged by the ads platform per thousand impressions.
+
+          - name: ctr
+            description: The click through rate on the campaign impressions.

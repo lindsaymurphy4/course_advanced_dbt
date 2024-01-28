@@ -1,11 +1,15 @@
 {{ config(materialized='table') }}
 
-SELECT
-    session_id,
-    created_at,
-    user_id,
-    event_name,
-    event_id
+with source as (
+    select
+        session_id,
+        created_at,
+        user_id,
+        event_name,
+        event_id
 
-FROM {{ ref('stg_bingeflix__events') }}
+    from {{ ref('stg_bingeflix__events') }}
+)
+
+select * from source
 

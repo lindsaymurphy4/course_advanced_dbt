@@ -8,11 +8,11 @@ models:
           - not_null
           - unique
 
-      - name: DATE_WEEK
-        description: The calendar week.
+      - name: date_week
+        description: '{{ doc("dates_column_date_week") }}'
 
-      - name: USER_ID
-        description: The unique identifier of the Bingeflix user.
+      - name: user_id
+        description: '{{ doc("bingeflix_column_user_id") }}'
 
-      - name: LOGIN_COUNT
+      - name: login_count
         description: The total number of logins for a given user in a given week.

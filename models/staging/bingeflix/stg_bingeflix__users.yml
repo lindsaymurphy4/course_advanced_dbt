@@ -9,12 +9,12 @@ models:
           - unique
 
       - name: created_at
-        description: When the user was created.
+        description: '{{ doc("bingeflix_column_user__created_at") }}'
         tests:
           - not_null
 
       - name: phone_number
-        description: The user's phone number.
+        description: '{{ doc("bingeflix_column_phone_number") }}'
         tests:
           - not_null
 
@@ -22,7 +22,7 @@ models:
         description: When the user's account was deleted. The value is NULL if the account has not been deleted.
 
       - name: username
-        description: The username for login to Bingeflix.
+        description: '{{ doc("bingeflix_column_username") }}'
         tests:
           - not_null
 

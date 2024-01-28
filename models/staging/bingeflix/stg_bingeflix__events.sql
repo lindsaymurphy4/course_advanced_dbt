@@ -1,20 +1,20 @@
-WITH source AS (
+with source as (
 
-    SELECT * FROM {{ source('bingeflix', 'events') }}
+    select * from {{ source('bingeflix', 'events') }}
 
 ),
 
-renamed AS (
+renamed as (
 
-    SELECT
+    select
         session_id,
         created_at,
         user_id,
         event_name,
         event_id
 
-    FROM source
+    from source
 
 )
 
-SELECT * FROM renamed
+select * from renamed

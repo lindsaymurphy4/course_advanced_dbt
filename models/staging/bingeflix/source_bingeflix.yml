@@ -8,12 +8,12 @@ sources:
         description: This table contains information about the behavioral events of users while they interact with the Bingeflix platform.
         columns:
           - name: session_id
-            description: The unique identifier of the session in the Bingeflix application.
+            description: '{{ doc("bingeflix_column_session_id") }}'
             tests:
               - not_null
 
           - name: created_at
-            description: When the event was logged.
+            description: '{{ doc("bingeflix_column_event__created_at") }}'
             tests:
               - not_null
 
@@ -23,12 +23,12 @@ sources:
               - not_null
 
           - name: event_name
-            description: The name of the event.
+            description: '{{ doc("bingeflix_column_event_name") }}'
             tests:
               - not_null
 
           - name: event_id
-            description: The unique identifier of the event.
+            description: '{{ doc("bingeflix_column_event_id") }}'
             tests:
               - not_null
               - unique
@@ -37,7 +37,7 @@ sources:
         description: This table contains information about various subscription plans available on Bingeflix.
         columns:
           - name: subscription_plan_id
-            description: The unique identifier of the subscription plan.
+            description: '{{ doc("bingeflix_column_plan_id") }}'
             tests:
               - not_null
               - unique
@@ -45,17 +45,17 @@ sources:
                   values: [1, 2, 3]
 
           - name: plan_name
-            description: The name of the subscription plan.
+            description: '{{ doc("bingeflix_column_plan_name") }}'
             tests:
               - not_null
 
           - name: pricing
-            description: The price of the subscription.
+            description: '{{ doc("bingeflix_column_pricing") }}'
             tests:
               - not_null
 
           - name: payment_period
-            description: The recurring payment period for the subscription.
+            description: '{{ doc("bingeflix_column_billing_period") }}'
             tests:
               - not_null
 
@@ -64,7 +64,7 @@ sources:
         description: This model contains information about Bingeflix subscriptions.
         columns:
           - name: subscription_plan_id
-            description: The subscription identifier.
+            description: '{{ doc("bingeflix_column_plan_id") }}'
             tests:
               - not_null
 
@@ -74,15 +74,15 @@ sources:
               - not_null
 
           - name: starts_at
-            description: When the subscription started.
+            description: '{{ doc("bingeflix_column_subscription__starts_at") }}'
             tests:
               - not_null
 
           - name: ends_at
-            description: When the subscription ends. This value is NULL if the subscription is active.
+            description: '{{ doc("bingeflix_column_subscription__ends_at") }}'
 
           - name: subscription_id
-            description: The unique identifier for the subscription.
+            description: '{{ doc("bingeflix_column_subscription_id") }}'
             tests:
               - not_null
               - unique
@@ -97,12 +97,12 @@ sources:
               - unique
 
           - name: created_at
-            description: When the user was created.
+            description: '{{ doc("bingeflix_column_user__created_at") }}'
             tests:
               - not_null
 
           - name: phone_number
-            description: The user's phone number.
+            description: '{{ doc("bingeflix_column_phone_number") }}'
             tests:
               - not_null
 
@@ -110,7 +110,7 @@ sources:
             description: When the user's account was deleted. The value is NULL if the account has not been deleted.
 
           - name: username
-            description: The username for login to Bingeflix.
+            description: '{{ doc("bingeflix_column_username") }}'
             tests:
               - not_null
 
