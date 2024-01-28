@@ -1,6 +1,7 @@
 # Bingeflix Docs
 This file contains doumentation for Bingeflix data sources.
 
+
 ## Events
 This section contains documentation from the Bingeflix Events table.
 
