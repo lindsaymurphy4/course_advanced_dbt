@@ -1,6 +1,6 @@
 models:
   - name: int_sessions_pivoted_to_event_names
-    description: '{{ doc("product__fct_active_users__table")}}'
+    description: '{{ doc("intermediate__int_sessions_pivoted_to_event_names__table")}}'
     columns:
       - name: session_id
         description: '{{ doc("bingeflix__events__column__session_id")}}'
