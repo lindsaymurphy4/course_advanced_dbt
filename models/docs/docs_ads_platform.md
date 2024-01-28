@@ -1,8 +1,13 @@
 # Ads Platform Docs
-This file contains doumentation for core metrics that are calculations or combine data from multiple sources.
+This file contains doumentation for Ads Platform data sources.
+
+{% docs ads_platform__source %}
+This source contains tables from the marketing ads platform database.
+{% enddocs %}
 
 
 ## Daily Ads
+This section contains documentation from the Ads Platform Daily Ads table
 
 {% docs ads_platform__daily_ads__table %}
 The daily ad campaigns table.
