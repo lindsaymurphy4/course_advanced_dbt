@@ -1,20 +1,20 @@
 models:
   - name: int_sessions_pivoted_to_event_names
-    description: This is an intermediate model that counts the total number of events tracked per session_id.
+    description: '{{ doc("product__fct_active_users__table")}}'
     columns:
       - name: session_id
-        description: The unique identifier for the session.
+        description: '{{ doc("bingeflix__events__column__session_id")}}'
         tests:
           - not_null
           - unique
 
       - name: user_logged_in_count
-        description: The number of times the user logged in during the specified session.
+        description: '{{ doc("intermediate__int_sessions_pivoted_to_event_names__column__user_logged_in_count")}}'
         tests:
           - assert_column_is_positive
 
       - name: user_logged_out_count
-        description: The number of times the user logged out during the specified session.
+        description: '{{ doc("intermediate__int_sessions_pivoted_to_event_names__column__user_logged_out_count")}}'
 
       - name: video_watched_count
-        description: The number of times the user watched videos during the specified session.
+        description: '{{ doc("intermediate__int_sessions_pivoted_to_event_names__column__video_watched_count")}}'
