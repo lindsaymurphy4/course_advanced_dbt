@@ -34,14 +34,27 @@ models:
     marts:
       core:
         +schema: core_reporting
+        +docs:
+          show: true
+          node_color: blue
       finance:
         +schema: finance
+        +docs:
+          show: true
+          node_color: purple
       product:
         +schema: product
+        +docs:
+          show: true
+          node_color: orange
 
 seeds:
+  course_advanced_dbt:
+    dbt_project_evaluator_exceptions:
+      +docs:
+        show: false
   dbt_project_evaluator:
     dbt_project_evaluator_exceptions:
       +enabled: false
 
-# on-run-end: "{{ dbt_project_evaluator.print_dbt_project_evaluator_issues() }}"
+on-run-end: "{{ dbt_project_evaluator.print_dbt_project_evaluator_issues() }}"

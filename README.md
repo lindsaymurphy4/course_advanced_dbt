@@ -23,3 +23,11 @@
 - Columns that should never be null must have a not_null schema test.
 - Columns that should be unique must have a unique schema test.
 - Where possible, use schema tests from the dbt_utils or dbt_expectations packages to perform extra verification.
+
+### Project work
+#### Week 1 - Major updates
+- Project environment installation
+- Added model yml file for `fct_events`
+- Updated `docs_bingeflix.md` to standardize description for event related table/fields
+- Installed `dbt_project_evaluator` package and resolve errors in the project
+- Added color-highlight to the DAG
