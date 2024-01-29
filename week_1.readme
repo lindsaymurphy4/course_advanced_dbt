@@ -1,0 +1,5 @@
+# I solved the fan-out option by referencing the fct model instead of the staging model, since this was already being referenced in one of the int models 
+# For many of the documentation issues, I added a description to either the table itself or the schema it belonged in. 
+# For the empty fct documentation, I added documentation for this model fllowing the same format as the documentation for the other models. 
+# For the source that did not have any documentation, I looked at the data in the warehouse and added descriptions and tests based on that. 
+# I named the mrr model to be dim_mrr since it is a describing model and not an event-driven model. 
