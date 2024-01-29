@@ -6,7 +6,7 @@ events AS (
         DATE(created_at) AS created_date,
         event_id AS login_id
     FROM
-        {{ ref('stg_bingeflix__events')}}
+        {{ ref('fct_events')}}
     WHERE
         event_name = 'User Logged In'
 ),

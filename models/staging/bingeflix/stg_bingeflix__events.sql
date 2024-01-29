@@ -12,7 +12,6 @@ renamed AS (
         user_id,
         event_name,
         event_id
-
     FROM source
 
 )
