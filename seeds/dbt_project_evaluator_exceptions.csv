@@ -1,3 +1,4 @@
 fct_name,column_name,id_to_exclude,comment
 fct_root_models,child,int_dates,calendar table does not need to have a source model
+fct_model_fanout,parent,stg_bingeflix__events,model can have more than 3 children due to no BI layer being used
 
