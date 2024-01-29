@@ -1,12 +1,14 @@
 models:
-  - name: mrr
+  - name: fct_mrr
     config:
       tags: p0
-    description: '{{ doc("marts__finance__table__mrr") }}'
+    description: '{{ doc("marts__finance__table__fct_mrr") }}'
       
     columns:
       - name: surrogate_key
-        description: '{{ doc("marts__finance__mrr__column__surrogate_key") }}'
+        description: '{{ doc("marts__finance__fct_mrr__column__surrogate_key") }}'
+        tags:
+          - primary-key
         tests:
           - not_null
           - unique:
@@ -32,19 +34,19 @@ models:
         description: '{{ doc("bingeflix__subscription_plans__column__plan_name") }}'
 
       - name: mrr_amount
-        description: '{{ doc("marts__finance__mrr__column__mrr_amount") }}'
+        description: '{{ doc("marts__finance__fct_mrr__column__mrr_amount") }}'
 
       - name: mrr_change
-        description: '{{ doc("marts__finance__mrr__column__mrr_change") }}'
+        description: '{{ doc("marts__finance__fct_mrr__column__mrr_change") }}'
 
       - name: retained_mrr_amount
-        description: '{{ doc("marts__finance__mrr__column__retained_mrr_amount") }}'
+        description: '{{ doc("marts__finance__fct_mrr__column__retained_mrr_amount") }}'
 
       - name: previous_month_mrr_amount
-        description: '{{ doc("marts__finance__mrr__column__previous_month_mrr_amount") }}'
+        description: '{{ doc("marts__finance__fct_mrr__column__previous_month_mrr_amount") }}'
 
       - name: change_category
-        description: '{{ doc("marts__finance__mrr__column__change_category") }}'
+        description: '{{ doc("marts__finance__fct_mrr__column__change_category") }}'
 
       - name: month_retained_number
-        description: '{{ doc("marts__finance__mrr__column__month_retained_number") }}'
+        description: '{{ doc("marts__finance__fct_mrr__column__month_retained_number") }}'

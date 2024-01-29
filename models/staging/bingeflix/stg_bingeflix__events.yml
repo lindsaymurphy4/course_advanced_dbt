@@ -1,6 +1,6 @@
 models:
   - name: stg_bingeflix__events
-    description: This table contains information about the behavioral events.
+    description: '{{ doc("bingeflix__table__events") }}'
     columns:
       - name: session_id
         description: '{{ doc("bingeflix__events__column__session_id") }}'

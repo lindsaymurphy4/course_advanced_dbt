@@ -36,35 +36,35 @@ This table contains information about the behavioral events.
 ## Finance
 This section contains documentation from the Finance mart.
 
-{% docs marts__finance__table__mrr %}
+{% docs marts__finance__table__fct_mrr %}
 This model contains calculations for the monthly recurring revenue generated per user and subscription for each month.
 {% enddocs %}
 
-{% docs marts__finance__mrr__column__surrogate_key %}
+{% docs marts__finance__fct_mrr__column__surrogate_key %}
 The surrogate key. This acts as a primary key for this model.
 {% enddocs %}
 
-{% docs marts__finance__mrr__column__mrr_amount %}
+{% docs marts__finance__fct_mrr__column__mrr_amount %}
 The amount of monthly recurring revenue generated from the subscription in a given month.
 {% enddocs %}
 
-{% docs marts__finance__mrr__column__mrr_change %}
+{% docs marts__finance__fct_mrr__column__mrr_change %}
 The change in monthly recurring revenue from the associated subscription versus last month.
 {% enddocs %}
 
-{% docs marts__finance__mrr__column__retained_mrr_amount %}
+{% docs marts__finance__fct_mrr__column__retained_mrr_amount %}
 The amount of monthly recurring revenue associated with the subscription retained from the previous month.
 {% enddocs %}
 
-{% docs marts__finance__mrr__column__previous_month_mrr_amount %}
+{% docs marts__finance__fct_mrr__column__previous_month_mrr_amount %}
 The amount of monthly recurring revenue associated with the subscription earned in the previous month.
 {% enddocs %}
 
-{% docs marts__finance__mrr__column__change_category %}
+{% docs marts__finance__fct_mrr__column__change_category %}
 The category the subscription falls into based on the current month (e.g. new, churned, retained, reactivated)
 {% enddocs %}
 
-{% docs marts__finance__mrr__column__month_retained_number %}
+{% docs marts__finance__fct_mrr__column__month_retained_number %}
 The number of months the subscription has been retained since it was started (first month = 0).
 {% enddocs %}
 
