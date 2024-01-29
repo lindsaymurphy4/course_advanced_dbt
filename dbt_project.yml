@@ -15,6 +15,8 @@ log-path: 'logs'
 target-path: 'target'
 packages-install-path: 'dbt_packages'
 
+on-run-end: "{{ dbt_project_evaluator.print_dbt_project_evaluator_issues() }}"
+
 clean-targets:
   - "target"
   - "dbt_packages"
