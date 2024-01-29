@@ -59,12 +59,22 @@ The country of the user's residence.
 This section contains documentation from the Bingeflix Subscriptions table.
 
 {% docs bingeflix__table__subscriptions %}
-This model contains information about Bingeflix subscriptions.
+This table contains subscription-related information, such as subscription plan IDs, subscription start dates, renewal dates, billing information, and any other relevant subscription details.
+{% enddocs %}
+
+{% docs bingeflix__subscriptions__column__subscription_id %}
+When the subscription was started.
 {% enddocs %}
 
 {% docs bingeflix__subscriptions__column__starts_at %}
+When the subscription plan ends (The value is NULL if the subscription plan has auto-renew turned on/does not have a defined end date).
+{% enddocs %}
+
+
+{% docs bingeflix__subscriptions__column__ends_at %}
 When the subscription was started.
 {% enddocs %}
+
 
 ## ########################################################################
 ## Subscription Plans

@@ -1,49 +1,49 @@
 models:
   - name: int_dates
-    description: '{{ docs("int__table__int_dates") }}'
+    description: '{{ doc("int__table__int_dates") }}'
     columns:
       - name: calendar_date
-        description: '{{ docs("int__int_dates__column__calendar_date") }}'
+        description: '{{ doc("int__int_dates__column__calendar_date") }}'
         tests:
           - unique
           - not_null
 
       - name: date_week
-        description: '{{ docs("int__int_dates__column__date_week") }}'
+        description: '{{ doc("int__int_dates__column__date_week") }}'
         tests:
           - not_null
 
       - name: date_month
-        description: '{{ docs("int__int_dates__column__date_month") }}'
+        description: '{{ doc("int__int_dates__column__date_month") }}'
         tests:
           - not_null
 
       - name: date_quarter
-        description: '{{ docs("int__int_dates__column__date_quarter") }}'
+        description: '{{ doc("int__int_dates__column__date_quarter") }}'
         tests:
           - not_null
 
       - name: date_year
-        description: '{{ docs("int__int_dates__column__date_year") }}'
+        description: '{{ doc("int__int_dates__column__date_year") }}'
         tests:
           - not_null
 
       - name: day_of_month
-        description: '{{ docs("int__int_dates__column__day_of_month") }}'
+        description: '{{ doc("int__int_dates__column__day_of_month") }}'
         tests:
           - not_null
 
       - name: year_num
-        description: '{{ docs("int__int_dates__column__year_num") }}'
+        description: '{{ doc("int__int_dates__column__year_num") }}'
         tests:
           - not_null
 
       - name: quarter_num
-        description: '{{ docs("int__int_dates__column__quarter_num") }}'
+        description: '{{ doc("int__int_dates__column__quarter_num") }}'
         tests:
           - not_null
 
       - name: month_num
-        description: '{{ docs("int__int_dates__column__month_num") }}'
+        description: '{{ doc("int__int_dates__column__month_num") }}'
         tests:
           - not_null

@@ -1,9 +1,9 @@
 models:
   - name: stg_bingeflix__subscription_plans
-    description: '{{ docs("bingeflix__table__subscription_plans") }}'
+    description: '{{ doc("bingeflix__table__subscription_plans") }}'
     columns:
       - name: subscription_plan_id
-        description: '{{ docs("bingeflix__subscription_plans__column__subscription_plan_id") }}'
+        description: '{{ doc("bingeflix__subscription_plans__column__subscription_plan_id") }}'
         tests:
           - not_null
           - unique
@@ -11,16 +11,16 @@ models:
               values: [1, 2, 3]
 
       - name: plan_name
-        description: '{{ docs("bingeflix__subscription_plans__column__plan_name") }}'
+        description: '{{ doc("bingeflix__subscription_plans__column__plan_name") }}'
         tests:
           - not_null
 
       - name: pricing
-        description: '{{ docs("bingeflix__subscription_plans__column__pricing") }}'
+        description: '{{ doc("bingeflix__subscription_plans__column__pricing") }}'
         tests:
           - not_null
 
       - name: payment_period
-        description: '{{ docs("bingeflix__subscription_plans__column__payment_period") }}'
+        description: '{{ doc("bingeflix__subscription_plans__column__payment_period") }}'
         tests:
           - not_null

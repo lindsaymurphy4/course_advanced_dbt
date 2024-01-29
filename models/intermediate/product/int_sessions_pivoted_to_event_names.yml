@@ -1,6 +1,6 @@
 models:
   - name: int_sessions_pivoted_to_event_names
-    description: '{{ docs("int__product__table__int_sessions_pivoted_to_event_names")}}'
+    description: '{{ doc("int__product__table__int_sessions_pivoted_to_event_names")}}'
     columns:
       - name: session_id
         description: '{{ doc("bingeflix__events__column__session_id") }}'
@@ -9,12 +9,12 @@ models:
           - unique
 
       - name: user_logged_in_count
-        description: '{{ docs("int__product__int_sessions_pivoted_to_event_names__column__user_logged_in_count")}}'
+        description: '{{ doc("int__product__int_sessions_pivoted_to_event_names__column__user_logged_in_count")}}'
         tests:
           - assert_column_is_positive
 
       - name: user_logged_out_count
-        description: '{{ docs("int__product__int_sessions_pivoted_to_event_names__column__user_logged_out_count")}}'
+        description: '{{ doc("int__product__int_sessions_pivoted_to_event_names__column__user_logged_out_count")}}'
 
       - name: video_watched_count
-        description: '{{ docs("int__product__int_sessions_pivoted_to_event_names__column__video_watched_count")}}'
+        description: '{{ doc("int__product__int_sessions_pivoted_to_event_names__column__video_watched_count")}}'

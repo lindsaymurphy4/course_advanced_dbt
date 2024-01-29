@@ -1,44 +1,44 @@
 models:
   - name: dim_subscriptions
-    description: '{{ docs("marts__core__table__dim_subscriptions") }}'
+    description: '{{ doc("marts__core__table__dim_subscriptions") }}'
     columns:
       - name: subscription_id
-        description: '{{ docs("bingeflix__subscriptions__column__subscription_id") }}'
+        description: '{{ doc("bingeflix__subscriptions__column__subscription_id") }}'
         tests:
           - not_null
           - unique
 
       - name: subscription_plan_id
-        description: '{{ docs("bingeflix__subscription_plans__column__subscription_plan_id") }}'
+        description: '{{ doc("bingeflix__subscription_plans__column__subscription_plan_id") }}'
         tests:
           - not_null
           - accepted_values:
               values: [1, 2, 3]
 
       - name: user_id
-        description: '{{ docs("bingeflix__users__column__user_id") }}'
+        description: '{{ doc("bingeflix__users__column__user_id") }}'
         tests:
           - not_null
 
       - name: starts_at
-        description: '{{ docs("bingeflix__subscriptions__column__starts_at") }}'
+        description: '{{ doc("bingeflix__subscriptions__column__starts_at") }}'
         tests:
           - not_null
 
       - name: ends_at
-        description: '{{ docs("bingeflix__subscriptions__column__ends_at") }}'
+        description: '{{ doc("bingeflix__subscriptions__column__ends_at") }}'
 
       - name: plan_name
-        description: '{{ docs("bingeflix__subscription_plans__column__plan_name") }}'
+        description: '{{ doc("bingeflix__subscription_plans__column__plan_name") }}'
         tests:
           - not_null
 
       - name: pricing
-        description: '{{ docs("bingeflix__subscription_plans__column__pricing") }}'
+        description: '{{ doc("bingeflix__subscription_plans__column__pricing") }}'
         tests:
           - not_null
 
       - name: billing_period
-        description: '{{ docs("marts__core__dim_subscriptions__column__billing_period") }}'
+        description: '{{ doc("marts__core__dim_subscriptions__column__billing_period") }}'
         tests:
           - not_null

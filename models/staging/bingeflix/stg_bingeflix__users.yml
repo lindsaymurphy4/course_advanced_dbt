@@ -1,6 +1,6 @@
 models:
   - name: stg_bingeflix__users
-    description: '{{ docs("bingeflix__table__users") }}'
+    description: '{{ doc("bingeflix__table__users") }}'
     columns:
       - name: user_id
         description: '{{ doc("bingeflix__users__column__user_id") }}'

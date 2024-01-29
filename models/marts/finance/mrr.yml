@@ -2,11 +2,11 @@ models:
   - name: mrr
     config:
       tags: p0
-    description: '{{ docs("marts__finance__table__mrr") }}'
+    description: '{{ doc("marts__finance__table__mrr") }}'
       
     columns:
       - name: surrogate_key
-        description: '{{ docs("marts__finance__mrr__column__surrogate_key") }}'
+        description: '{{ doc("marts__finance__mrr__column__surrogate_key") }}'
         tests:
           - not_null
           - unique:
@@ -14,7 +14,7 @@ models:
                 tags: p0
 
       - name: date_month
-        description: '{{ docs("int__int_dates__column__date_month") }}'
+        description: '{{ doc("int__int_dates__column__date_month") }}'
 
       - name: user_id
         description: '{{ doc("bingeflix__users__column__user_id") }}'
@@ -23,28 +23,28 @@ models:
         description: '{{ doc("bingeflix__subscriptions__column__subscription_id") }}'
 
       - name: starts_at
-        description: '{{ docs("bingeflix__subscriptions__column__starts_at") }}'
+        description: '{{ doc("bingeflix__subscriptions__column__starts_at") }}'
 
       - name: ends_at
-        description: '{{ docs("bingeflix__subscriptions__column__ends_at") }}'
+        description: '{{ doc("bingeflix__subscriptions__column__ends_at") }}'
 
       - name: plan_name
-        description: '{{ docs("bingeflix__subscription_plans__column__plan_name") }}'
+        description: '{{ doc("bingeflix__subscription_plans__column__plan_name") }}'
 
       - name: mrr_amount
-        description: '{{ docs("marts__finance__mrr__column__mrr_amount") }}'
+        description: '{{ doc("marts__finance__mrr__column__mrr_amount") }}'
 
       - name: mrr_change
-        description: '{{ docs("marts__finance__mrr__column__mrr_change") }}'
+        description: '{{ doc("marts__finance__mrr__column__mrr_change") }}'
 
       - name: retained_mrr_amount
-        description: '{{ docs("marts__finance__mrr__column__retained_mrr_amount") }}'
+        description: '{{ doc("marts__finance__mrr__column__retained_mrr_amount") }}'
 
       - name: previous_month_mrr_amount
-        description: '{{ docs("marts__finance__mrr__column__previous_month_mrr_amount") }}'
+        description: '{{ doc("marts__finance__mrr__column__previous_month_mrr_amount") }}'
 
       - name: change_category
-        description: '{{ docs("marts__finance__mrr__column__change_category") }}'
+        description: '{{ doc("marts__finance__mrr__column__change_category") }}'
 
       - name: month_retained_number
-        description: '{{ docs("marts__finance__mrr__column__month_retained_number") }}'
+        description: '{{ doc("marts__finance__mrr__column__month_retained_number") }}'

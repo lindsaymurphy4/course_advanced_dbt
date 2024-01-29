@@ -1,6 +1,6 @@
 models:
   - name: dim_users
-    description: '{{ docs("marts__core__table__dim_users") }}'
+    description: '{{ doc("marts__core__table__dim_users") }}'
     meta:
       priority: high
       owner:
