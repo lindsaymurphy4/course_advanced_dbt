@@ -6,6 +6,7 @@ models:
         description: The unique identifier of the session in the Bingeflix application.
         tests:
           - not_null
+          - unique
 
       - name: created_at
         description: When the event was logged.

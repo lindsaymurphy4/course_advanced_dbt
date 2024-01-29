@@ -15,14 +15,14 @@ This section contains documentation from the Bingeflix Subscriptions table.
 The unique identifier for the subscription.
 {% enddocs %}
 
-{ % docs bingeflix_column_subscription_plan_id %}
+{% docs bingeflix_column_subscription_plan_id %}
 The unique identifier of the subscription plan.
 {% enddocs %}
 
-{ % docs bingeflix_column_subscription_starts_at %}
+{% docs bingeflix_column_subscription_starts_at %}
 When the subscription started.
 {% enddocs %}
 
-{ % docs bingeflix_column_subscription_ends_at %}
+{% docs bingeflix_column_subscription_ends_at %}
 When the subscription ends. This value is NULL if the subscription is active.
 {% enddocs %}
