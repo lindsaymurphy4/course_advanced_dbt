@@ -29,10 +29,10 @@ models:
     +materialized: view
     +grants:
       select: ['transformer', 'reporter']
-    
+
     staging:
       +schema: staging
-    
+
     intermediate:
       +schema: intermediate
 
