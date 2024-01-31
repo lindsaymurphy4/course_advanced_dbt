@@ -1,7 +1,7 @@
 {%
     set event_names = dbt_utils.get_column_values(
         table=ref('stg_bingeflix__events'), column='event_name'
-        ) 
+        )
 -%}
 
 SELECT

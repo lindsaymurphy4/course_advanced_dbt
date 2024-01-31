@@ -3,7 +3,7 @@ models:
     config:
       tags: p0
     description: '{{ doc("rpt_mrr") }}'
-      
+
     columns:
       - name: surrogate_key
         description: '{{ doc("rpt_mrr__surrogate_key") }}'

@@ -217,8 +217,8 @@ final AS (
 )
 
 SELECT
-    
-        
+
+
         {{ dbt_utils.generate_surrogate_key(['date_month', 'subscription_id', 'change_category']) }}
         AS surrogate_key,
     *
