@@ -37,5 +37,8 @@ repos:
   - id: replace-script-table-names #Replace taables to ensure scripts refers to source or ref macro for table name
   - id: check-model-columns-have-desc #Ensure model columns have description
     files: ^models/marts/finance
+  - id: check-model-tags
+    args: ["--tags", "hourly", "daily", "weekly", "monthly", "--"]
+    files: ^models/marts/core
   - id: dbt-run
   - id: dbt-test
