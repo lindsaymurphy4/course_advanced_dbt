@@ -128,4 +128,3 @@ The user's sex at birth
 {% docs bingeflix_users_column_username %}
 The username used for login
 {% enddocs %}
-

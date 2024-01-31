@@ -3,7 +3,7 @@ models:
     config:
       tags: p0
     description: '{{ doc("bingeflix_mrr_table") }}'
-      
+
     columns:
       - name: surrogate_key
         description: '{{ doc("bingeflix_metrics_column_mrr_surrogate_key") }}'

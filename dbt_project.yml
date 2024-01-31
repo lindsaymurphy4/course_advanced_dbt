@@ -24,12 +24,12 @@ models:
     +materialized: view
     +grants:
       select: ['transformer', 'reporter']
-    
+
     staging:
       +schema: staging
       +docs:
         node_color: "green"
-    
+
     intermediate:
       +schema: intermediate
       +docs:
