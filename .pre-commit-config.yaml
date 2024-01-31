@@ -5,3 +5,18 @@ repos:
     - id: check-yaml
     - id: end-of-file-fixer
     - id: trailing-whitespace
+
+- repo: https://github.com/sqlfluff/sqlfluff
+  rev: 2.3.5
+  hooks:
+    - id: sqlfluff-lint
+      additional_dependencies: [
+        'dbt-snowflake==1.7.1',
+        'sqlfluff-templater-dbt==2.3.5'
+      ]
+    - id: sqlfluff-fix
+      stages: [manual]  # this command is available only to run manually
+      additional_dependencies: [
+        'dbt-snowflake==1.7.1',
+        'sqlfluff-templater-dbt==2.3.5'
+      ]
