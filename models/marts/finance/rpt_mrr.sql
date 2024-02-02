@@ -16,8 +16,9 @@ monthly_subscriptions AS (
         ends_at,
         plan_name,
         pricing,
-        DATE(DATE_TRUNC('month', starts_at)) AS start_month,
-        DATE(DATE_TRUNC('month', ends_at)) AS end_month
+        {{ trunc_to_month( "starts_at", "start_month") }},
+        {{ trunc_to_month( "ends_at", "end_month") }}
+
     FROM
         {{ ref('dim_subscriptions') }}
     WHERE
@@ -54,7 +55,9 @@ subscription_periods AS (
 
         CASE
             WHEN start_month = end_month THEN DATEADD('month', 1, end_month)
-            WHEN end_month IS NULL THEN DATE(DATEADD('month', 1, DATE_TRUNC('month', CURRENT_DATE)))
+            WHEN
+                end_month IS NULL
+                THEN DATE(DATEADD('month', 1, {{ trunc_to_month("current_date") }} ))
             ELSE end_month
         END AS end_month
     FROM
@@ -213,7 +216,7 @@ final AS (
             ON mrr_with_changes.user_id = subscription_periods.user_id
                 AND mrr_with_changes.subscription_id = subscription_periods.subscription_id
     WHERE
-        date_month <= DATE_TRUNC('month', CURRENT_DATE)
+        date_month <= {{ trunc_to_month("current_date") }}
 )
 
 SELECT
