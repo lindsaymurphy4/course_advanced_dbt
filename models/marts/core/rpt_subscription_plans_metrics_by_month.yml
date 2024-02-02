@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: rpt_subscription_plans_metrics_by_month
+    description: "{{ doc('rpt_subscription_plans_metrics_by_month') }}"
+    columns:
+      - name: surrogate_key
+        data_type: varchar
+        description: "{{ doc('rpt_subscription_plans_metrics_by_month__surrogate_key') }}"
+        tests:
+          - not_null
+          - unique
+
+      - name: subscription_plan_id
+        data_type: number
+        description: '{{ doc("bingeflix__subscription_plans__subscription_plan_id") }}'
+        tests:
+          - not_null
+
+      - name: plan_name
+        data_type: varchar
+        description: '{{ doc("bingeflix__subscription_plans__plan_name") }}'
+        tests:
+          - not_null
+
+      - name: start_month
+        data_type: timestamp_ntz
+        description: "{{ doc('rpt_subscription_plans_metrics_by_month__start_month') }}"
+        tests:
+          - not_null
+
+      - name: total_subscription_per_month
+        data_type: number
+        description: "{{ doc('rpt_subscription_plans_metrics_by_month__total_subscription_per_month') }}"
+        tests:
+          - not_null
+
+      - name: avg_3_periods_total_subscription_per_month
+        data_type: number
+        description: "{{ doc('rpt_subscription_plans_metrics_by_month__avg_3_periods_total_subscription_per_month')}}"
+
+      - name: sum_3_periods_total_subscription_per_month
+        data_type: number
+        description: "{{ doc('rpt_subscription_plans_metrics_by_month__avg_3_periods_total_subscription_per_month')}}"

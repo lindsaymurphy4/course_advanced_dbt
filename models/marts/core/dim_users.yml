@@ -74,6 +74,6 @@ models:
 
       - name: first_subscription_starts_at
         description: '{{ doc("dim_users__first_subscription_starts_at") }}'
-      
+
       - name: count_of_subscriptions
         description: '{{ doc("dim_users__count_of_subscriptions") }}'

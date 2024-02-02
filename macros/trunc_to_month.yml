@@ -1,0 +1,12 @@
+version: 2
+
+macros:
+  - name: trunc_to_month
+    description: "{{ doc('macro__trunc_to_month') }}"
+    arguments:
+      - name: date
+        type: date
+        description: "{{ doc('macro__trunc_to_month__date') }}"
+      - name: alias
+        type: string
+        description: "{{ doc('macro__trunc_to_month__alias') }}"
