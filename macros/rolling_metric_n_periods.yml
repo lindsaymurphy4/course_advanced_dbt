@@ -1,0 +1,3 @@
+macros:
+  - name: rolling_average_7_periods
+    description: This macro allows you...
