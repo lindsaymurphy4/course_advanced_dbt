@@ -16,3 +16,9 @@ models:
 
       - name: LOGIN_COUNT
         description: '{{ doc("marts__prodict__fct_active_users__column__login_count") }}'
+
+      - name: sum_4_periods_login_count
+        description: '{{ doc("marts__prodict__fct_active_users__column__sum_4_periods_login_count") }}'
+
+      - name: avg_7_periods_login_count
+        description: '{{ doc("marts__prodict__fct_active_users__column__avg_7_periods_login_count") }}'

@@ -92,3 +92,11 @@ Primary Key.
 {% docs marts__prodict__fct_active_users__column__login_count %}
 The total number of logins for a given user in a given week.
 {% enddocs %}
+
+{% docs marts__prodict__fct_active_users__column__sum_4_periods_login_count %}
+The total login count over the last 4 weeks.
+{% enddocs %}
+
+{% docs marts__prodict__fct_active_users__column__avg_7_periods_login_count %}
+The average login count for the last 7 weeks.
+{% enddocs %}

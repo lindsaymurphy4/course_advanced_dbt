@@ -24,7 +24,9 @@ final AS (
         {{ dbt_utils.generate_surrogate_key(['date_week', 'user_id']) }} AS surrogate_key,
         date_week,
         user_id,
-        COUNT(DISTINCT login_id) AS login_count
+        COUNT(DISTINCT login_id) AS login_count,
+        {{ rolling_aggregate_n_periods('login_count', 'user_id', 7, 'date_week') }},
+        {{ rolling_aggregate_n_periods('login_count', 'user_id', 4, 'date_week', 'sum') }}
     FROM
         date_spine
         LEFT JOIN events ON date_spine.calendar_date = events.created_date

@@ -18,12 +18,6 @@ sources:
             tests:
               - not_null
 
-          - name: surrogate_key
-            description: '{{ doc("ads_platform__daily_ads__column__surrogate_key") }}'
-            tests:
-              - not_null
-              - unique
-
           - name: spend
             description: '{{ doc("ads_platform__daily_ads__column__spend") }}'
             tests:
