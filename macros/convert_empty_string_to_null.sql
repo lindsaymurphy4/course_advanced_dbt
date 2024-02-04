@@ -1,6 +1,6 @@
 
-{% macro convert_empty_string_to_null(empty_column_name) %}
+{% macro convert_empty_string_to_null(empty_column_name) -%}
 
-    NULLIF({{ empty_column_name }}, OR('', ' '))
+    NULLIF(NULLIF({{ empty_column_name }}, ''), ' ') as {{ empty_column_name }}
 
-{% endmacro %}
+{%- endmacro %}

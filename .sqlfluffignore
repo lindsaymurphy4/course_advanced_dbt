@@ -3,6 +3,6 @@ target/
 dbt_packages/
 
 # other
-analysis/
+analyses/
 macros/
 .venv/
