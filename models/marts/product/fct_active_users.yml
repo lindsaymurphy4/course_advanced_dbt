@@ -16,3 +16,6 @@ models:
 
       - name: LOGIN_COUNT
         description: The total number of logins for a given user in a given week.
+
+      - name: avg_3_month_login_count
+        description: The avergae number of logins for each user over a 3 month period.

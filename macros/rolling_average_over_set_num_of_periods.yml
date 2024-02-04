@@ -1,0 +1,28 @@
+version: 2
+
+macros:
+  - name: rolling_average_over_set_number_of_periods
+    arguments:
+      - name: aggregation
+        type: string
+        description: "An aggregation expression, such as 'avg' or 'sum'. The default is average."
+
+      - name: column_name
+        type: integer
+        description: "The column that should be aggregated. The default is the monthly recurring revenue."
+
+      - name: partition_by
+        type: column name or expression
+        description: "The name of the column that the column_name is grouped by. The default is user_id."
+
+      - name: period
+        type: expression
+        description: "This defines the period that should be used, such as months, days or years. The default is months."
+
+      - name: num
+        type: integer
+        description: "The number of periods. The default is 3."
+
+      - name: order_by
+        type: column name or expression
+        description: "The column to order the data by. The default is the date_month field."

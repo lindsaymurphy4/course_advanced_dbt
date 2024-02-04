@@ -31,4 +31,7 @@ final AS (
     GROUP BY ALL
 )
 
-SELECT * FROM final
+SELECT
+    *,
+    {{ rolling_average_over_set_number_of_periods(aggregation='avg', column_name='login_count', partition_by='user_id', period="'YYYY-MM'", num=3, order_by='date_week') }}
+FROM final

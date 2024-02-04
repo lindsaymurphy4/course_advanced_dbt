@@ -195,7 +195,7 @@ final AS (
             ELSE DATEDIFF('month', first_subscription_month, date_month)
         END AS month_retained_number,
 
-        {{ rolling_average_over_set_number_of_periods(aggregation='sum', column_name='mrr', partition_by='mrr_with_changes.user_id', num=3, order_by='mrr_with_changes.date_month', period = "'YYYY-MM'") }}
+        {{ rolling_average_over_set_number_of_periods() }}
 
     FROM
         mrr_with_changes

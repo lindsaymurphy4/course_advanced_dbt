@@ -48,3 +48,6 @@ models:
 
       - name: month_retained_number
         description: '{{ doc("bingeflix_metrics_column_month_retained_number") }}'
+
+      - name: avg_3_month_mrr
+        description: The average mrr amount over the past 3 months.
