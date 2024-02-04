@@ -1,0 +1,10 @@
+version: 2
+
+macros:
+  - name: start_of_month
+    description: A macro for getting a truncated start of month
+    docs:
+      show: true
+    arguments:
+      - name: column_name
+        description: the column name of the data column for which the start of month is required
