@@ -1,0 +1,10 @@
+version: 2
+
+macros:
+  - name: get_month_start_date
+    description: given a date, return the month-start date (e.g., if 2/4/2024, returns 2/1/2024).
+    docs:
+      show: true
+    arguments:
+      - name: date_column_name
+        description: column containing the date for which we want the monthstart date.
