@@ -18,6 +18,14 @@ The user's current age.
 The age of the user when they became a Bingeflix user.
 {% enddocs %}
 
+{% docs bingeflix__users__column__first_subscription_starts_at %}
+The date the user's first subscription began.
+{% enddocs %}
+
+{% docs bingeflix__users__column__count_of_subscriptions %}
+The number of subscriptions the user has acquired.
+{% enddocs %}
+
 ### Dim Subscriptions
 {% docs marts__core__table__dim_subscriptions %}
 This model contains information about Bingeflix subscriptions.
