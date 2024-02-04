@@ -1,0 +1,15 @@
+macros:
+  - name: rolling_metric_n_periods
+    description: A macro to find the rolling metric over n periods.
+    arguments:
+      - name: column_name
+        type: string
+        description: The name of the column you want to convert.
+      - name: partition_by='user_id'
+        description: What you want to use as a partition.The default partition uses the 'user_id' column.
+      - name: order_by='created_at'
+        description: How you want to order your window. The default order uses the 'created_at' column.
+      - name: metric='avg'
+        description: The aggregate you want to apply. The default aggregation is an average.
+      - name: num=7
+        description: The number of periods you want to look at. The default number of periods is 7.
