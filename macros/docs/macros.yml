@@ -13,3 +13,10 @@ macros:
         description: The aggregate you want to apply. The default aggregation is an average.
       - name: num=7
         description: The number of periods you want to look at. The default number of periods is 7.
+
+  - name: month_trunc
+    description: A macro to truncate the date to the month
+    arguments:
+      - name: date_column
+        type: date
+        description: the date truncated to the month
