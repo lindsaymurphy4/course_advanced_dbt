@@ -13,6 +13,6 @@ models:
 
       - name: USER_ID
         description: '{{ doc("bingeflix__users__column__user_id") }}'
-        
+
       - name: LOGIN_COUNT
         description: '{{ doc("marts__prodict__fct_active_users__column__login_count") }}'

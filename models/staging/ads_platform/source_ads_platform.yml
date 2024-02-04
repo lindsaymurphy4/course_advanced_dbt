@@ -38,4 +38,3 @@ sources:
             description: '{{ doc("ads_platform__daily_ads__column__ctr") }}'
             tests:
               - not_null
-
