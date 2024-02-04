@@ -9,14 +9,14 @@ macros:
 
       - name: column_name
         type: integer
-        description: "The column that should be aggregated. The default is the monthly recurring revenue."
+        description: "The column that should be aggregated."
 
       - name: partition_by
-        type: column name or expression
-        description: "The name of the column that the column_name is grouped by. The default is user_id."
+        type: string
+        description: "The name of the column that the column_name is grouped by."
 
       - name: period
-        type: expression
+        type: string
         description: "This defines the period that should be used, such as months, days or years. The default is months."
 
       - name: num
@@ -24,5 +24,5 @@ macros:
         description: "The number of periods. The default is 3."
 
       - name: order_by
-        type: column name or expression
-        description: "The column to order the data by. The default is the date_month field."
+        type: string
+        description: "The column to order the data by."
