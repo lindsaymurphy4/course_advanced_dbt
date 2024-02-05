@@ -15,8 +15,8 @@ monthly_subscriptions AS (
         ends_at,
         plan_name,
         pricing,
-        DATE(DATE_TRUNC('month', starts_at)) AS start_month,
-        DATE(DATE_TRUNC('month', ends_at)) AS end_month
+        {{ truncate_date('starts_at', 'month') }} AS start_month,
+        {{ truncate_date('ends_at', 'month') }} AS end_month
     FROM
         {{ ref('dim_subscriptions') }}
     WHERE
@@ -81,7 +81,7 @@ subscriber_months AS (
             -- All months after start date
             ON months.date_month >= subscribers.first_start_month
                 -- and before end date
-                AND months.date_month < subscribers.last_end_month
+                AND subscribers.last_end_month > months.date_month
 ),
 
 -- Join together to create base CTE for MRR calculations
@@ -150,17 +150,8 @@ unioned AS (
 mrr_with_changes AS (
     SELECT
         *,
-
-        COALESCE(
-            LAG(is_subscribed_current_month) OVER (PARTITION BY user_id, subscription_id ORDER BY date_month),
-            FALSE
-        ) AS is_subscribed_previous_month,
-
-        COALESCE(
-            LAG(mrr) OVER (PARTITION BY user_id, subscription_id ORDER BY date_month),
-            0.0
-        ) AS previous_month_mrr_amount,
-
+        {{ find_previous_partition('is_subscribed_current_month', 'user_id', 'subscription_id', 'date_month', 'FALSE')}} AS is_subscribed_previous_month,
+        {{ find_previous_partition('mrr', 'user_id', 'subscription_id', 'date_month', 0.0)}} AS previous_month_mrr_amount,
         mrr - previous_month_mrr_amount AS mrr_change
     FROM
         unioned
@@ -198,8 +189,8 @@ final AS (
     FROM
         mrr_with_changes
         LEFT JOIN subscription_periods
-            ON subscription_periods.user_id = mrr_with_changes.user_id
-                AND subscription_periods.subscription_id = mrr_with_changes.subscription_id
+            ON mrr_with_changes.user_id = subscription_periods.user_id
+                AND mrr_with_changes.subscription_id = subscription_periods.subscription_id
     WHERE
         date_month <= DATE_TRUNC('month', CURRENT_DATE)
 )

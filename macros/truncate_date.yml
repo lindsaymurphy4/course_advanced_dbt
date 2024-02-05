@@ -1,0 +1,12 @@
+macros:
+  - name: truncate_date
+    description: > 
+      This macro truncates a timestamp to find the date type specified. Use this whenever you are extracting a part of a date from 
+      a timestamp function, such as month, day, year, etc.   
+    arguments:
+      - name: column_name
+        type: timestamp 
+        description: The timestamp column you wish to truncate 
+      - name: date_type 
+        type: string 
+        description: The date type that you wish to extract from the timestamp e.g. month 
