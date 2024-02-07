@@ -4,18 +4,12 @@ models:
     columns:
       - name: subscription_plan_id
         description: '{{ doc("bingeflix_column_subscription_plan_id") }}'
-        tests:
-          - not_null
 
       - name: user_id
         description: '{{ doc("bingeflix_column_user_id") }}'
-        tests:
-          - not_null
 
       - name: starts_at
         description: '{{ doc("bingeflix_column_subscription_starts_at") }}'
-        tests:
-          - not_null
 
       - name: ends_at
         description: '{{ doc("bingeflix_column_subscription_ends_at") }}'

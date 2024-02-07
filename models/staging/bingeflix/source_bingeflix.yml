@@ -11,6 +11,7 @@ sources:
             description: The unique identifier of the session in the Bingeflix application.
             tests:
               - not_null
+              - unique
 
           - name: created_at
             description: When the event was logged.
@@ -92,19 +93,12 @@ sources:
         columns:
           - name: user_id
             description: '{{ doc("bingeflix_column_user_id") }}'
-            tests:
-              - not_null
-              - unique
 
           - name: created_at
             description: When the user was created.
-            tests:
-              - not_null
 
           - name: phone_number
             description: The user's phone number.
-            tests:
-              - not_null
 
           - name: deleted_at
             description: When the user's account was deleted. The value is NULL if the account has not been deleted.

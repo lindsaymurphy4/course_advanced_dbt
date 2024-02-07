@@ -10,21 +10,12 @@ models:
 
       - name: created_at
         description: When the event was logged.
-        tests:
-          - not_null
 
       - name: user_id
         description: '{{ doc("bingeflix_column_user_id") }}'
-        tests:
-          - not_null
 
       - name: event_name
         description: The name of the event.
-        tests:
-          - not_null
 
       - name: event_id
         description: The unique identifier of the event.
-        tests:
-          - not_null
-          - unique
