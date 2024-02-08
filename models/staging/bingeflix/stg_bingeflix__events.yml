@@ -13,6 +13,9 @@ models:
 
       - name: event_name
         description: '{{ doc("bingeflix_events_column_event_name") }}'
+        tests:
+          - assert_valid_event_name:
+              value: test
 
       - name: event_id
         description: '{{ doc("bingeflix_events_column_event_id") }}'
