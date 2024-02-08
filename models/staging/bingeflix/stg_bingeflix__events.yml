@@ -4,23 +4,15 @@ models:
     columns:
       - name: session_id
         description: '{{ doc("bingeflix_events_column_session_id") }}'
-        tests:
-          - not_null
 
       - name: created_at
         description: '{{ doc("bingeflix_events_column_created_at") }}'
-        tests:
-          - not_null
 
       - name: user_id
         description: '{{ doc("bingeflix_users_column_user_id") }}'
-        tests:
-          - not_null
 
       - name: event_name
         description: '{{ doc("bingeflix_events_column_event_name") }}'
-        tests:
-          - not_null
 
       - name: event_id
         description: '{{ doc("bingeflix_events_column_event_id") }}'

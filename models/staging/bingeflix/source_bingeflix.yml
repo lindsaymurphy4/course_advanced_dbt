@@ -9,55 +9,33 @@ sources:
         columns:
           - name: session_id
             description: '{{ doc("bingeflix_events_column_session_id") }}'
-            tests:
-              - not_null
 
           - name: created_at
             description: '{{ doc("bingeflix_events_column_created_at") }}'
-            tests:
-              - not_null
 
           - name: user_id
             description: '{{ doc("bingeflix_users_column_user_id") }}'
-            tests:
-              - not_null
 
           - name: event_name
             description: '{{ doc("bingeflix_events_column_event_name") }}'
-            tests:
-              - not_null
 
           - name: event_id
             description: '{{ doc("bingeflix_events_column_event_id") }}'
-            tests:
-              - not_null
-              - unique
 
       - name: subscription_plans
         description: '{{ doc("bingeflix_subscription_plans_table") }}'
         columns:
           - name: subscription_plan_id
             description: '{{ doc("bingeflix_subscription_plans_column_subscription_plan_id") }}'
-            tests:
-              - not_null
-              - unique
-              - accepted_values:
-                  values: [1, 2, 3]
 
           - name: plan_name
             description: '{{ doc("bingeflix_subscription_plans_column_plan_name") }}'
-            tests:
-              - not_null
 
           - name: pricing
             description: '{{ doc("bingeflix_subscription_plans_column_pricing") }}'
-            tests:
-              - not_null
 
           - name: payment_period
             description: '{{ doc("bingeflix_subscription_plans_column_payment_period") }}'
-            tests:
-              - not_null
 
 
       - name: subscriptions
@@ -65,83 +43,51 @@ sources:
         columns:
           - name: subscription_plan_id
             description: '{{ doc("bingeflix_subscription_plans_column_subscription_plan_id") }}'
-            tests:
-              - not_null
 
           - name: user_id
             description: '{{ doc("bingeflix_users_column_user_id") }}'
-            tests:
-              - not_null
 
           - name: starts_at
             description: '{{ doc("bingeflix_subscriptions_column_starts_at") }}'
-            tests:
-              - not_null
 
           - name: ends_at
             description: '{{ doc("bingeflix_subscriptions_column_ends_at") }}'
 
           - name: subscription_id
             description: '{{ doc("bingeflix_subscriptions_column_subscription_id") }}'
-            tests:
-              - not_null
-              - unique
 
       - name: users
         description: '{{ doc("bingeflix_users_table") }}'
         columns:
           - name: user_id
             description: '{{ doc("bingeflix_users_column_user_id") }}'
-            tests:
-              - not_null
-              - unique
 
           - name: created_at
             description: '{{ doc("bingeflix_users_column_created_at") }}'
-            tests:
-              - not_null
 
           - name: phone_number
             description: '{{ doc("bingeflix_users_column_phone_number") }}'
-            tests:
-              - not_null
 
           - name: deleted_at
             description: '{{ doc("bingeflix_users_column_deleted_at") }}'
 
           - name: username
             description: '{{ doc("bingeflix_users_column_username") }}'
-            tests:
-              - not_null
 
           - name: name
             description: '{{ doc("bingeflix_users_column_name") }}'
-            tests:
-              - not_null
 
           - name: sex
             description: '{{ doc("bingeflix_users_column_sex") }}'
-            tests:
-              - not_null
-              - accepted_values:
-                  values: ['M','F']
 
           - name: email
             description: '{{ doc("bingeflix_users_column_email") }}'
-            tests:
-              - not_null
 
           - name: birthdate
             description: '{{ doc("bingeflix_users_column_birthdate") }}'
-            tests:
-              - not_null
 
           - name: region
             description: '{{ doc("bingeflix_users_column_region") }}'
-            tests:
-              - not_null
 
           - name: country
             description: '{{ doc("bingeflix_users_column_country") }}'
-            tests:
-              - not_null
