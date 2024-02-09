@@ -54,4 +54,13 @@ seeds:
     dbt_project_evaluator_exceptions:
       +enabled: false
 
+  unit_testing:
+    unit_testing:
+      +schema: unit_testing
+      +tags: unit_testing
+      unit_test_output_mrr:
+        +column_types:
+          date_month: DATE
+          mrr_amount: FLOAT
+
 on-run-end: "{{ dbt_project_evaluator.print_dbt_project_evaluator_issues() }}"

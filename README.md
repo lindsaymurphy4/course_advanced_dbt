@@ -38,3 +38,7 @@
 - Task 2: Added additional project checks from dbt-checkpoint
 - Task 3: Generalized the custom macro and applied to two models
 - Task 4: Wrote a custom macro, focussing on looping through columns to change white spaces to null
+### Week 3
+- Task 1: Redundant tests removed from the source yaml if it is covered by staging or further upstream
+- Task 2: Custom generic test added to address test events
+- Task 3: unit testing of rpt_mrr. The seed files were not pushed to github as they were too large (kept in the local repo only)

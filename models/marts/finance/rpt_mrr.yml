@@ -3,7 +3,10 @@ models:
     config:
       tags: p0
     description: '{{ doc("bingeflix_mrr_table") }}'
-
+    tests:
+        - dbt_utils.equality:
+            compare_model: ref('unit_test_output_mrr')
+            tags: ['unit_testing']
     columns:
       - name: surrogate_key
         description: '{{ doc("bingeflix_metrics_column_mrr_surrogate_key") }}'
@@ -48,6 +51,3 @@ models:
 
       - name: month_retained_number
         description: '{{ doc("bingeflix_metrics_column_month_retained_number") }}'
-
-      - name: avg_3_month_mrr
-        description: The average mrr amount over the past 3 months.
