@@ -4,16 +4,14 @@ models:
     columns:
       - name: subscription_plan_id
         description: '{{ doc("bingeflix__subscription_plans__column__subscription_plan_id") }}'
+        tags:
+          - primary-key
         tests:
-          - not_null
           - unique
-          - accepted_values:
-              values: [1, 2, 3]
+          - not_null
 
       - name: plan_name
         description: '{{ doc("bingeflix__subscription_plans__column__plan_name") }}'
-        tests:
-          - not_null
 
       - name: pricing
         description: '{{ doc("bingeflix__subscription_plans__column__pricing") }}'
@@ -22,5 +20,3 @@ models:
 
       - name: payment_period
         description: '{{ doc("bingeflix__subscription_plans__column__payment_period") }}'
-        tests:
-          - not_null

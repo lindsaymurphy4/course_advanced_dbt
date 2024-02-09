@@ -23,3 +23,4 @@
 - Columns that should never be null must have a not_null schema test.
 - Columns that should be unique must have a unique schema test.
 - Where possible, use schema tests from the dbt_utils or dbt_expectations packages to perform extra verification.
+- Columns that are 1:1 with the source (no transformation), do not need to be re-tested for any tests already performed on the column in the source.

@@ -4,31 +4,23 @@ models:
     columns:
       - name: date
         description: '{{ doc("ads_platform__daily_ads__column__date") }}'
-        tests:
-          - not_null
 
       - name: campaign_id
         description: '{{ doc("ads_platform__daily_ads__column__campaign_id") }}'
-        tests:
-          - not_null
 
       - name: surrogate_key
         description: '{{ doc("ads_platform__daily_ads__column__surrogate_key") }}'
+        tags:
+          - primary-key
         tests:
           - not_null
           - unique
 
       - name: spend
         description: '{{ doc("ads_platform__daily_ads__column__spend") }}'
-        tests:
-          - not_null
 
       - name: cpm
         description: '{{ doc("ads_platform__daily_ads__column__cpm") }}'
-        tests:
-          - not_null
 
       - name: ctr
         description: '{{ doc("ads_platform__daily_ads__column__ctr") }}'
-        tests:
-          - not_null

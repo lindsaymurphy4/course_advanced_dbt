@@ -4,56 +4,38 @@ models:
     columns:
       - name: user_id
         description: '{{ doc("bingeflix__users__column__user_id") }}'
+        tags:
+          - primary-key
         tests:
           - not_null
           - unique
 
       - name: created_at
         description: '{{ doc("bingeflix__users__column__created_at") }}'
-        tests:
-          - not_null
 
       - name: phone_number
         description: '{{ doc("bingeflix__users__column__phone_number") }}'
-        tests:
-          - not_null
 
       - name: deleted_at
         description: '{{ doc("bingeflix__users__column__deleted_at") }}'
 
       - name: username
         description: '{{ doc("bingeflix__users__column__username") }}'
-        tests:
-          - not_null
 
       - name: name
         description: '{{ doc("bingeflix__users__column__name") }}'
-        tests:
-          - not_null
 
       - name: sex
         description: '{{ doc("bingeflix__users__column__sex") }}'
-        tests:
-          - not_null
-          - accepted_values:
-              values: ['M','F']
 
       - name: email
         description: '{{ doc("bingeflix__users__column__email") }}'
-        tests:
-          - not_null
 
       - name: birthdate
         description: '{{ doc("bingeflix__users__column__birthdate") }}'
-        tests:
-          - not_null
 
       - name: region
         description: '{{ doc("bingeflix__users__column__region") }}'
-        tests:
-          - not_null
 
       - name: country
         description: '{{ doc("bingeflix__users__column__country") }}'
-        tests:
-          - not_null
