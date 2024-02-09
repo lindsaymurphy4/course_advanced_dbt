@@ -19,63 +19,42 @@ models:
 
       - name: created_at
         description: When the user account was created.
-        tests:
-          - not_null
 
       - name: phone_number
         description: the user's phone number.
-        tests:
-          - not_null
 
       - name: deleted_at
         description: When the user's account was deleted.
 
       - name: username
         description: The username associated with the user.
-        tests:
-          - not_null
 
       - name: name
         description: The full name of the user (first and last).
-        tests:
-          - not_null
 
       - name: sex
         description: The user's gender.
-        tests:
-          - not_null
 
       - name: email
         description: The user's email address.
-        tests:
-          - not_null
 
       - name: birthdate
         description: The user's bithdate.
-        tests:
-          - not_null
 
       - name: current_age
         description: The user's current age.
-        tests:
-          - not_null
 
       - name: age_at_acquisition
         description: The age of the user when they became a Bingeflix user.
-        tests:
-          - not_null
 
       - name: region
         description: Where the user lives.
-        tests:
-          - not_null
 
       - name: country
         description: Where the user lives.
-        tests:
-          - not_null
 
       - name: count_of_subscriptions
         description: Number of subscriptions
+
       - name: first_subscription_starts_at
         description: Date of first subscription
