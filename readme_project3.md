@@ -6,5 +6,6 @@ I did leave the generic tests on the PK for each model.
 For example, in subscription plans, plan_name has a not_null test in source, but no transformations are done in the stg model, so it's redundant to retest. However, pricing column has a macro applied, so I left the not_null test to check for any issues with the macro execution.
 
 ## Task 2
+Added test "assert_valid_column_value" to check whether column contains a given keyword.
 
 ## Task 3

@@ -13,6 +13,12 @@ models:
 
       - name: event_name
         description: '{{ doc("bingeflix__events__column__event_name") }}'
+        tests:
+          - assert_valid_column_value:
+              keyword: test
+              config:
+                severity: error
+                error_if: ">1"
 
       - name: event_id
         description: '{{ doc("bingeflix__events__column__event_id") }}'
