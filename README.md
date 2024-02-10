@@ -76,9 +76,19 @@ For this task I set all keywords to upper case, and a line lenght of 100, then I
 - Columns that should be unique must have a unique schema test.
 
 #### Models
+The following rules must be applied to all models:
 - The primary key column must have not_null and unique schema tests.
+- Columns that should be unique must have a unique schema test.
+
+The following rules can be ommited if:
+1. It is a staging model and the source is tested.
+2. The model contain simple transformations that don't change the definition of the column
+    and it is a model with only 1 dependency.
+3. The column is not transformed and came from the principal table in a left or right join.
+    Note: These tests must be applied for full outer joins.
+4. The model contains group bys, aggregations, and more complex transformations.
+Otherwise these tests are contemplated in upstream models:
 - All boolean columns must have an accepted_values schema test. The accepted values are true and false.
 - Columns that contain category values must have an accepted_values schema test.
 - Columns that should never be null must have a not_null schema test.
-- Columns that should be unique must have a unique schema test.
 - Where possible, use schema tests from the dbt_utils or dbt_expectations packages to perform extra verification.
