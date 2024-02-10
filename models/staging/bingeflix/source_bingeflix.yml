@@ -26,6 +26,8 @@ sources:
             description: '{{ doc("bingeflix__events__event_name") }}'
             tests:
               - not_null
+              - assert_valid_event_name:
+                  like_clause: ['%test%', '%test2%']
 
           - name: event_id
             description: '{{ doc("bingeflix__events__event_id") }}'
