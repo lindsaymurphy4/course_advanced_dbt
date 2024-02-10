@@ -7,20 +7,17 @@ models:
         tests:
           - not_null
           - unique
-          - accepted_values:
-              values: [1, 2, 3]
+          #Tested upstream
+          # - accepted_values:
 
       - name: plan_name
         description: '{{ doc("bingeflix__subscription_plans__plan_name") }}'
-        tests:
-          - not_null
+        #Tested upstream
 
       - name: pricing
         description: '{{ doc("bingeflix__subscription_plans__pricing") }}'
-        tests:
-          - not_null
+        #Tested upstream
 
       - name: payment_period
         description: '{{ doc("bingeflix__subscription_plans__payment_period") }}'
-        tests:
-          - not_null
+        #Tested upstream

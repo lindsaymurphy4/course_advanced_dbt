@@ -10,50 +10,39 @@ models:
 
       - name: created_at
         description: '{{ doc("bingeflix__users__created_at") }}'
-        tests:
-          - not_null
+        #Tested upstream
 
       - name: phone_number
         description: '{{ doc("bingeflix__users__phone_number") }}'
-        tests:
-          - not_null
+        #Tested upstream
 
       - name: deleted_at
         description: '{{ doc("bingeflix__users__deleted_at") }}'
 
       - name: username
         description: '{{ doc("bingeflix__users__username") }}'
-        tests:
-          - not_null
+        #Tested upstream
 
       - name: name
         description: '{{ doc("bingeflix__users__name") }}'
-        tests:
-          - not_null
+        #Tested upstream
 
       - name: sex
         description: '{{ doc("bingeflix__users__sex") }}'
-        tests:
-          - not_null
-          - accepted_values:
-              values: ['M','F']
+        #Tested upstream
 
       - name: email
         description: '{{ doc("bingeflix__users__email") }}'
-        tests:
-          - not_null
+        #Tested upstream
 
       - name: birthdate
         description: '{{ doc("bingeflix__users__birthdate") }}'
-        tests:
-          - not_null
+        #Tested upstream
 
       - name: region
         description: '{{ doc("bingeflix__users__region") }}'
-        tests:
-          - not_null
+        #Tested upstream
 
       - name: country
         description: '{{ doc("bingeflix__users__country") }}'
-        tests:
-          - not_null
+        #Tested upstream
