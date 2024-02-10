@@ -10,24 +10,23 @@ models:
 
       - name: subscription_plan_id
         description: '{{ doc("bingeflix__subscription_plans__subscription_plan_id") }}'
-        tests:
-          - not_null
-          - accepted_values:
-              values: [1, 2, 3]
+        #Tested upstream
+        # Is part of the main model in a left join
 
       - name: user_id
         description: '{{ doc("bingeflix__users__user_id") }}'
-        tests:
-          - not_null
+        #Tested upstream
+        # Is part of the main model in a left join
 
       - name: starts_at
         description: '{{ doc("bingeflix__subscriptions__starts_at") }}'
-        tests:
-          - not_null
+        #Tested upstream
+        # Is part of the main model in a left join
 
       - name: ends_at
         description: '{{ doc("bingeflix__subscriptions__ends_at") }}'
 
+      # We keep the following tests as they are part of the left table
       - name: plan_name
         description: '{{ doc("bingeflix__subscription_plans__plan_name") }}'
         tests:

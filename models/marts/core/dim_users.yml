@@ -16,41 +16,41 @@ models:
 
       - name: created_at
         description: '{{ doc("bingeflix__users__created_at") }}'
-        tests:
-          - not_null
+        #Tested upstream
+        # Is part of the main model in a left join
 
       - name: phone_number
         description: '{{ doc("bingeflix__users__phone_number") }}'
-        tests:
-          - not_null
+        #Tested upstream
+        # Is part of the main model in a left join
 
       - name: deleted_at
         description: '{{ doc("bingeflix__users__deleted_at") }}'
 
       - name: username
         description: '{{ doc("bingeflix__users__username") }}'
-        tests:
-          - not_null
+        #Tested upstream
+        # Is part of the main model in a left join
 
       - name: name
         description: '{{ doc("bingeflix__users__name") }}'
-        tests:
-          - not_null
+        #Tested upstream
+        # Is part of the main model in a left join
 
       - name: sex
         description: '{{ doc("bingeflix__users__sex") }}'
-        tests:
-          - not_null
+        #Tested upstream
+        # Is part of the main model in a left join
 
       - name: email
         description: '{{ doc("bingeflix__users__email") }}'
-        tests:
-          - not_null
+        #Tested upstream
+        # Is part of the main model in a left join
 
       - name: birthdate
         description: '{{ doc("bingeflix__users__birthdate") }}'
-        tests:
-          - not_null
+        #Tested upstream
+        # Is part of the main model in a left join
 
       - name: current_age
         description: '{{ doc("dim_users__current_age") }}'
@@ -64,13 +64,13 @@ models:
 
       - name: region
         description: '{{ doc("bingeflix__users__region") }}'
-        tests:
-          - not_null
+        #Tested upstream
+        # Is part of the main model in a left join
 
       - name: country
         description: '{{ doc("bingeflix__users__country") }}'
-        tests:
-          - not_null
+        #Tested upstream
+        # Is part of the main model in a left join
 
       - name: first_subscription_starts_at
         description: '{{ doc("dim_users__first_subscription_starts_at") }}'
