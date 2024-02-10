@@ -1,0 +1,9 @@
+version: 2
+
+macros:
+  - name: test_assert_valid_event_name
+    description: "{{ doc('test__assert_valid_event_name') }}"
+    arguments:
+      - name: like_clause
+        type: array
+        description: "{{ doc('test__assert_valid_event_name__like_clause') }}"
