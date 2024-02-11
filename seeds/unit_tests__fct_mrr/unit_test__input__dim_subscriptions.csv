@@ -1,0 +1,2 @@
+subscription_id,subscription_plan_id,user_id,starts_at,ends_at,plan_name,pricing,billing_period
+192890,1,20772,2023-02-22T05:33:59Z,2023-06-01T05:33:59Z,Standard with Ads,0.06,monthly

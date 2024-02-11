@@ -1,0 +1,3 @@
+surrogate_key,date_month,user_id,subscription_id,starts_at,ends_at,plan_name,mrr_amount,mrr_change,retained_mrr_amount,previous_month_mrr_amount,change_category,month_retained_number
+321b4111239a8bff58fdde5a01e6e8fd,2023-02-01,20772,192890,2023-02-22T05:33:59Z,2023-06-01T05:33:59Z,Standard with Ads,0.06,0.06,0.00,0.00,new,0
+a561c841c4d4c87c2f9595bce1ad19ca,2023-03-22,20772,192890,2023-02-22T05:33:59Z,2023-06-01T05:33:59Z,Standard with Ads,0,-0.06,0,0.06,churn,

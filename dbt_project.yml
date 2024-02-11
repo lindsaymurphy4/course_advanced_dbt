@@ -43,5 +43,37 @@ seeds:
   dbt_project_evaluator:
     dbt_project_evaluator_exceptions:
       +enabled: false
+  unit_tests__fct_mrr:
+    +schema: unit_testing
+    +tags: unit_testing
+    uunit_test__input__int_dates:
+      +column_types:
+        calendar_date: DATE
+        day_of_month: INT
+    unit_test__input__dim_subscription:
+      +column_types:
+        subscription_id: INT
+        subscription_plan_id: INT
+        user_id: INT
+        starts_at: TIMESTAMP
+        ends_at: TIMESTAMP
+        plan_name: STRING
+        pricing: FLOAT
+        billing_period: STRING
+    unit_test__output__fct_mrr:
+      +column_types:
+        surrogate_key: STRING
+        date-month: DATE
+        user_id: INT
+        subscription_id: INT
+        starts_at: TIMESTAMP
+        ends_at: TIMESTAMP
+        plan_name: STRING
+        mrr_amount: FLOAT
+        mrr_change: FLOAT
+        retained_mrr_amount: FLOAT
+        previous_month_mrr_amount: FLOAT
+        change_category: STRING
+        month_retained_number: INT
 
 on-run-end: "{{ dbt_project_evaluator.print_dbt_project_evaluator_issues() }}"

@@ -3,7 +3,10 @@ models:
     config:
       tags: p0
     description: '{{ doc("marts__finance__table__fct_mrr") }}'
-
+    tests:
+        - dbt_utils.equality:
+            compare_model: ref('unit_test__output__fct_mrr')
+            tags: ['unit_testing']
     columns:
       - name: surrogate_key
         description: '{{ doc("marts__finance__fct_mrr__column__surrogate_key") }}'
