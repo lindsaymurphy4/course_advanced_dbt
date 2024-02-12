@@ -3,6 +3,10 @@ models:
     config:
       tags: p0
     description: '{{ doc("rpt_mrr") }}'
+    tests:
+      - dbt_utils.equality:
+          compare_model: ref('unit_test_expected_output__rpt_mrr')
+          tags: ['unit_testing']
 
     columns:
       - name: surrogate_key
