@@ -3,7 +3,10 @@ models:
     config:
       tags: p0
     description: This model contains calculations for the monthly recurring revenue generated per user and subscription for each month.
-
+    tests:
+      - dbt_utils.equality:
+          compare_model: ref('unit_test_expected_output_dim_mrr')
+          tags: ['unit_testing']
     columns:
       - name: surrogate_key
         description: The surrogate key. This acts as a primary key for this model.

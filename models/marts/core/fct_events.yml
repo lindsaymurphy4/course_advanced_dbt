@@ -9,7 +9,7 @@ models:
           - unique
 
       - name: created_at
-        description: The timestamp that the session was created. 
+        description: The timestamp that the session was created.
         tests:
           - not_null
 
@@ -19,9 +19,9 @@ models:
           - not_null
 
       - name: event_name
-        description: The name of the event. 
+        description: The name of the event.
         tests:
           - not_null
 
       - name: event_id
-        description: The unique ID of an event. 
+        description: The unique ID of an event.

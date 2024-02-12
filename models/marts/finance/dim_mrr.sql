@@ -1,4 +1,5 @@
 {{ config(tags="p0") }}
+{% set import_mrr_final = unit_testing_select_table(final, ref('unit_test_expected_output_dim_mrr')) %}
 
 
 -- This model is created following the dbt MRR playbook: https://www.getdbt.com/blog/modeling-subscription-revenue/
@@ -170,7 +171,6 @@ final AS (
         mrr_change,
         LEAST(mrr, previous_month_mrr_amount) AS retained_mrr_amount,
         previous_month_mrr_amount,
-
         CASE
             WHEN is_first_subscription_month THEN 'new'
             WHEN NOT(is_subscribed_current_month) AND is_subscribed_previous_month THEN 'churn'
@@ -198,4 +198,4 @@ final AS (
 SELECT
     {{ dbt_utils.generate_surrogate_key(['date_month', 'subscription_id', 'change_category']) }} AS surrogate_key,
     *
-FROM final
+FROM {{ import_mrr_final }}

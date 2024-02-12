@@ -26,10 +26,10 @@ models:
     +materialized: view
     +grants:
       select: ['transformer', 'reporter']
-    
+
     staging:
       +schema: staging
-    
+
     intermediate:
       +schema: intermediate
 
@@ -45,5 +45,43 @@ seeds:
   dbt_project_evaluator:
     dbt_project_evaluator_exceptions:
       +enabled: false
-
-# on-run-end: "{{ dbt_project_evaluator.print_dbt_project_evaluator_issues() }}"
+  course_advanced_dbt:
+    unit_testing:
+      +schema: unit_testing
+      +tags: unit_testing
+      unit_test_expected_output_int_dates: 
+        +column_types: 
+          calender_date: date
+          date_week: date
+          date_month: date
+          date_quarter: date
+          date_year: date
+          day_of_month: number
+          year_num: number
+          quarter_num: number
+          month_num: number
+      unit_test_expected_output_dim_subscriptions: 
+        +column_types: 
+          subscription_id: number
+          subscription_plan_id: number
+          user_id: number
+          starts_at: timestamp
+          ends_at: timestamp
+          plan_name: varchar
+          pricing: number
+          billing_period: varchar
+      unit_test_expected_output_dim_mrr:
+        +column_types:
+          surrogate_key: varchar
+          date_month: date
+          user_id: number
+          subscription_id: number
+          starts_at: timestamp
+          ends_at: timestamp
+          plan_name: varchar
+          mrr_amount: number
+          mrr_change: number
+          retained_mrr_amount: number
+          previous_month_mrr_amount: number
+          change_category: varchar
+          month_retained_number: number

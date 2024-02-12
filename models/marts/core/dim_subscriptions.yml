@@ -1,6 +1,10 @@
 models:
   - name: dim_subscriptions
     description: This model contains information about Bingeflix events.
+    tests:
+      - dbt_utils.equality:
+          compare_model: ref('unit_test_expected_output_dim_subscriptions')
+          tags: ['unit_testing']
     columns:
       - name: subscription_id
         description: '{{ doc("bingeflix_column_subscription_id") }}'

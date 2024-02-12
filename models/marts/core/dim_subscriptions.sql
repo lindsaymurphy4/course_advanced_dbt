@@ -1,3 +1,6 @@
+{% set import_subscriptions_final = unit_testing_select_table(final, ref('unit_test_expected_output_dim_subscriptions')) %}
+
+
 WITH
 
 final AS (
@@ -16,4 +19,4 @@ final AS (
             ON s.subscription_plan_id = sp.subscription_plan_id
 )
 
-SELECT * FROM final
+SELECT * FROM {{ import_subscriptions_final }}
