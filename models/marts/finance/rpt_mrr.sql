@@ -1,5 +1,12 @@
 {{ config(tags="p0") }}
 
+-- Setting the unit test inputs
+{%
+    set import_dim_subscriptions = unit_testing_select_table(
+        ref('dim_subscriptions'),
+        ref('unit_test_input__rpt_mrr__dim_subscriptions')
+    )
+%}
 
 -- This model is created following the dbt MRR playbook:
 -- https://www.getdbt.com/blog/modeling-subscription-revenue/
@@ -20,7 +27,7 @@ monthly_subscriptions AS (
         {{ trunc_to_month( "ends_at", "end_month") }}
 
     FROM
-        {{ ref('dim_subscriptions') }}
+        {{ import_dim_subscriptions }}
     WHERE
         billing_period = 'monthly'
 ),
