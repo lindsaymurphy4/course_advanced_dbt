@@ -2,6 +2,12 @@ models:
   - name: stg_bingeflix__subscriptions
     description: This model contains information about Bingeflix subscriptions.
     columns:
+      - name: subscription_id
+        description: '{{ doc("bingeflix_column_subscription_id") }}'
+        tests:
+          - not_null
+          - unique
+
       - name: subscription_plan_id
         description: '{{ doc("bingeflix_column_subscription_plan_id") }}'
 
@@ -13,9 +19,3 @@ models:
 
       - name: ends_at
         description: '{{ doc("bingeflix_column_subscription_ends_at") }}'
-
-      - name: subscription_id
-        description: '{{ doc("bingeflix_column_subscription_id") }}'
-        tests:
-          - not_null
-          - unique
