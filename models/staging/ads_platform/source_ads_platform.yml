@@ -1,7 +1,30 @@
 sources:
   - name: ads_platform
     schema: bingeflix
+    description: This source contains tables from the ads platform production database
     database: raw
     tables:
       - name: daily_ads
+        description: Details on ad spend and performance aggregated by day.
         identifier: ads
+        columns:
+          - name: date
+            description: The date of the ad.
+            tests:
+              - not_null
+          - name: campaign_id
+            description: The id of the campaign.
+            tests:
+              - not_null
+          - name: spend
+            description: The amount in dollars spent on the ad.
+            tests:
+              - not_null
+          - name: cpm
+            description: The amount in dollars spent on 1000 views.
+            tests:
+              - not_null
+          - name: ctr
+            description: The click through rate of the ad.
+            tests:
+              - not_null

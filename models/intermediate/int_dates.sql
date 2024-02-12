@@ -1,3 +1,5 @@
+{% set import_dates_final = unit_testing_select_table(final, ref('unit_test_expected_output_int_dates')) %}
+
 WITH
 
 date_spine AS (
@@ -25,4 +27,4 @@ final AS (
         date_spine
 )
 
-SELECT * FROM final
+SELECT * FROM {{ import_dates_final }}

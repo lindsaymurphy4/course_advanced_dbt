@@ -1,0 +1,16 @@
+macros:
+  - name: find_previous_partition
+    description: > 
+      This macro finds the previous value of a column using the LAG window function, and coalesces the result. Use this when you are looking 
+      to compare values of a current row to values of a previous row. 
+    arguments:
+      - name: column_name
+        description: The field whose value you are finding 
+      - name: partition_by 
+        description: The field you are partitioning by 
+      - name: partition_by_2
+        description: The 2nd field you are partitioning by 
+      - name: order_by 
+        description: The field you are ordering the values by 
+      - name: coalesce_value 
+        description: The value to be returned if the LAG function returns NULL 

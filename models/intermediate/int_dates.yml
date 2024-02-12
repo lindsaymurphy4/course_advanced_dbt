@@ -2,6 +2,10 @@ models:
   - name: int_dates
     description: This is a calendar table including all the consecutive dates between the 2019-01-01 and 2030-01-01.
       It also includes week, month, quarter, year, and other values associated with a specific date.
+    tests:
+      - dbt_utils.equality:
+          compare_model: ref('unit_test_expected_output_int_dates')
+          tags: ['unit_testing']
     columns:
       - name: calendar_date
         description: The calendar date.

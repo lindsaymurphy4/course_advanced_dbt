@@ -1,0 +1,16 @@
+macros:
+  - name: rolling_average_n_periods
+    description: This macro finds the rolling average of field over n number of periods 
+    arguments:
+      - name: column_name
+        type: integer
+        description: The field you are taking the rolling average of 
+      - name: partition_by 
+        type: varchar
+        description: The field that you want the rolling average calculation to be grouped by 
+      - name: order_by 
+        type: timestamp 
+        description: The timestamp you want the data to be ordered by in the rolling average calculation 
+      - name: n_periods 
+        type: integer
+        description: The number of periods you wish the rolling average to be calculated over 

@@ -1,32 +1,36 @@
 models:
   - name: dim_subscriptions
-    description: This model contains information about Bingeflix subscriptions.
+    description: This model contains information about Bingeflix events.
+    tests:
+      - dbt_utils.equality:
+          compare_model: ref('unit_test_expected_output_dim_subscriptions')
+          tags: ['unit_testing']
     columns:
       - name: subscription_id
-        description: The unique identifier of the subscription.
+        description: '{{ doc("bingeflix_column_subscription_id") }}'
         tests:
           - not_null
           - unique
 
       - name: subscription_plan_id
-        description: The subscription plan identifier.
+        description: '{{ doc("bingeflix_column_subscription_plan_id") }}'
         tests:
           - not_null
           - accepted_values:
               values: [1, 2, 3]
 
       - name: user_id
-        description: The identifier of the user.
+        description: '{{ doc("bingeflix_column_user_id") }}'
         tests:
           - not_null
 
       - name: starts_at
-        description: When the subscription started.
+        description: '{{ doc("bingeflix_column_subscription_starts_at") }}'
         tests:
           - not_null
 
       - name: ends_at
-        description: When the subscription ends.
+        description: '{{ doc("bingeflix_column_subscription_ends_at") }}'
 
       - name: plan_name
         description: The name of the subscription plan.

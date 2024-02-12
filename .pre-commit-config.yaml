@@ -1,0 +1,34 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.5.0
+  hooks:
+    - id: check-yaml
+    - id: end-of-file-fixer
+    - id: trailing-whitespace
+- repo: https://github.com/sqlfluff/sqlfluff
+  rev: 2.3.5
+  hooks:
+    - id: sqlfluff-lint
+      additional_dependencies: [
+        'dbt-snowflake==1.7.1',
+        'sqlfluff-templater-dbt==2.3.5'
+      ]
+    - id: sqlfluff-fix
+      stages: [manual]  # this command is available only to run manually
+      additional_dependencies: [
+        'dbt-snowflake==1.7.1',
+        'sqlfluff-templater-dbt==2.3.5'
+      ]
+- repo: https://github.com/dbt-checkpoint/dbt-checkpoint
+  rev: v1.2.0
+  hooks:
+  - id: dbt-compile # Compiles dbt (necessary for future hooks)
+  - id: dbt-docs-generate # Generates the dbt docs (necessary for some future hooks)
+  - id: check-source-table-has-description # Ensures all source tables have descriptions
+  - id: check-model-has-tests # Ensures all models have at least 2 tests
+    args: ["--test-cnt", "2", "--"]
+    files: ^models/
+  - id: check-script-semicolon # Ensure that the model does not have a semicolon at the end of the file.
+  - id: check-script-has-no-table-name # Ensures models only use source or ref macro to specify the table name.
+  - id: check-model-has-all-columns # Ensures that mart models have all columns in the database also specified in the .yml
+    files: ^models/marts

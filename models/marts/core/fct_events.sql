@@ -6,6 +6,4 @@ SELECT
     user_id,
     event_name,
     event_id
-
 FROM {{ ref('stg_bingeflix__events') }}
-
