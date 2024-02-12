@@ -1,0 +1,35 @@
+version: 2
+
+seeds:
+  - name: unit_test_input__rpt_mrr__dim_subscriptions
+    description: 'dim_subscriptions unit test input for rpt_mrr model'
+    config:
+      column_types:
+        subscription_id: string
+        user_id: string
+        starts_at: timestamp
+        ends_at: timestamp
+        plan_name: string
+        pricing: double
+        billing_period: string
+    columns:
+      - name: subscription_id
+        description: '{{ doc("bingeflix__subscriptions__subscription_id") }}'
+
+      - name: user_id
+        description: '{{ doc("bingeflix__users__user_id") }}'
+
+      - name: starts_at
+        description: '{{ doc("bingeflix__subscriptions__starts_at") }}'
+
+      - name: ends_at
+        description: '{{ doc("bingeflix__subscriptions__ends_at") }}'
+
+      - name: plan_name
+        description: '{{ doc("bingeflix__subscription_plans__plan_name") }}'
+
+      - name: pricing
+        description: '{{ doc("bingeflix__subscription_plans__pricing") }}'
+
+      - name: billing_period
+        description: '{{ doc("bingeflix__subscription_plans__payment_period") }}'
