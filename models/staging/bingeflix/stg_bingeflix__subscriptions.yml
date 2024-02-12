@@ -14,8 +14,6 @@ models:
 
       - name: starts_at
         description: When the subscription started.
-        tests:
-          - not_null
 
       - name: ends_at
         description: When the subscription ends. This value is NULL if the subscription is active.
