@@ -1,5 +1,25 @@
 # Week 2 Project
 
+## Task 1: Identify a few redundant tests that can be removed
+I added some new testing conventions so we can be reduce the redundant tests among the models.
+For staging models I removed all tests except the one for the primary key as the others columns
+are considered in source tests.
+
+## Task 2: Write a custom generic test to replace a redundant singular test
+For this task I created the `assert_valid_event_name` generict test.
+Also:
+1. An array type argument called `like_clause` was added so you could test several LIKE clauses using one test.
+2. In dbt_project.yml I added the paths tests/generic/docs and tests/generic/schemas too macros paths.
+    I did this so I could document the generic tests as macros using doc blocks and a yml file.
+    (Otherwise dbt was not identyfing the yml file, this also could be done adding the test to the macros folder instead of the tests folders)
+3. I applied this test to the source instead of the staging model.
+
+## Task 3: Write a unit test to confirm MRR is calculated correctly
+I didn't add a seed file for int_dates input, I think int_dates is really generic so it doesn't need a seed file for unit testing.
+Also I documented these seeds files.
+
+# Week 2 Project
+
 ## Task 1: Add SQLFluff to pre-commit hook
 sqlfluff pre-commit hook was added succesfully.
 
