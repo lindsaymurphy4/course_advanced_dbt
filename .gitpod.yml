@@ -4,8 +4,7 @@ tasks:
       mkdir -p /workspace/.dbt
       ln -snf /workspace/.dbt ~/.dbt
       unset PROMPT_COMMAND
-      echo "unset PROMPT_COMMAND" >> ~/.bashrc
-      echo "PIP_USER=false" >> ~/.bashrc
+      echo "unset PROMPT_COMMAND" >> ~/.bashrc && echo "PIP_USER=false" >> ~/.bashrc
 ports:
   - port: 8000
     onOpen: open-browser
