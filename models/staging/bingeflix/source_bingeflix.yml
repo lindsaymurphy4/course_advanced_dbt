@@ -1,43 +1,43 @@
-sources:
+ources:
   - name: bingeflix
     schema: bingeflix
-    description: This source contains tables from the Bingeflix production database
+    description: '{{ doc("bingeflix__source")}}'
     database: raw
     tables:
       - name: events
-        description: This table contains information about the behavioral events of users while they interact with the Bingeflix platform.
+        description: '{{ doc("bingeflix__events__table")}}'
         columns:
           - name: session_id
-            description: The unique identifier of the session in the Bingeflix application.
+            description: '{{ doc("bingeflix__events__column__session_id")}}'
             tests:
               - not_null
 
           - name: created_at
-            description: When the event was logged.
+            description: '{{ doc("bingeflix__events__column__created_at")}}'
             tests:
               - not_null
 
           - name: user_id
-            description: '{{ doc("bingeflix_column_user_id") }}'
+            description: '{{ doc("bingeflix__users__column__user_id") }}'
             tests:
               - not_null
 
           - name: event_name
-            description: The name of the event.
+            description: '{{ doc("bingeflix__events__column__event_name") }}'
             tests:
               - not_null
 
           - name: event_id
-            description: The unique identifier of the event.
+            description: '{{ doc("bingeflix__events__column__event_id") }}'
             tests:
               - not_null
               - unique
 
       - name: subscription_plans
-        description: This table contains information about various subscription plans available on Bingeflix.
+        description: '{{ doc("bingeflix__subscription_plans__table") }}'
         columns:
           - name: subscription_plan_id
-            description: The unique identifier of the subscription plan.
+            description: '{{ doc("bingeflix__subscription_plans__column__subscription_plan_id") }}'
             tests:
               - not_null
               - unique
@@ -45,103 +45,103 @@ sources:
                   values: [1, 2, 3]
 
           - name: plan_name
-            description: The name of the subscription plan.
+            description: '{{ doc("bingeflix__subscription_plans__column__plan_name") }}'
             tests:
               - not_null
 
           - name: pricing
-            description: The price of the subscription.
+            description: '{{ doc("bingeflix__subscription_plans__column__pricing") }}'
             tests:
               - not_null
 
           - name: payment_period
-            description: The recurring payment period for the subscription.
+            description: '{{ doc("bingeflix__subscription_plans__column__payment_period") }}'
             tests:
               - not_null
 
 
       - name: subscriptions
-        description: This model contains information about Bingeflix subscriptions.
+        description: '{{ doc("bingeflix__subscriptions__table") }}'
         columns:
           - name: subscription_plan_id
-            description: The subscription identifier.
+            description: '{{ doc("bingeflix__subscription_plans__column__subscription_plan_id") }}'
             tests:
               - not_null
 
           - name: user_id
-            description: '{{ doc("bingeflix_column_user_id") }}'
+            description: '{{ doc("bingeflix__users__column__user_id") }}'
             tests:
               - not_null
 
           - name: starts_at
-            description: When the subscription started.
+            description: '{{ doc("bingeflix__subscriptions__column__starts_at") }}'
             tests:
               - not_null
 
           - name: ends_at
-            description: When the subscription ends. This value is NULL if the subscription is active.
+            description: '{{ doc("bingeflix__subscriptions__column__ends_at") }}'
 
           - name: subscription_id
-            description: The unique identifier for the subscription.
+            description: '{{ doc("bingeflix__subscriptions__column__subscription_id") }}'
             tests:
               - not_null
               - unique
 
       - name: users
-        description: "This is table contains information about Bingeflix users."
+        description: '{{ doc("bingeflix__users__table") }}'
         columns:
           - name: user_id
-            description: '{{ doc("bingeflix_column_user_id") }}'
+            description: '{{ doc("bingeflix__users__column__user_id") }}'
             tests:
               - not_null
               - unique
 
           - name: created_at
-            description: When the user was created.
+            description: '{{ doc("bingeflix__users__column__created_at") }}'
             tests:
               - not_null
 
           - name: phone_number
-            description: The user's phone number.
+            description: '{{ doc("bingeflix__users__column__phone_number") }}'
             tests:
               - not_null
 
           - name: deleted_at
-            description: When the user's account was deleted. The value is NULL if the account has not been deleted.
+            description: '{{ doc("bingeflix__users__column__deleted_at") }}'
 
           - name: username
-            description: The username for login to Bingeflix.
+            description: '{{ doc("bingeflix__users__column__username") }}'
             tests:
               - not_null
 
           - name: name
-            description: The name of the user.
+            description: '{{ doc("bingeflix__users__column__name") }}'
             tests:
               - not_null
 
           - name: sex
-            description: The user's sex at birth.
+            description: '{{ doc("bingeflix__users__column__sex") }}'
             tests:
               - not_null
               - accepted_values:
                   values: ['M','F']
 
           - name: email
-            description: The user's email address.
+            description: '{{ doc("bingeflix__users__column__email") }}'
             tests:
               - not_null
 
           - name: birthdate
-            description: The user's birthdate.
+            description: '{{ doc("bingeflix__users__column__birthdate") }}'
             tests:
               - not_null
 
           - name: region
-            description: Where the user resides (i.e. the state or province).
+            description: '{{ doc("bingeflix__users__column__region") }}'
             tests:
               - not_null
 
           - name: country
-            description: Where the user resides.
+            description: '{{ doc("bingeflix__users__column__country") }}'
             tests:
               - not_null
