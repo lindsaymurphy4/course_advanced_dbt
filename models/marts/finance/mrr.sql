@@ -1,5 +1,6 @@
 {{ config(tags="p0") }}
-
+{% set import_subscriptions = unit_test_table(ref('dim_subscriptions'), ref('unit_test_input_dim_subscriptions')) %}
+{% set import_dates = unit_test_table(ref('int_dates'), ref('unit_test_input_int_dates')) %}
 
 -- This model is created following the dbt MRR playbook: https://www.getdbt.com/blog/modeling-subscription-revenue/
 
@@ -15,10 +16,10 @@ monthly_subscriptions AS (
         ends_at,
         plan_name,
         pricing,
-        DATE(DATE_TRUNC('month', starts_at)) AS start_month,
-        DATE(DATE_TRUNC('month', ends_at)) AS end_month
+        {{ date_trunc('starts_at') }} AS start_month,
+        {{ date_trunc('ends_at') }} AS end_month
     FROM
-        {{ ref('dim_subscriptions') }}
+        {{ import_subscriptions }}
     WHERE
         billing_period = 'monthly'
 ),
@@ -28,7 +29,7 @@ months AS (
     SELECT
         calendar_date AS date_month
     FROM
-        {{ ref('int_dates') }}
+        {{ import_dates }}
     WHERE
         day_of_month = 1
 ),
@@ -81,7 +82,7 @@ subscriber_months AS (
             -- All months after start date
             ON months.date_month >= subscribers.first_start_month
                 -- and before end date
-                AND months.date_month < subscribers.last_end_month
+                AND subscribers.last_end_month > months.date_month
 ),
 
 -- Join together to create base CTE for MRR calculations
@@ -194,12 +195,13 @@ final AS (
             WHEN change_category = 'churn' THEN NULL
             ELSE DATEDIFF('month', first_subscription_month, date_month)
         END AS month_retained_number
+        /*{{ rolling_average_over_set_number_of_periods(column_name='mrr', partition_by='mrr_with_changes.user_id', order_by='mrr_with_changes.date_month') }}*/
 
     FROM
         mrr_with_changes
         LEFT JOIN subscription_periods
-            ON subscription_periods.user_id = mrr_with_changes.user_id
-                AND subscription_periods.subscription_id = mrr_with_changes.subscription_id
+            ON mrr_with_changes.user_id = subscription_periods.user_id
+                AND mrr_with_changes.subscription_id = subscription_periods.subscription_id
     WHERE
         date_month <= DATE_TRUNC('month', CURRENT_DATE)
 )
