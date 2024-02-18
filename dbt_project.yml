@@ -43,7 +43,7 @@ seeds:
   dbt_project_evaluator:
     dbt_project_evaluator_exceptions:
       +enabled: false
-  course_advanced_dbt: 
+  course_advanced_dbt:
     unit_testing:
       +schema: unit_testing
       +tags: unit_testing
