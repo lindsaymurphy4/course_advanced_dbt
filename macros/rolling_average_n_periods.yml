@@ -1,0 +1,16 @@
+version: 2
+
+macros:
+  - name: rolling_average_n_periods
+    description: A macro for computing the rolling average over n periods
+    docs:
+      show: true
+    arguments:
+      - name: column_name
+        description: the column for taking the rolling average
+      - name: partition_by
+        description: the column_name for partitioning the data
+      - name: order_by
+        description: the column name for ordering the data; default value - 'created_at'
+      - name: n
+        description: the number of periods for the rolling average calculation; default value = 7

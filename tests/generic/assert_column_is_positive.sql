@@ -4,4 +4,4 @@ SELECT *
 FROM {{ model }}
 WHERE {{ column_name }} <= 0
 
-{% endtest %} 
+{% endtest %}
