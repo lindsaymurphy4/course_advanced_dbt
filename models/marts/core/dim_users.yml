@@ -7,7 +7,7 @@ models:
         - lindsay
     columns:
       - name: user_id
-        description: '{{ doc("bingeflix_column_user_id") }}'
+        description: '{{ doc("bingeflix_user_id") }}'
         meta:
           priority: high
         tests:
@@ -15,40 +15,40 @@ models:
           - unique
 
       - name: created_at
-        description: When the user account was created.
+        description: '{{ doc("user_created_at") }}'
         tests:
           - not_null
 
       - name: phone_number
-        description: the user's phone number.
+        description: '{{ doc("phone_number") }}'
         tests:
           - not_null
 
       - name: deleted_at
-        description: When the user's account was deleted.
+        description: '{{ doc("deleted_at") }}'
 
       - name: username
-        description: The username associated with the user.
+        description: '{{ doc("username") }}'
         tests:
           - not_null
 
       - name: name
-        description: The full name of the user (first and last).
+        description: '{{ doc("user_full_name") }}'
         tests:
           - not_null
 
       - name: sex
-        description: The user's gender.
+        description: '{{ doc("user_sex") }}'
         tests:
           - not_null
 
       - name: email
-        description: The user's email address.
+        description: '{{ doc("email") }}'
         tests:
           - not_null
 
       - name: birthdate
-        description: The user's bithdate.
+        description: '{{ doc("birthdate") }}'
         tests:
           - not_null
 
@@ -63,11 +63,21 @@ models:
           - not_null
 
       - name: region
-        description: Where the user lives.
+        description: '{{ doc("region") }}'
         tests:
           - not_null
 
       - name: country
-        description: Where the user lives.
+        description: '{{ doc("country") }}'
+        tests:
+          - not_null
+
+      - name: first_subscription_starts_at
+        description: '{{ doc("first_subscription_starts_at") }}'
+        tests:
+          - not_null
+
+      - name: count_of_subscriptions
+        description: '{{ doc("count_of_subscriptions") }}'
         tests:
           - not_null

@@ -1,0 +1,27 @@
+version: 2
+
+macros:
+  - name: cents_to_dollars
+    description: Automated conversion from cents to dollars
+
+  - name: clean_stale_dev_models
+    description: Clean models that are not used anymore
+
+  - name: convert_empty_string_to_null
+    description: Replace white space fields with null values. This action clean the data and improve the performance 
+
+  - name: convert_timestamp_to_now
+    description: Add timestamp of the query execution. It's usefull for flag when the job was running for last timestamp
+
+  - name: convert_to_null
+    description: Ingest null valus to empty columns 
+
+  - name: limit_data_in_dev
+    description: Limit the data during the execution of the jobs on Dev. It saves time and computing power  
+
+  - name: rolling_average_7_periods
+    description: A general macro for window functions with an option to calculate the average for 7 periods
+
+
+
+    
