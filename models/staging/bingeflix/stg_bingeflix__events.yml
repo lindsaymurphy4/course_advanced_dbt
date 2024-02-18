@@ -21,6 +21,7 @@ models:
         description: '{{ doc("bingeflix_column_event_name") }}'
         tests:
           - not_null
+          - non_test_column_name
 
       - name: event_id
         description: '{{ doc("bingeflix_column_event_id") }}'
