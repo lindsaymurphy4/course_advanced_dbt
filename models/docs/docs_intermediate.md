@@ -1,5 +1,21 @@
 # Intermediate Docs
 This file contains doumentation for intermediate models.
+## ########################################################################
+## Finance
+This section contains documentation from the intermediate models for Finace.
+
+### Int Subscription Periods
+{% docs int_subscription_periods %}
+Create subscription period start_month and end_month ranges
+{% enddocs %}
+
+{% docs int_subscription_periods__column_start_month  %}
+The date for the first day of each month 
+{% enddocs %}
+
+{% docs int_subscription_periods__column_end_month  %}
+The date for the last day of each month 
+{% enddocs %}
 
 ## ########################################################################
 ## Product

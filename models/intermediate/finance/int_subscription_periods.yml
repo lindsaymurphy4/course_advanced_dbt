@@ -1,0 +1,38 @@
+models:
+  - name: int_subscription_periods
+    description: '{{ doc("int_subscription_periods")}}'
+    columns:
+      - name: subscription_id
+        description: '{{ doc("bingeflix__subscriptions__column__subscription_id") }}'
+        tests:
+          - not_null
+          - unique
+
+      - name: user_id
+        description: '{{ doc("bingeflix__users__column__user_id") }}'
+        tests:
+          - not_null
+
+      - name: plan_name
+        description: '{{ doc("bingeflix__subscription_plans__column__plan_name") }}'
+        tests:
+          - not_null
+
+      - name: monthly_amount
+        description: '{{ doc("bingeflix__subscription_plans__column__pricing") }}'
+        tests:
+          - not_null
+
+      - name: starts_at
+        description: '{{ doc("bingeflix__subscriptions__column__starts_at") }}'
+        tests:
+          - not_null
+
+      - name: ends_at
+        description: '{{ doc("bingeflix__subscriptions__column__ends_at") }}'
+
+      - name: start_month
+        description: '{{ doc("int_subscription_periods__column_start_month") }}'
+
+      - name: end_month
+        description: '{{ doc("int_subscription_periods__column_end_month") }}'
