@@ -5,46 +5,46 @@ models:
     columns:
       - name: calendar_date
         description: The calendar date.
-        tests:
+        data_tests:
           - unique
           - not_null
 
       - name: date_week
         description: The start date of the calendar week (week starting on Monday).
-        tests:
+        data_tests:
           - not_null
 
       - name: date_month
         description: The first date of the calendar month.
-        tests:
+        data_tests:
           - not_null
 
       - name: date_quarter
         description: The first date of the calendar quarter.
-        tests:
+        data_tests:
           - not_null
 
       - name: date_year
         description: The first date of the calendar year.
-        tests:
+        data_tests:
           - not_null
 
       - name: day_of_month
         description: The day of the month.
-        tests:
+        data_tests:
           - not_null
 
       - name: year_num
         description: The year number (e.g. 2018).
-        tests:
+        data_tests:
           - not_null
 
       - name: quarter_num
         description: The quarter number (between 1 and 4).
-        tests:
+        data_tests:
           - not_null
 
       - name: month_num
         description: The month number (between 1 and 12).
-        tests:
+        data_tests:
           - not_null

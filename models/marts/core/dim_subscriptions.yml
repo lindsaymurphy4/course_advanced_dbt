@@ -4,25 +4,25 @@ models:
     columns:
       - name: subscription_id
         description: The unique identifier of the subscription.
-        tests:
+        data_tests:
           - not_null
           - unique
 
       - name: subscription_plan_id
         description: The subscription plan identifier.
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: [1, 2, 3]
 
       - name: user_id
         description: The identifier of the user.
-        tests:
+        data_tests:
           - not_null
 
       - name: starts_at
         description: When the subscription started.
-        tests:
+        data_tests:
           - not_null
 
       - name: ends_at
@@ -30,15 +30,15 @@ models:
 
       - name: plan_name
         description: The name of the subscription plan.
-        tests:
+        data_tests:
           - not_null
 
       - name: pricing
         description: The monthly cost of the subscription.
-        tests:
+        data_tests:
           - not_null
 
       - name: billing_period
         description: The cadence of the billing period.
-        tests:
+        data_tests:
           - not_null
