@@ -4,18 +4,18 @@ models:
     columns:
       - name: user_id
         description: '{{ doc("bingeflix_column_user_id") }}'
-        tests:
+        data_tests:
           - not_null
           - unique
 
       - name: created_at
         description: When the user was created.
-        tests:
+        data_tests:
           - not_null
 
       - name: phone_number
         description: The user's phone number.
-        tests:
+        data_tests:
           - not_null
 
       - name: deleted_at
@@ -23,37 +23,37 @@ models:
 
       - name: username
         description: The username for login to Bingeflix.
-        tests:
+        data_tests:
           - not_null
 
       - name: name
         description: The name of the user.
-        tests:
+        data_tests:
           - not_null
 
       - name: sex
         description: The user's sex at birth.
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ['M','F']
 
       - name: email
         description: The user's email address.
-        tests:
+        data_tests:
           - not_null
 
       - name: birthdate
         description: The user's birthdate.
-        tests:
+        data_tests:
           - not_null
 
       - name: region
         description: Where the user resides (i.e. the state or province).
-        tests:
+        data_tests:
           - not_null
 
       - name: country
         description: Where the user resides.
-        tests:
+        data_tests:
           - not_null

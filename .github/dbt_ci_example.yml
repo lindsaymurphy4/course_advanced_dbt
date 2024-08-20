@@ -33,7 +33,7 @@ jobs:
     - name: Setup Python environment
       uses: actions/setup-python@v4
       with:
-        python-version: "3.11"
+        python-version: "3.12"
     - name: Install pipenv
       run: python -m pip install --upgrade pipenv wheel
     - name: Remove existing pipenv environment
@@ -42,13 +42,5 @@ jobs:
       run: pipenv install
     - name: Install dbt deps
       run: pipenv run dbt deps
-    - name: Load seed data
-      run: pipenv run dbt seed --target dev --full-refresh
     - name: Build the models
-      run: pipenv run dbt run --target dev
-    - name: Execute the tests
-      run: pipenv run dbt test --exclude tag:unit_testing
-    - name: Build unit testing models
-      run: pipenv run dbt run
-    - name: Run unit tests
-      run: pipenv run dbt test
+      run: pipenv run dbt build --target dev

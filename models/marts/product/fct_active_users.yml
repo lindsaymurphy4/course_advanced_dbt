@@ -4,7 +4,7 @@ models:
     columns:
       - name: surrogate_key
         description: The primary key for the table. A concatenation of date_week and user_id hashed.
-        tests:
+        data_tests:
           - not_null
           - unique
 
