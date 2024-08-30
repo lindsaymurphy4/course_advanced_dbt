@@ -17,19 +17,19 @@ models:
         description: The calendar month.
 
       - name: user_id
-        description: '{{ doc("bingeflix_column_user_id") }}'
+        description: '{{ doc("bingeflix_users_column_user_id") }}'
 
       - name: subscription_id
-        description: The unique identifier for the subscription.
+        description: '{{ doc("bingeflix_subscriptions_column_subscription_id") }}'
 
       - name: starts_at
-        description: When the subscription started.
+        description: '{{ doc("bingeflix_subscriptions_column_starts_at") }}'
 
       - name: ends_at
-        description: When the subscription ended. This value is NULL if the subscription has not had auto-renew turned off.
+        description: '{{ doc("bingeflix_subscriptions_column_ends_at") }}'
 
       - name: plan_name
-        description: The name of the subscription plan.
+        description: '{{ doc("bingeflix_subscription_plans_column_plan_name") }}'
 
       - name: mrr_amount
         description: The amount of monthly recurring revenue generated from the subscription in a given month.

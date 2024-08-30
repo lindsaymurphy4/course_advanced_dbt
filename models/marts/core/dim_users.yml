@@ -7,7 +7,7 @@ models:
         - lindsay
     columns:
       - name: user_id
-        description: '{{ doc("bingeflix_column_user_id") }}'
+        description: '{{ doc("bingeflix_users_column_user_id") }}'
         meta:
           priority: high
         data_tests:
@@ -15,40 +15,40 @@ models:
           - unique
 
       - name: created_at
-        description: When the user account was created.
+        description: '{{ doc("bingeflix_users_column_created_at") }}'
         data_tests:
           - not_null
 
       - name: phone_number
-        description: the user's phone number.
+        description: '{{ doc("bingeflix_users_column_phone_number") }}'
         data_tests:
           - not_null
 
       - name: deleted_at
-        description: When the user's account was deleted.
+        description: '{{ doc("bingeflix_users_column_deleted_at") }}'
 
       - name: username
-        description: The username associated with the user.
+        description: '{{ doc("bingeflix_users_column_username") }}'
         data_tests:
           - not_null
 
       - name: name
-        description: The full name of the user (first and last).
+        description: '{{ doc("bingeflix_users_column_name") }}'
         data_tests:
           - not_null
 
       - name: sex
-        description: The user's gender.
+        description: '{{ doc("bingeflix_users_column_sex") }}'
         data_tests:
           - not_null
 
       - name: email
-        description: The user's email address.
+        description: '{{ doc("bingeflix_users_column_email") }}'
         data_tests:
           - not_null
 
       - name: birthdate
-        description: The user's bithdate.
+        description: '{{ doc("bingeflix_users_column_birthdate") }}'
         data_tests:
           - not_null
 
@@ -63,11 +63,11 @@ models:
           - not_null
 
       - name: region
-        description: Where the user lives.
+        description: '{{ doc("bingeflix_users_column_region") }}'
         data_tests:
           - not_null
 
       - name: country
-        description: Where the user lives.
+        description: '{{ doc("bingeflix_users_column_country") }}'
         data_tests:
           - not_null
