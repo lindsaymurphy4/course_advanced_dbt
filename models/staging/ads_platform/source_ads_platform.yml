@@ -1,7 +1,17 @@
 sources:
   - name: ads_platform
     schema: bingeflix
+    description: This source contains tables from ad campaigns.
     database: raw
     tables:
       - name: daily_ads
+        description: The raw daily ad campaigns table.
         identifier: ads
+        freshness:
+          warn_after:
+            count: 1
+            period: day
+          error_after:
+            count: 2
+            period: day
+        loaded_at_field: date
