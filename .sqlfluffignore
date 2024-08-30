@@ -5,4 +5,5 @@ dbt_packages/
 # other
 analysis/
 macros/
+tests/
 .venv/
