@@ -21,12 +21,6 @@ sources:
             data_tests:
               - not_null
 
-          - name: surrogate_key
-            description: The surrogate key.
-            data_tests:
-              - not_null
-              - unique
-
           - name: spend
             description: The amount spent on the campaign.
             data_tests:
