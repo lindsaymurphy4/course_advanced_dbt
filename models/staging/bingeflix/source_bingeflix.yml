@@ -3,6 +3,9 @@ sources:
     schema: bingeflix
     description: This source contains tables from the Bingeflix production database
     database: raw
+    freshness:
+      warn_after: {count: 7, period: day}
+      error_after: {count: 7, period: day}
     tables:
       - name: events
         description: This table contains information about the behavioral events of users while they interact with the Bingeflix platform.

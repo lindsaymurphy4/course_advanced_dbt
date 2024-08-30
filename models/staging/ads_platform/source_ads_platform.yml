@@ -3,6 +3,9 @@ sources:
     schema: bingeflix
     description: This source contains tables from the Bingeflix production ads platform database
     database: raw
+    freshness:
+      warn_after: {count: 7, period: day}
+      error_after: {count: 7, period: day}
     tables:
       - name: daily_ads
         identifier: ads
