@@ -8,7 +8,7 @@ sources:
         description: This table contains information about the behavioral events of users while they interact with the Bingeflix platform.
         columns:
           - name: session_id
-            description: The unique identifier of the session in the Bingeflix application.
+            description: '{{ doc("bingeflix_column_session_id") }}'
             data_tests:
               - not_null
 
