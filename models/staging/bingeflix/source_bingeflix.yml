@@ -6,6 +6,8 @@ sources:
     tables:
       - name: events
         description: '{{ doc("bingeflix_table_events") }}'
+        # freshness:
+        #   warn_after:  {count: 1, period: hour}
         columns:
           - name: session_id
             description: '{{ doc("bingeflix_column_session_id") }}'
@@ -14,6 +16,8 @@ sources:
 
           - name: created_at
             description: '{{ doc("bingeflix_column_event_created_at") }}'
+            freshness:
+              warn_after:  {count: 1, period: hour}
             data_tests:
               - not_null
 
@@ -35,6 +39,8 @@ sources:
 
       - name: subscription_plans
         description: '{{ doc("bingeflix_table_subscription_plans") }}'
+        # freshness:
+        #   warn_after:  {count: 1, period: hour}
         columns:
           - name: subscription_plan_id
             description: '{{ doc("bingeflix_column_subscription_plan_id") }}'
