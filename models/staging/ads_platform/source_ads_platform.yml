@@ -2,6 +2,8 @@ sources:
   - name: ads_platform
     schema: bingeflix
     description: This source contains ad campaign data from the Bingeflix production database.
+    freshness:
+      warn_after: {count: 1, period: day}
     database: raw
     tables:
       - name: daily_ads
