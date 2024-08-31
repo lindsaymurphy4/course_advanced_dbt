@@ -9,7 +9,7 @@ models:
           - unique
 
       - name: created_at
-        description: '{{ doc("bingeflix_column_created_at") }}'
+        description: '{{ doc("bingeflix_column_user_created_at") }}'
         data_tests:
           - not_null
 
