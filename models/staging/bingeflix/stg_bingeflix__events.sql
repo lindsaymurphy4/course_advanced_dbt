@@ -2,16 +2,16 @@ WITH source AS (
 
     SELECT * FROM {{ source('bingeflix', 'events') }}
 
-),
+)
 
-renamed AS (
+, renamed AS (
 
     SELECT
-        session_id,
-        created_at,
-        user_id,
-        event_name,
-        event_id
+        session_id
+        , created_at
+        , user_id
+        , event_name
+        , event_id
 
     FROM source
 
