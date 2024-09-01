@@ -1,8 +1,8 @@
 # Ads Platform Docs
 This file contains doumentation for Ads Platform data sources.
 
-## Users
-This section contains documentation from the Bingeflix Users table.
+## Ad Platform Daily
+This section contains documentation from the Ads Platform daily ads table.
 
 {% docs ads_platform_table_daily %}
  This table contains information about Bingeflix's marketing ads.

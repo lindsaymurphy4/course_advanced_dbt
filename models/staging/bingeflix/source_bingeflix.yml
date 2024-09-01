@@ -6,6 +6,10 @@ sources:
     tables:
       - name: events
         description: This table contains information about the behavioral events of users while they interact with the Bingeflix platform.
+        freshness:
+          warn_after:
+            count: 12
+            period: hour
         columns:
           - name: session_id
             description: The unique identifier of the session in the Bingeflix application.
@@ -35,6 +39,10 @@ sources:
 
       - name: subscription_plans
         description: This table contains information about various subscription plans available on Bingeflix.
+        freshness:
+          warn_after:
+            count: 12
+            period: hour
         columns:
           - name: subscription_plan_id
             description: The unique identifier of the subscription plan.
@@ -62,6 +70,10 @@ sources:
 
       - name: subscriptions
         description: This model contains information about Bingeflix subscriptions.
+        freshness:
+          warn_after:
+            count: 12
+            period: hour
         columns:
           - name: subscription_plan_id
             description: The subscription identifier.
@@ -88,7 +100,11 @@ sources:
               - unique
 
       - name: users
-        description: "This is table contains information about Bingeflix users."
+        description: '{{ doc("bingeflix_table_users") }}'
+        freshness:
+          warn_after:
+            count: 12
+            period: hour
         columns:
           - name: user_id
             description: '{{ doc("bingeflix_column_user_id") }}'
