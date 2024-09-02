@@ -8,7 +8,7 @@ models:
           - not_null
 
       - name: campaign_id
-        description: The unique identifier for the campaign.
+        description: '{{ doc("bingeflix_column_campaign_id") }}'
         data_tests:
           - not_null
 
@@ -24,11 +24,11 @@ models:
           - not_null
 
       - name: cpm
-        description: The cost charged by the ads platform per thousand impressions.
+        description: '{{ doc("bingeflix_column_cpm") }}'
         data_tests:
           - not_null
 
       - name: ctr
-        description: The click through rate on the campaign impressions.
+        description: '{{ doc("bingeflix_column_ctr") }}'
         data_tests:
           - not_null

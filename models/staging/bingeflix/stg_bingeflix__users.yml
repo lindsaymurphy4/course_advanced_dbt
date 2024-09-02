@@ -1,6 +1,6 @@
 models:
   - name: stg_bingeflix__users
-    description: "This is table contains information about Bingeflix users."
+    description: '{{ doc("bingeflix_table_users") }}'
     columns:
       - name: user_id
         description: '{{ doc("bingeflix_column_user_id") }}'

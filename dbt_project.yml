@@ -34,6 +34,8 @@ models:
     marts:
       core:
         +schema: core_reporting
+        +docs:
+          node_color: "#FFD700"
       finance:
         +schema: finance
       product:

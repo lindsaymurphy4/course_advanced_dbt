@@ -1,6 +1,6 @@
 models:
   - name: dim_users
-    description: This model contains information about Bingeflix users.
+    description: '{{ doc("bingeflix_table_users") }}'
     meta:
       priority: high
       owner:
@@ -28,7 +28,7 @@ models:
         description: When the user's account was deleted.
 
       - name: username
-        description: The username associated with the user.
+        description: '{{ doc("bingeflix_column_username") }}'
         data_tests:
           - not_null
 
