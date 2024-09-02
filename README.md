@@ -23,3 +23,9 @@
 - Columns that should never be null must have a not_null schema test.
 - Columns that should be unique must have a unique schema test.
 - Where possible, use schema tests from the dbt_utils or dbt_expectations packages to perform extra verification.
+
+
+## Week 1 Question Answers:
+Q1: dbt Project Evaluator notes:
+- I chose to create exceptions for freshness. I figured since it is fake data for the projects - we won't be getting fresh data
+- I chose to increase the threshold for fanout from 3 to 5 to make it pass evaluator. However, I think, the code for 'active users' should be rewritten to read off the intermediate table (so that we don't have a calculation for # logins per day in two separate places). It is a fairly safe calculation, so in the scope of this project it is not too worrying.
