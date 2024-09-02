@@ -20,7 +20,7 @@ The username for login to Bingeflix.
 This section contains documentation of the Bingeflix product engagement-related data
 
 {% docs bingeflix_table_events %}
-This table contains information about the behavioral events.
+This table contains information about the behavioral events of users while they interact with the Bingeflix platform.
 {% enddocs %}
 
 {% docs bingeflix_column_session_id %}
@@ -68,6 +68,10 @@ The unique identifier for the subscription.
 
 ## Ads
 This section contains documentation of the Bingeflix ad data.
+
+{% docs bingeflix_table_daily_ads %}
+The daily ad campaign performance and spend data by campaign
+{% enddocs %}
 
 {% docs bingeflix_column_campaign_id %}
 The unique identifier for the campaign.

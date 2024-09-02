@@ -9,7 +9,9 @@ events AS (
         {{ ref('stg_bingeflix__events')}}
     WHERE
         event_name = 'User Logged In'
-),
+)
+
+,
 
 date_spine AS (
     SELECT
@@ -17,7 +19,9 @@ date_spine AS (
         date_week
     FROM
         {{ ref('int_dates')}}
-),
+)
+
+,
 
 final AS (
     SELECT
@@ -30,4 +34,5 @@ final AS (
         LEFT JOIN events ON date_spine.calendar_date = events.created_date
     GROUP BY ALL
 )
+
 SELECT * FROM final
