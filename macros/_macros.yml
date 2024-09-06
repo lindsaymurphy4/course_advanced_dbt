@@ -4,7 +4,7 @@ macros:
   - name: rolling_aggregation
     description: >
       This macro calculates a rolling window function (e.g., average or sum) over a specified period.
-      The default period is 7 rows, and the default aggregation is SUM, but these can be customized. 
+      The default period is 7 rows, and the default aggregation is SUM, but these can be customized.
       It supports partitioning and ordering.
     arguments:
       - name: column_name

@@ -5,7 +5,6 @@ SELECT
     created_at,
     user_id,
     event_name,
-    event_id,
-    {{ rolling_aggregation('count', 'session_id', 'user_id', 'created_at', 30) }} 
+    event_id
 
 FROM {{ ref('stg_bingeflix__events') }}

@@ -3,5 +3,5 @@
                 PARTITION BY {{ partition_by }}
                 ORDER BY {{ order_by }}
                 ROWS BETWEEN {{ period }} PRECEDING AND CURRENT ROW
-            ) 
+            )
 {% endmacro %}
