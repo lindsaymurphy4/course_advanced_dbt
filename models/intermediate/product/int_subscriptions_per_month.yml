@@ -1,0 +1,24 @@
+models:
+  - name: int_subscriptions_per_month
+    description: This is an intermediate model that groups user subscriptions per month.
+    columns:
+      - name: date_month
+        description: The calendar month.
+        data_tests:
+          - not_null
+
+      - name: user_id
+        description: '{{ doc("bingeflix_users_column_user_id") }}'
+        data_tests:
+          - not_null
+
+      - name: plan_name
+        description: '{{ doc("bingeflix_subscription_plans_column_plan_name") }}'
+        data_tests:
+          - not_null
+
+      - name: pricing
+        description: '{{ doc("bingeflix_subscription_plans_column_pricing") }}'
+        data_tests:
+          - not_null
+          - assert_column_is_positive

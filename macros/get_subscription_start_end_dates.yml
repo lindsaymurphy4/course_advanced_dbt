@@ -1,0 +1,12 @@
+version: 2
+
+macros:
+  - name: get_subscription_start_end_dates
+    description: This macro gets the start and end date for a given subscription
+    arguments:
+      - name: starts_at
+        description: The start date of a subscription.
+      - name: ends_at
+        description: The end date of a subsription.
+      - name: interval
+        description: The interval

@@ -1,0 +1,16 @@
+version: 2
+
+macros:
+  - name: rolling_average
+    description: This macro calculates the rolling average of specified columns over a specified number of periods
+    arguments:
+      - name: column_names
+        description: The names of the columns for which the rolling average is calculated.
+      - name: partition_by
+        description: The column(s) used to partition the data before calculating the rolling average.
+      - name: order_by
+        description: The column used to order the data before calculating the rolling average.
+      - name: time_unit
+        description: The time unit for the rolling average calculation (days, weeks, months). Defaults to 'days'.
+      - name: n_periods
+        description: The number of periods to include in the rolling average calculation. Defaults to 7.
