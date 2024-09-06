@@ -20,3 +20,8 @@
 - Additionally it will take a list of column names that you wish to apply this to, rather than a single column name.
 - Added a new model named "int_subscriptions_per_month" to group subscriptions by month.
 - Added a new model named "fct_active_subscriptions" to use the above intermediate model and leverage the rolling_average macro.
+
+### Task 4: Write a custom macro to improve another part of the codebase
+- Created a macro named *get_subscription_start_end_dates* to generate the start and end dates for a subscription over a given period of time
+- Removed redundant code from the *fct_mrr* model and integrated the *get_subscription_start_end_dates* macro
+- Personally I think there would have been much better use cases for macros but given time constraints I just created a macro for this purpose with the generalised interval.
