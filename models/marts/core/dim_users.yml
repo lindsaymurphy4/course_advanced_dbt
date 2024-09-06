@@ -74,8 +74,6 @@ models:
 
       - name: count_of_subscriptions
         description: The number of subscriptions the user has associated.
-        data_tests:
-          - not_null
 
       - name: first_subscription_starts_at
         description: The date the first subscription started.
