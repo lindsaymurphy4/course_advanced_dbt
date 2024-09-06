@@ -3,7 +3,7 @@ models:
     config:
       tags: p0
     description: This model contains calculations for the monthly recurring revenue generated per user and subscription for each month.
-      
+
     columns:
       - name: surrogate_key
         description: The surrogate key. This acts as a primary key for this model.

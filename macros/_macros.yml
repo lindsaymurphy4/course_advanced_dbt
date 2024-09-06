@@ -1,0 +1,29 @@
+version: 2
+
+macros:
+  - name: rolling_aggregation
+    description: >
+      This macro calculates a rolling window function (e.g., average or sum) over a specified period.
+      The default period is 7 rows, and the default aggregation is SUM, but these can be customized. 
+      It supports partitioning and ordering.
+    arguments:
+      - name: column_name
+        description: The column to perform the aggregation on.
+      - name: partition_by
+        description: The column(s) to partition the window function by (e.g., user_id).
+      - name: agg_type
+        description: The aggregate function to be applied (e.g., AVG, SUM).
+      - name: order_by
+        description: The column to order the window function by. Defaults to 'created_at'.
+      - name: period
+        description: The number of rows to include in the rolling window. Defaults to 7.
+        type: integer
+
+  - name: date_trunc
+    description: Truncates a date to a specified interval. The default interval is 'month'.
+    arguments:
+      - name: date_column
+        description: The date column to be truncated.
+      - name: interval
+        description: The interval to truncate to. Default is 'month'.
+        type: string

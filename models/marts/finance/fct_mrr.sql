@@ -15,8 +15,8 @@ monthly_subscriptions AS (
         ends_at,
         plan_name,
         pricing,
-        DATE(DATE_TRUNC('month', starts_at)) AS start_month,
-        DATE(DATE_TRUNC('month', ends_at)) AS end_month
+        {{ date_trunc('starts_at') }} AS start_month, --PROJECT 2
+        {{ date_trunc('ends_at') }} AS end_month
     FROM
         {{ ref('dim_subscriptions') }}
     WHERE
@@ -116,7 +116,8 @@ subscription_revenue_by_month AS (
         MAX(CASE WHEN is_subscribed_current_month THEN date_month END) OVER (PARTITION BY user_id, subscription_id) AS last_subscription_month,
         first_subscription_month = date_month AS is_first_subscription_month,
         last_subscription_month = date_month AS is_last_subscription_month,
-        mrr
+        mrr,
+         {{ rolling_aggregation('mrr', 'user_id, subscription_id', 'sum', 'date_month', 2) }} AS rolling_3_month_mrr
     FROM
         mrr_base
 ),
@@ -132,7 +133,8 @@ subscription_churn_by_month AS (
         last_subscription_month,
         FALSE AS is_first_subscription_month,
         FALSE AS is_last_subscription_month,
-        0.0::DECIMAL(18, 2) AS mrr
+        0.0::DECIMAL(18, 2) AS mrr,
+        0.0::DECIMAL(18, 2) AS rolling_3_month_mrr
     FROM
         subscription_revenue_by_month
     WHERE
@@ -177,6 +179,7 @@ final AS (
         subscription_periods.plan_name,
         mrr AS mrr_amount,
         mrr_change,
+        rolling_3_month_mrr,
         LEAST(mrr, previous_month_mrr_amount) AS retained_mrr_amount,
         previous_month_mrr_amount,
 

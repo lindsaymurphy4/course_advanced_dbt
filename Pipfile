@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 dbt-core = "==1.8.3"
 dbt-snowflake = "==1.8.3"
+pre-commit = "==3.8.0"
 
 [requires]
 python_version = "3.12"
