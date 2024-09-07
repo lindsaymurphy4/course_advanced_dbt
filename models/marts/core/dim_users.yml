@@ -71,3 +71,13 @@ models:
         description: Where the user lives.
         data_tests:
           - not_null
+
+      - name: first_subscription_starts_at
+        description: First subscription start date for a Bingeflix user.
+        data_tests:
+          - not_null
+
+      - name: count_of_subscriptions
+        description: Number of subscriptions for a Bingeflix user.
+        data_tests:
+          - not_null
