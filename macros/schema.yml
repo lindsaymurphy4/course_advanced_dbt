@@ -1,0 +1,31 @@
+version: 2
+
+macros:
+  - name: aggregate_over_period
+    description: A macro to aggregate a column over x number of rows. For example, to get a 7 day average of a column.
+    arguments:
+      - name: agg_function
+        type: string
+        description: The name of aggregation function, for example, 'min', 'max', 'avg', 'sum', 'count', etc. The default value is 'avg'
+      - name: n_rows
+        type: integer
+        description: Number of rows from the current row that you want to apply the aggregation to. The default is 7, to get the last 7 rows from current row.
+      - name: column_name
+        type: string
+        description: The column_name which you want to aggregate.
+      - name: partition_by
+        type: string
+        description: The column that divides the aggregation result.
+      - name: order_by
+        type: string
+        description: The column to order the dataset before the aggregation. Default value is 'created_at'.
+
+  - name: get_subscription_end_month
+    description: Get the correct subscription end month because the raw version needs modification.
+    arguments:
+      - name: start_month
+        type: date
+        description: User's ubscription start month.
+      - name: end_month
+        type: date
+        description: User's subscription end month.
