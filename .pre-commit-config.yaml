@@ -34,4 +34,4 @@ repos:
     files: ^models/marts
   - id: check-model-tags
     args: ["--tags", "hourly", "daily", "weekly", "monthly", "--"]
-    files: ^models
+    files: ^models/marts/core

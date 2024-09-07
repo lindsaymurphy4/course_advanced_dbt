@@ -1,0 +1,12 @@
+macros:
+  - name: prior_period_value
+    description: "Applies the LAG function to a specified column. Used primarily in fct_mrr to pull values from the previous month. Can be used more broadly by specifying all args."
+    arguments:
+      - name: column
+        description: "The column to apply the LAG function to."
+      - name: value_if_null
+        description: "The value to return if the LAG function returns NULL."
+      - name: partition_by
+        description: "The column(s) to partition by."
+      - name: order_by
+        description: "The column to order by."
