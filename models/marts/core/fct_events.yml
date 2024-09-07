@@ -3,7 +3,7 @@ models:
     config:
       tags: p0
     description: '{{ doc("bingeflix_table_events") }}'
-      
+
     columns:
       - name: session_id
         description: '{{ doc("bingeflix_column_session_id") }}'
