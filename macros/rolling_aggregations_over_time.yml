@@ -1,0 +1,21 @@
+version: 2
+
+macros:
+  - name: rolling_aggregations_over_time
+    description: A macro to calculate an aggregation over a specified time window.
+    arguments:
+      - name: column_name
+        type: string
+        description: The name of the column to which an aggregation function is applied.
+      - name: aggregation_type
+        type: string
+        description: Type of an aggregation (average is set as default).
+      - name: time_window
+        type: integer
+        description: Time window of an aggregation.
+      - name: partition_by
+        type: string
+        description: Grouping column (none value as a default).
+      - name: order_by
+        type: string
+        description: Ordering column (created_at as a default value).
