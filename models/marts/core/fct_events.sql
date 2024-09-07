@@ -5,6 +5,6 @@ SELECT
     , created_at
     , user_id
     , event_name
-, event_id
+    , event_id
 
 FROM {{ ref('stg_bingeflix__events') }}
