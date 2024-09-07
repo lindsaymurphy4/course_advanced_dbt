@@ -14,4 +14,6 @@ I applied this macro in `fct_active_users` to calculate a user's average weekly 
 
 ## Task 4: Write a custom macro to improve another part of the codebase
 
-As suggested in the instructions, I focused on `fct_mrr`. There were probably a few options here. I decided to turn the LAG function in the `mrr_with_changes` CTE into a macro. I chose this because I think it aligns well with this model. Financial models often need to compare previous month (or other period) values with current, so this macro will allow us to easily pull those values instead of repeating LAG functions. I set default values here because I think the primary use case with be `fct_mrr` and it will make those calls easier, but if you specify all args the macro can be generalized across the project.
+As suggested in the instructions, I focused on `fct_mrr`. There were probably a few options here. I decided to turn the LAG function in the `mrr_with_changes` CTE into a macro [here](https://github.com/sander-c-beck/course_advanced_dbt/blob/sander-project-2/macros/prior_period_value.sql).
+
+I chose this because I think it aligns well with this model. Financial models often need to compare previous month (or other period) values with current, so this macro will allow us to easily pull those values instead of repeating LAG functions. I set default values here because I think the primary use case with be `fct_mrr` and it will make those calls easier, but if you specify all args the macro can be generalized across the project.
