@@ -151,15 +151,21 @@ mrr_with_changes AS (
     SELECT
         *,
 
-        COALESCE(
-            LAG(is_subscribed_current_month) OVER (PARTITION BY user_id, subscription_id ORDER BY date_month),
-            FALSE
-        ) AS is_subscribed_previous_month,
+        {{ lagging_over_column(column_name='is_subscribed_current_month', 
+                            partition_by_first_column='user_id', 
+                            partition_by_second_column='subscription_id',
+                            order_by='date_month', 
+                            coalesce_value='FALSE', 
+                            new_name_column='is_subscribed_previous_month'
+        ) }} ,
 
-        COALESCE(
-            LAG(mrr) OVER (PARTITION BY user_id, subscription_id ORDER BY date_month),
-            0.0
-        ) AS previous_month_mrr_amount,
+        {{ lagging_over_column(column_name='mrr', 
+                            partition_by_first_column='user_id', 
+                            partition_by_second_column='subscription_id',
+                            order_by='date_month', 
+                            coalesce_value='0.0', 
+                            new_name_column='previous_month_mrr_amount'
+        ) }} ,
 
         mrr - previous_month_mrr_amount AS mrr_change
     FROM
