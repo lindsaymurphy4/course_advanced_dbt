@@ -1,0 +1,7 @@
+macros:
+  - name: timestamp_to_start_of_month_Date  #
+    description: "Use this macro to convert a timestamp to a the beginning of a month with a date format"
+    arguments:
+      - name: column_name
+        description: "The timestmap that will be converted"
+        type: timestamp

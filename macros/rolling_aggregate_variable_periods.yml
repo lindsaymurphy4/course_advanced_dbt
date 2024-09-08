@@ -1,0 +1,19 @@
+macros:
+  - name: rolling_aggregate_variable_periods  #
+    description: "Use this macro to do any window aggregation for any rolling windo up to the current row."
+    arguments:
+      - name: aggregation
+        description: "Insert any aggregation that can be used in a window function"
+        type: string
+      - name: column_name
+        description: "The column that wil be aggregated"
+        type: string
+      - name: partition_by
+        description: "Insert column that will be partitioned"
+        type: string
+      - name: order_by  # Replace with the actual argument name
+        description: "Order by column option, default value = created_at"
+        type: string
+      - name: variable_period_day
+        description: "number of days the aggregation will be counted for."
+        type: int
