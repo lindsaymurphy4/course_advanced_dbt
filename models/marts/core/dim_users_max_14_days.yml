@@ -1,0 +1,24 @@
+models:
+  - name: dim_users_max_14_days
+    description: This model contains information on maximum number of subscriptions for regions and countries with a rollout of 14 days.
+    columns:
+
+      - name: created_at
+        description: When the user account was created.
+        data_tests:
+          - not_null
+
+      - name: region
+        description: Where the user lives.
+        data_tests:
+          - not_null
+
+      - name: country
+        description: Where the user lives.
+        data_tests:
+          - not_null
+
+      - name: max_14_periods_count_of_subscriptions
+        description: Maximum number of subscriptions for the last 14 days.
+        data_tests:
+          - not_null

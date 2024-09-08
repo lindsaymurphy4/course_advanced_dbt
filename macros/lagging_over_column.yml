@@ -1,0 +1,24 @@
+version: 2
+
+macros:
+  - name: lagging_over_column
+    description: A macro applies lagging function to the specified column and allows to coalesce null with a defined value.
+    arguments:
+      - name: column_name
+        type: string
+        description: The name of the column that needs to be lagged.
+      - name: partition_by_first_column
+        type: string
+        description: The first grouping column.
+      - name: order_by
+        type: string
+        description: Ordering column (created_at as a default value).
+      - name: coalesce_value
+        type: string
+        description: Value that should be used instead of null.
+      - name: new_name_column
+        type: string
+        description: Name of the column returned by the macro.
+      - name: partition_by_second_column
+        type: string
+        description: The second grouping column (none by default).
