@@ -8,4 +8,3 @@ SELECT
     event_id
 
 FROM {{ ref('stg_bingeflix__events') }}
-

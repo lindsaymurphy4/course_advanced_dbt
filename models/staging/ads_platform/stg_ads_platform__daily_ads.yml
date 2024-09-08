@@ -32,3 +32,8 @@ models:
         description: The click through rate on the campaign impressions.
         data_tests:
           - not_null
+
+      - name: avg_7_periods_spend
+        description: The 7-day rolling average of ad spend for the campaign.
+        data_tests:
+          - not_null

@@ -1,0 +1,13 @@
+version: 2
+
+macros:
+  - name: truncate_to_interval
+    description: This macro truncates a given date column to a specified time interval (e.g., month, day, year). The default interval is month.
+    arguments:
+      - name: column
+        type: string
+        description: The column that contains the date or timestamp to be truncated.
+
+      - name: interval
+        type: string
+        description: The interval to which the date should be truncated (e.g., day, week, month, year). Default is month.

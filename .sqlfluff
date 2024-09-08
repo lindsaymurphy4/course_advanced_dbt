@@ -22,7 +22,7 @@ tab_space_size = 4
 template_blocks_indent = True
 
 [sqlfluff:layout:type:comma]
-spacing_before = touch
+#spacing_before = touch
 line_position = trailing
 
 [sqlfluff:templater]

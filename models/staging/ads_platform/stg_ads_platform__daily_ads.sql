@@ -18,4 +18,7 @@ renamed AS (
 
 )
 
-SELECT * FROM renamed
+SELECT
+    *,
+    {{ rolling_aggregate_periods('spend', 'campaign_id', 'avg', 'date', 7) }}
+FROM renamed

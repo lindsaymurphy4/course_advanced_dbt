@@ -5,7 +5,7 @@ source as (
         user_id,
         created_at,
         phone_number,
-        NULLIF(deleted_at, '') AS deleted_at,
+        NULLIF(deleted_at, '') as deleted_at,
         username,
         name,
         sex,
@@ -17,4 +17,3 @@ source as (
 )
 
 select * from source
-

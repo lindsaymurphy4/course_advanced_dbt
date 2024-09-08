@@ -1,0 +1,25 @@
+version: 2
+
+macros:
+  - name: rolling_aggregation_by_period
+    description: This macro helps to calculate rolling period aggregations.
+    arguments:
+      - name: aggregate_function
+        type: string
+        description: Type of aggregation (i.e sum, avg, max, min, etc...)
+
+      - name: order_by
+        type: string
+        description: The column to order the rows by, for determining the rolling window. Defaults to 'created_at'.
+
+      - name: periods
+        type: integer
+        description: The number of periods to use for the rolling window. Defaults to 7, meaning it will include the current row and the last 6 rows.
+
+      - name: column_name
+        type: string
+        description: The name of the column to apply the aggregate function to.
+
+      - name: partition_by
+        type: string
+        description: The column to partition/group by. The aggregation will be calculated for each unique partition. (i.e 'store_id', 'product_id', etc.)
