@@ -5,7 +5,7 @@ This file contains doumentation for Bingeflix data sources.
 This section contains documentation from the Bingeflix Users table.
 
 {% docs bingeflix_table_users %}
-This table stores information about Bingeflix users, including user IDs, usernames, email addresses, subscription start dates, and other relevant user details. 
+This table stores information about Bingeflix users, including user IDs, usernames, email addresses, subscription start dates, and other relevant user details.
 {% enddocs %}
 
 {% docs bingeflix_column_user_id %}
@@ -56,7 +56,7 @@ The country the user resides in
 This section contains documentation from the Bingeflix Subscriptions table.
 
 {% docs bingeflix_table_subscriptions %}
-This table contains subscription-related information, such as subscription plan IDs, subscription start dates, renewal dates, billing information, and any other relevant subscription details. 
+This table contains subscription-related information, such as subscription plan IDs, subscription start dates, renewal dates, billing information, and any other relevant subscription details.
 {% enddocs %}
 
 {% docs bingeflix_column_subscription_id %}
@@ -116,6 +116,3 @@ The name of the event
 {% docs bingeflix_column_event_created_at %}
 When the event was logged
 {% enddocs %}
-
-
-
