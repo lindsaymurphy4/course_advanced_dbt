@@ -14,7 +14,7 @@ sources:
               - unique
               - not_null
 
-          - name: spend 
+          - name: spend
             description: The amount spent on the campaign.
             data_tests:
               - not_null
@@ -22,9 +22,9 @@ sources:
           - name: cpm
             description: '{{ doc("bingeflix_column_cpm") }}'
             data_tests:
-              - not_null 
+              - not_null
 
           - name: ctr
             description: '{{ doc("bingeflix_column_ctr") }}'
-            data_tests: 
-              - not_null 
+            data_tests:
+              - not_null
