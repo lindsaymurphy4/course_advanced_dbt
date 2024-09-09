@@ -6,7 +6,7 @@ events AS (
         DATE(created_at) AS created_date,
         event_id AS login_id
     FROM
-        {{ ref('stg_bingeflix__events')}}
+        {{ ref('stg_bingeflix__events') }}
     WHERE
         event_name = 'User Logged In'
 )
@@ -18,12 +18,12 @@ date_spine AS (
         calendar_date,
         date_week
     FROM
-        {{ ref('int_dates')}}
+        {{ ref('int_dates') }}
 )
 
 ,
 
-final AS (
+login_counts AS (
     SELECT
         {{ dbt_utils.generate_surrogate_key(['date_week', 'user_id']) }} AS surrogate_key,
         date_week,
@@ -33,6 +33,16 @@ final AS (
         date_spine
         LEFT JOIN events ON date_spine.calendar_date = events.created_date
     GROUP BY ALL
+),
+
+final AS (
+    SELECT
+        surrogate_key,
+        date_week,
+        user_id,
+        login_count,
+        {{ rolling_aggregation('login_count', 'user_id', num_periods=4, order_by='date_week', agg_func='sum') }}
+    FROM login_counts
 )
 
 SELECT * FROM final

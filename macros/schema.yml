@@ -1,0 +1,21 @@
+version: 2
+
+macros:
+  - name: rolling_aggregation
+    description: A macro to calculate any standard aggregation on a rolling basis for a custom number of periods (no offset)
+    arguments:
+      - name: column_name
+        type: string
+        description: The name of the column you want to aggregate. Should have numeric values
+      - name: partition_by
+        type: string
+        description: The name of the column you want to partition by
+      - name: num_periods
+        type: integer
+        description: The number of periods for a rolling window. Defaults to 7
+      - name: agg_func
+        type: string
+        description: The SQL name of an aggregation function (e.g. sum, avg, min, max). Defaults to avg
+      - name: order_by
+        type: string
+        description: The name of the column you want to order by (usually, a time/date column). Default value 'created_at'
