@@ -16,3 +16,6 @@ models:
 
       - name: LOGIN_COUNT
         description: The total number of logins for a given user in a given week.
+
+      - name: SUM_4_PERIODS_LOGIN_COUNT
+        description: The number of logins for each user in the last 4 weeks rolling
