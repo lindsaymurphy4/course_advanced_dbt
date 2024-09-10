@@ -3,3 +3,4 @@ dbt_packages/
 logs/
 .vscode/
 packages-lock.yml
+Pipfile.lock
