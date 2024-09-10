@@ -1,3 +1,7 @@
 fct_name,column_name,id_to_exclude,comment
 fct_root_models,child,int_dates,calendar table does not need to have a source model
-
+fct_sources_without_freshness,resource_name,bingeflix.subscriptions,training project won't have fresh data
+fct_sources_without_freshness,resource_name,bingeflix.users,training project won't have fresh data
+fct_sources_without_freshness,resource_name,bingeflix.events,training project won't have fresh data
+fct_sources_without_freshness,resource_name,bingeflix.subscription_plans,training project won't have fresh data
+fct_sources_without_freshness,resource_name,ads_platform.daily_ads,training project won't have fresh data

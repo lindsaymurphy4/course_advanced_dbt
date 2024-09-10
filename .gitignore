@@ -3,3 +3,6 @@ dbt_packages/
 logs/
 .vscode/
 packages-lock.yml
+Pipfile.lock
+.idea/
+package-lock.yml
