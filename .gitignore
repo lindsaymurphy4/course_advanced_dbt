@@ -4,3 +4,4 @@ logs/
 .vscode/
 packages-lock.yml
 Pipfile.lock
+.idea/
