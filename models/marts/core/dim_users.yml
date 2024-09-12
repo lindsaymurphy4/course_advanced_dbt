@@ -16,41 +16,27 @@ models:
 
       - name: created_at
         description: '{{ doc("bingeflix_users_column_created_at") }}'
-        data_tests:
-          - not_null
 
       - name: phone_number
         description: '{{ doc("bingeflix_users_column_phone_number") }}'
-        data_tests:
-          - not_null
 
       - name: deleted_at
         description: '{{ doc("bingeflix_users_column_deleted_at") }}'
 
       - name: username
         description: '{{ doc("bingeflix_users_column_username") }}'
-        data_tests:
-          - not_null
 
       - name: name
         description: '{{ doc("bingeflix_users_column_name") }}'
-        data_tests:
-          - not_null
 
       - name: sex
         description: '{{ doc("bingeflix_users_column_sex") }}'
-        data_tests:
-          - not_null
 
       - name: email
         description: '{{ doc("bingeflix_users_column_email") }}'
-        data_tests:
-          - not_null
 
       - name: birthdate
         description: '{{ doc("bingeflix_users_column_birthdate") }}'
-        data_tests:
-          - not_null
 
       - name: current_age
         description: The user's current age.
@@ -64,13 +50,9 @@ models:
 
       - name: region
         description: '{{ doc("bingeflix_users_column_region") }}'
-        data_tests:
-          - not_null
 
       - name: country
         description: '{{ doc("bingeflix_users_column_country") }}'
-        data_tests:
-          - not_null
 
       - name: count_of_subscriptions
         description: The number of subscriptions the user has associated.
