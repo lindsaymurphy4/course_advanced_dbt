@@ -19,3 +19,8 @@ WHERE {{ column_name }} <= 0
 {% endtest %}
 ```
 - Applied the test to `stg_bingeflix__events.sql`.
+
+### Task 3: Write a unit test to verify the logic of a transformation
+- Created a unit test named `test_age_at_acquisition` and ran. I also changed the way `dim_issue` calculates this (changing to ROUND rather than TRUNCATE) to test that failures are flagged.
+- Added another unit test named `test_current_age` and ran. Whilst this is passing now I see the issue where in future it'll fail on the test users birthday. I wasn't able to get macros working within the unit tests so if anyone knows how to calculate this within the unit test itself, based on the current date, I'd be interested to know how.
+- I tested various data formats between both tests (dict and csv) just to get an idea of how they're used.

@@ -1,0 +1,15 @@
+unit_tests:
+  - name: test_current_age
+    description: test that the user age is calculated correctly
+    model: dim_users
+    given:
+      - input: ref('stg_bingeflix__users')
+        rows:
+          - { birthdate: 1941-10-01 }
+      - input: ref('stg_bingeflix__subscriptions')
+        rows:
+          - { user_id: 0}
+
+    expect:
+      rows:
+        - {current_age: 82 }
