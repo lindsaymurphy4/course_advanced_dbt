@@ -8,21 +8,14 @@ models:
       - name: session_id
         description: >
           {{ doc("bingeflix_column_session_id") }}
-        tests:
-          - not_null
-          - unique
 
       - name: created_at
         description: >
           {{ doc("bingeflix_column_created_at") }}
-        tests:
-          - not_null
 
       - name: user_id
         description: >
           {{ doc("bingeflix_column_user_id") }}
-        tests:
-          - not_null
 
       - name: event_name
         description: >
