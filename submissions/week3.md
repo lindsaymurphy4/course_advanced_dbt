@@ -14,8 +14,8 @@ From the Model schema, I removed:
 
 <h2>Task 2: Write a custom generic test to replace a redundant singular test </h2>
 
-Link to file: <a href="https://github.com/mthbicf/course_advanced_dbt/blob/setup_dbt/macros/aggregate_over_period.sql">here</a>.
+Link to file: <a href="https://github.com/mthbicf/course_advanced_dbt/blob/setup_dbt/tests/generic/assert_valid_event_name.sql">here</a>.
 
 <h2>Task 3: Write a unit test to verify the logic of a transformation</h2>
 
-Link to file: <a href="https://github.com/mthbicf/course_advanced_dbt/blob/setup_dbt/macros/get_subscription_end_month.sql">here</a>.
+Link to file: <a href="https://github.com/mthbicf/course_advanced_dbt/blob/setup_dbt/models/unit_test.yml">here</a>
