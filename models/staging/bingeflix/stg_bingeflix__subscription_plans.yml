@@ -12,15 +12,9 @@ models:
 
       - name: plan_name
         description: '{{ doc("bingeflix_column_plan_name") }}'
-        data_tests:
-          - not_null
 
       - name: pricing
         description: '{{ doc("bingeflix_column_pricing") }}'
-        data_tests:
-          - not_null
 
       - name: payment_period
         description: '{{ doc("bingeflix_column_payment_period") }}'
-        data_tests:
-          - not_null

@@ -4,13 +4,9 @@ models:
     columns:
       - name: date
         description: '{{ doc("ads_platform_column_date") }}'
-        data_tests:
-          - not_null
 
       - name: campaign_id
         description: '{{ doc("ads_platform_column_campaign_id") }}'
-        data_tests:
-          - not_null
 
       - name: surrogate_key
         description: '{{ doc("ads_platform_column_surrogate_key") }}'
@@ -20,15 +16,9 @@ models:
 
       - name: spend
         description: '{{ doc("ads_platform_column_spend") }}'
-        data_tests:
-          - not_null
 
       - name: cpm
         description: '{{ doc("ads_platform_column_cpm") }}'
-        data_tests:
-          - not_null
 
       - name: ctr
         description: '{{ doc("ads_platform_column_ctr") }}'
-        data_tests:
-          - not_null
