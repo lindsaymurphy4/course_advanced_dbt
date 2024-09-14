@@ -10,4 +10,7 @@ Added custom generic test [here](https://github.com/sander-c-beck/course_advance
 
 ## Task 3: Write a unit test to verify the logic of a transformation
 
+Added unit test for age_at_acquisition (provided in course documentation).
+Added second unit test for current_age. THIS TEST IS GOING TO FAIL once the actual CURRENT_DATE passes 2024-10-01. I struggled for a while to make this work based on the [course materials](https://uplimit.com/course/advanced-dbt/session/session_cltexnyi700a612850jefeljk/module/unit-testing#corise_cm008nkdz00043b7f8o0v3x5p) but I couldn't figure it out.
+
 ## Task 4: Practice writing a more complex unit test, to confirm MRR is calculated correctly
