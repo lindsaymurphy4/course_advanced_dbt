@@ -23,7 +23,7 @@ template_blocks_indent = True
 
 [sqlfluff:layout:type:comma]
 spacing_before = touch
-line_position = trailing
+line_position = leading
 
 [sqlfluff:templater]
 unwrap_wrapped_queries = true
@@ -36,3 +36,6 @@ single_table_references = consistent
 
 [sqlfluff:ambiguous.column_references]
 group_by_and_order_by_style = consistent
+
+[sqlfluff:rules:capitalisation.keywords]
+capitalisation_policy = upper

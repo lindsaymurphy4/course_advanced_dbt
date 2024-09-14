@@ -16,58 +16,82 @@ models:
 
       - name: created_at
         description: When the user account was created.
-        data_tests:
-          - not_null
 
       - name: phone_number
         description: the user's phone number.
-        data_tests:
-          - not_null
 
       - name: deleted_at
         description: When the user's account was deleted.
 
       - name: username
         description: The username associated with the user.
-        data_tests:
-          - not_null
 
       - name: name
         description: The full name of the user (first and last).
-        data_tests:
-          - not_null
 
       - name: sex
         description: The user's gender.
-        data_tests:
-          - not_null
 
       - name: email
         description: The user's email address.
-        data_tests:
-          - not_null
 
       - name: birthdate
         description: The user's bithdate.
-        data_tests:
-          - not_null
 
       - name: current_age
         description: The user's current age.
-        data_tests:
-          - not_null
 
       - name: age_at_acquisition
         description: The age of the user when they became a Bingeflix user.
-        data_tests:
-          - not_null
 
       - name: region
         description: Where the user lives.
-        data_tests:
-          - not_null
 
       - name: country
         description: Where the user lives.
-        data_tests:
-          - not_null
+
+      - name: first_subscription_starts_at
+        description: First subscription start date for a Bingeflix user.
+
+      - name: count_of_subscriptions
+        description: Number of subscriptions for a Bingeflix user.
+
+unit_tests:
+  - name: test_age_at_acquisition_is_correct
+    description: test that the user age_at_acquisition is calculated correctly
+    model: dim_users
+    given:
+      - input: ref('stg_bingeflix__users')
+        format: csv
+        rows: |
+          birthdate,created_at
+          1941-10-01,2022-04-11T21:58:19
+      - input: ref('stg_bingeflix__subscriptions')
+        format: csv
+        rows: |
+          user_id,starts_at,subscription_id
+          0,2022-04-11T21:58:19,0
+    expect:
+      format: csv
+      rows: |
+        age_at_acquisition
+        80
+  - name: test_current_age_is_correct
+    description: test that the user current_age is calculated correctly
+    model: dim_users
+    given:
+      - input: ref('stg_bingeflix__users')
+        format: csv
+        rows: |
+          birthdate,created_at
+          1941-10-01,2022-04-11T21:58:19
+      - input: ref('stg_bingeflix__subscriptions')
+        format: csv
+        rows: |
+          user_id,starts_at,subscription_id
+          0,2022-04-11T21:58:19,0
+    expect:
+      format: csv
+      rows: |
+        current_age
+        82

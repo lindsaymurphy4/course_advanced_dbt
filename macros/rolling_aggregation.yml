@@ -1,0 +1,14 @@
+macros:
+  - name: rolling_aggregation
+    description: "Calculates a rolling aggregation over a specified window"
+    arguments:
+      - name: aggregation_type
+        description: "The type of aggregation to perform (e.g., avg, sum, max)."
+      - name: column_name
+        description: "The column to aggregate."
+      - name: partition_by
+        description: "The column(s) to partition by."
+      - name: order_by
+        description: "The column to order by."
+      - name: length_of_period
+        description: "The size of the rolling window."

@@ -1,7 +1,42 @@
 sources:
   - name: ads_platform
     schema: bingeflix
+    description: This source contains ad campaign data from the Bingeflix production database.
+    freshness:
+      warn_after: {count: 1, period: day}
     database: raw
     tables:
       - name: daily_ads
         identifier: ads
+        description: '{{ doc("ads_platform_table_daily_ads") }}'
+        columns:
+          - name: date
+            description: '{{ doc("ads_platform_column_date") }}'
+            data_tests:
+              - not_null
+
+          - name: campaign_id
+            description: '{{ doc("ads_platform_column_campaign_id") }}'
+            data_tests:
+              - not_null
+
+          - name: surrogate_key
+            description: '{{ doc("ads_platform_column_surrogate_key") }}'
+            data_tests:
+              - not_null
+              - unique
+
+          - name: spend
+            description: '{{ doc("ads_platform_column_spend") }}'
+            data_tests:
+              - not_null
+
+          - name: cpm
+            description: '{{ doc("ads_platform_column_cpm") }}'
+            data_tests:
+              - not_null
+
+          - name: ctr
+            description: '{{ doc("ads_platform_column_ctr") }}'
+            data_tests:
+              - not_null

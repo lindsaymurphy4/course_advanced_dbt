@@ -24,10 +24,10 @@ models:
     +materialized: view
     +grants:
       select: ['transformer', 'reporter']
-    
+
     staging:
       +schema: staging
-    
+
     intermediate:
       +schema: intermediate
 
@@ -44,4 +44,4 @@ seeds:
     dbt_project_evaluator_exceptions:
       +enabled: false
 
-# on-run-end: "{{ dbt_project_evaluator.print_dbt_project_evaluator_issues() }}"
+on-run-end: "{{ dbt_project_evaluator.print_dbt_project_evaluator_issues() }}"
