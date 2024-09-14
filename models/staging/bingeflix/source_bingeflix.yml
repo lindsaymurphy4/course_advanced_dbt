@@ -25,6 +25,8 @@ sources:
             description: '{{ doc("bingeflix_column_user_id") }}'
             data_tests:
               - not_null
+              - assert_valid_string:
+                  string: 'test'
 
           - name: event_name
             description: '{{ doc("bingeflix_column_event_name") }}'
