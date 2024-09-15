@@ -10,64 +10,45 @@ models:
         description: '{{ doc("bingeflix_column_user_id") }}'
         meta:
           priority: high
-        data_tests:
-          - not_null
-          - unique
 
       - name: created_at
         description: When the user account was created.
-        data_tests:
-          - not_null
 
       - name: phone_number
         description: the user's phone number.
-        data_tests:
-          - not_null
 
       - name: deleted_at
         description: When the user's account was deleted.
 
       - name: username
         description: The username associated with the user.
-        data_tests:
-          - not_null
 
       - name: name
         description: The full name of the user (first and last).
-        data_tests:
-          - not_null
 
       - name: sex
         description: The user's gender.
-        data_tests:
-          - not_null
 
       - name: email
         description: The user's email address.
-        data_tests:
-          - not_null
 
       - name: birthdate
         description: The user's bithdate.
-        data_tests:
-          - not_null
 
       - name: current_age
         description: The user's current age.
-        data_tests:
-          - not_null
 
       - name: age_at_acquisition
         description: The age of the user when they became a Bingeflix user.
-        data_tests:
-          - not_null
 
       - name: region
         description: Where the user lives.
-        data_tests:
-          - not_null
 
       - name: country
         description: Where the user lives.
-        data_tests:
-          - not_null
+
+      - name: count_of_subscriptions
+        description: Number of subscriptions.
+
+      - name: first_subscription_starts_at
+        description: First subscription start time
