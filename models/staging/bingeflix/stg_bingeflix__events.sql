@@ -7,7 +7,7 @@ WITH source AS (
 renamed AS (
 
     SELECT
-        session_id0,
+        session_id,
         created_at,
         user_id,
         event_name,
