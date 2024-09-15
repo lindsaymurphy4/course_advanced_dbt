@@ -1,0 +1,20 @@
+unit_tests:
+  - name: test_current_age_is_correct
+    description: test that the user current_age is calculated correctly
+    model: dim_users
+    given:
+      - input: ref('stg_bingeflix__users')
+        format: csv
+        rows: |
+          birthdate,user_id
+          1931-02-20,1
+      - input: ref('stg_bingeflix__subscriptions')
+        format: csv
+        rows: |
+          user_id
+          1
+    expect:
+      format: csv
+      rows: |
+        current_age
+        93
