@@ -1,0 +1,56 @@
+unit_tests:
+  - name: test_age_is_correct
+    description: test that the user age_at_acquisition is calculated correctly
+    model: dim_users
+    given:
+      - input: ref('stg_bingeflix__users')
+        format: csv
+        rows: |
+          birthdate,created_at
+          1941-10-01,2022-04-11T21:58:19
+      - input: ref('stg_bingeflix__subscriptions')
+        format: csv
+        rows: |
+          user_id,starts_at,subscription_id
+          0,2022-04-11T21:58:19,0
+
+    expect:
+      format: csv
+      rows: |
+        age_at_acquisition
+        80
+
+  - name: test_mrr_is_correct
+    description: test that checks mrr calculation in fct_mrr
+    model: fct_mrr
+    given:
+      - input: ref('dim_subscriptions')
+        format: csv
+        rows: |
+          user_id,subscription_id,starts_at,ends_at,billing_period,pricing
+          0,1,2022-01-01 20:20:20.000,2022-01-10 20:20:20.000,monthly,1
+          0,2,2022-01-15 20:20:20.000,2022-02-27 20:20:20.000,monthly,2
+          0,3,2022-04-02 20:20:20.000,NULL,monthly,1
+          0,5,2022-05-01 20:20:20.000,NULL,annual,12
+      - input: ref('int_dates')
+        format: csv
+        rows: |
+          calendar_date,day_of_month
+          2022-01-01,1
+          2022-02-01,1
+          2022-03-01,1
+          2022-04-01,1
+          2022-05-01,1
+          2022-05-02,2
+
+    expect:
+      format: csv
+      rows: |
+        user_id,subscription_id,date_month,starts_at,ends_at,mrr_amount,mrr_change,retained_mrr_amount,previous_month_mrr_amount,change_category,month_retained_number
+        0,1,2022-01-01,2022-01-01 20:20:20.000,2022-01-10 20:20:20.000,1,1,0,0,new,0
+        0,1,2022-02-01,2022-01-01 20:20:20.000,2022-01-10 20:20:20.000,0,-1,0,1,churn,NULL
+        0,2,2022-01-01,2022-01-15 20:20:20.000,2022-02-27 20:20:20.000,2,2,0,0,new,0
+        0,2,2022-02-01,2022-01-15 20:20:20.000,2022-02-27 20:20:20.000,0,-2,0,2,churn,NULL
+        0,3,2022-04-01,2022-04-02 20:20:20.000,NULL,1,1,0,0,new,0
+        0,3,2022-05-01,2022-04-02 20:20:20.000,NULL,1,0,1,1,renewal,1
+        0,3,2022-06-01,2022-04-02 20:20:20.000,NULL,0,-1,0,1,churn,NULL

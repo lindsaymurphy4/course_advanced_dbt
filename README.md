@@ -18,6 +18,8 @@
 
 #### Models
 - The primary key column must have not_null and unique schema tests.
+- In staging models, if the model operates as a 'select' statement from the source, the tests on columns that are unchanged from the source (except for primary key column) are not required to avoid redundancy - as these columns are already tested at the source
+For all other models:
 - All boolean columns must have an accepted_values schema test. The accepted values are true and false.
 - Columns that contain category values must have an accepted_values schema test.
 - Columns that should never be null must have a not_null schema test.

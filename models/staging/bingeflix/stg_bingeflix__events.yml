@@ -4,23 +4,17 @@ models:
     columns:
       - name: session_id
         description: '{{ doc("bingeflix_column_session_id") }}'
-        data_tests:
-          - not_null
 
       - name: created_at
         description: When the event was logged.
-        data_tests:
-          - not_null
 
       - name: user_id
         description: '{{ doc("bingeflix_column_user_id") }}'
-        data_tests:
-          - not_null
+
 
       - name: event_name
         description: The name of the event.
-        data_tests:
-          - not_null
+
 
       - name: event_id
         description: The unique identifier of the event.

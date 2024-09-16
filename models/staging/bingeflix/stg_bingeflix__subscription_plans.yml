@@ -7,13 +7,11 @@ models:
         data_tests:
           - not_null
           - unique
-          - accepted_values:
-              values: [1, 2, 3]
+
 
       - name: plan_name
         description: '{{ doc("bingeflix_column_plan_name") }}'
-        data_tests:
-          - not_null
+
 
       - name: pricing
         description: '{{ doc("bingeflix_column_pricing") }}'
@@ -22,5 +20,3 @@ models:
 
       - name: payment_period
         description: '{{ doc("bingeflix_column_payment_period") }}'
-        data_tests:
-          - not_null
