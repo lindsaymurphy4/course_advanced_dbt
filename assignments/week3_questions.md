@@ -10,11 +10,11 @@
 ### Task 2: Write a custom generic test to replace a redundant singular test
 - Created the following generic test named "assert_valid_event_name":
 ```
-{% test assert_column_is_positive(model, column_name) %}
+{% test assert_valid_event_name(model, column_name) %}
 
 SELECT *
 FROM {{ model }}
-WHERE {{ column_name }} <= 0
+WHERE lower({{ column_name }}) LIKE '%test%'
 
 {% endtest %}
 ```
