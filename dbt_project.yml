@@ -45,3 +45,14 @@ seeds:
       +enabled: false
 
 # on-run-end: "{{ dbt_project_evaluator.print_dbt_project_evaluator_issues() }}"
+
+dispatch:
+  - macro_namespace: dbt
+    search_order:
+      - 'course_advanced_dbt'
+      - dbt_snowflake_monitoring
+      - dbt
+
+query-comment:
+  comment: '{{ dbt_snowflake_monitoring.get_query_comment(node) }}'
+  append: true
