@@ -51,3 +51,7 @@
     WHERE dbt_node_id IN ('test.advanced_dbt.unique_mrr_surrogate_key.871f470500', 'model.advanced_dbt.stg_bingeflix_events')
     GROUP BY 1
 ```
+
+### Task 3: Refactor mrr.sql to proactively avoid a modelneck
+- I already created an `int_subscriptions_per_month` model in week 2 but I made some small changes to this in order to make it more accurate, mainly taking into account upgrades.
+- Modified `fct_mrr` to utilise `int_subscriptions_per_month` and give similar output to previous, whilst aligning with the dbt mrr playbook.

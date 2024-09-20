@@ -1,32 +1,23 @@
 models:
   - name: fct_mrr
-    config:
-      tags: p0
     description: This model contains calculations for the monthly recurring revenue generated per user and subscription for each month.
 
     columns:
-      - name: surrogate_key
+      - name: id
         description: The surrogate key. This acts as a primary key for this model.
         data_tests:
           - not_null
-          - unique:
-              config:
-                tags: p0
+          - unique
 
       - name: date_month
         description: The calendar month.
+        data_tests:
+          - not_null
 
       - name: user_id
         description: '{{ doc("bingeflix_users_column_user_id") }}'
-
-      - name: subscription_id
-        description: '{{ doc("bingeflix_subscriptions_column_subscription_id") }}'
-
-      - name: starts_at
-        description: '{{ doc("bingeflix_subscriptions_column_starts_at") }}'
-
-      - name: ends_at
-        description: '{{ doc("bingeflix_subscriptions_column_ends_at") }}'
+        data_tests:
+          - not_null
 
       - name: plan_name
         description: '{{ doc("bingeflix_subscription_plans_column_plan_name") }}'
