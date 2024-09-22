@@ -2,6 +2,7 @@
 <h1>Week 4 Submission</h1>
 
 <h2>Task 1: Build Incremental Model </h2>
+
 - stg_bingeflix__events: [Link](https://github.com/mthbicf/course_advanced_dbt/blob/setup_dbt/models/staging/bingeflix/stg_bingeflix__events.sql)
 - incremental_where_clause macro: [Link](https://github.com/mthbicf/course_advanced_dbt/blob/setup_dbt/macros/incremental_where_clause.sql)
 
