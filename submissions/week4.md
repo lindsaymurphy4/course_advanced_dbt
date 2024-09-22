@@ -2,8 +2,8 @@
 <h1>Week 4 Submission</h1>
 
 <h2>Task 1: Build Incremental Model </h2>
-stg_bingeflix__events: link
-incremental_where_clause macro: link
+- stg_bingeflix__events: [Link](https://github.com/mthbicf/course_advanced_dbt/blob/setup_dbt/models/staging/bingeflix/stg_bingeflix__events.sql)
+- incremental_where_clause macro: [Link](https://github.com/mthbicf/course_advanced_dbt/blob/setup_dbt/macros/incremental_where_clause.sql)
 
 <h2>Task 2: Snowflake Costs </h2>
 
@@ -39,3 +39,9 @@ where dbt_node_id = 'model.dbt_snowflake_monitoring.stg_access_history'
 group by 1
 order by 1 desc
 ```
+
+<h2>Task 3: Snowflake Costs </h2>
+
+- New Intermediate model: [Link](https://github.com/mthbicf/course_advanced_dbt/blob/setup_dbt/models/intermediate/finance/int_subscription_periods.sql)
+- Unit Test: [Link](https://github.com/mthbicf/course_advanced_dbt/blob/setup_dbt/models/unit_test.yml)
+- New Fct_mrr model: [Link](https://github.com/mthbicf/course_advanced_dbt/blob/setup_dbt/models/marts/finance/fct_mrr.sql)
