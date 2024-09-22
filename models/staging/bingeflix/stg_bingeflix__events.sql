@@ -1,6 +1,19 @@
+{{
+    config(
+        materialized = "incremental",
+        unique_key = "event_id"
+    )
+}}
+
 WITH source AS (
 
     SELECT * FROM {{ source('bingeflix', 'events') }}
+
+    {% if is_incremental() %}
+
+    {{ incremental_where_clause() }}
+
+    {% endif %}
 
 ),
 

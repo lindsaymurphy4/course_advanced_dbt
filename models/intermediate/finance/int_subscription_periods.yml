@@ -1,0 +1,26 @@
+models:
+  - name: int_subscription_periods
+    description: Store the list of months between customer's subscription start month and subscription end month.
+    columns:
+      - name: date_month
+        data_type: date
+        description: Observation Date
+
+      - name: user_id
+        data_type: number
+        description: "{{doc('user_id')}}"
+
+      - name: subscription_id
+        data_type: number
+        description:  "{{doc('subscription_id')}}"
+
+      - name: mrr
+        data_type: number
+        description:  "{{doc('pricing')}}"
+
+      - name: primary_key
+        data_type: string
+        description: Unique Key
+        tests:
+          - unique
+          - not_null

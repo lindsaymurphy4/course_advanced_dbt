@@ -29,3 +29,13 @@ macros:
       - name: end_month
         type: date
         description: User's subscription end month.
+
+  - name: incremental_where_clause
+    description: A macro for incremental models to capture data for the last x days.
+    arguments:
+      - name: column_name
+        type: timestamp
+        description: The column that reflects the freshness of the data.
+      - name: lookback_window
+        type: integer
+        description: How many days back that DBT will check for updates.

@@ -40,3 +40,32 @@ unit_tests:
       rows: |
         current_age
         82
+
+  - name: test_subscription_months_generated
+    description: test that the subscription months generated correctly
+    model: int_subscription_periods
+    given:
+      - input: ref('stg_bingeflix__subscriptions')
+        format: csv
+        rows: |
+          subscription_id,user_id,starts_at,ends_at,subscription_plan_id
+          139,58886,2019-01-08,2019-03-13,2
+      - input: ref('stg_bingeflix__subscription_plans')
+        format: csv
+        rows: |
+          plan_name,pricing,billing_period,subscription_plan_id
+          Basic,0.10,monthly,2
+      - input: ref('int_dates')
+        format: csv
+        rows: |
+          calendar_date,day_of_month
+          2019-01-01,1
+          2019-02-01,1
+          2019-03-01,1
+
+    expect:
+      format: csv
+      rows: |
+        date_month,user_id,subscription_id,mrr
+        2019-01-01,58886,139,0.10
+        2019-02-01,58886,139,0.10
