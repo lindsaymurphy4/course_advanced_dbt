@@ -40,7 +40,7 @@ group by 1
 order by 1 desc
 ```
 
-<h2>Task 3: Snowflake Costs </h2>
+<h2>Task 3: MRR </h2>
 
 - New Intermediate model: [Link](https://github.com/mthbicf/course_advanced_dbt/blob/setup_dbt/models/intermediate/finance/int_subscription_periods.sql)
 - Unit Test: [Link](https://github.com/mthbicf/course_advanced_dbt/blob/setup_dbt/models/unit_test.yml)
