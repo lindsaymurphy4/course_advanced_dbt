@@ -1,6 +1,8 @@
+version: 2
+
 models:
-  - name: stg_ads_platform__daily_ads
-    description: The daily ad campaigns table.
+  - name: int_ads_last_7_days
+    description: Calculate running total of ads metrics, such as total cost, spend, and ctr.
     columns:
       - name: date
         description: The calendar date of the campaign reporting period.
@@ -32,3 +34,12 @@ models:
         description: "{{doc('ctr')}}"
         data_tests:
           - not_null
+
+      - name: sum_7_days_spend
+        description: "{{doc('sum_7_days_spend')}}"
+
+      - name: sum_7_days_cpm
+        description: "{{doc('sum_7_days_cpm')}}"
+
+      - name: avg_7_days_ctr
+        description: "{{doc('avg_7_days_ctr')}}"
