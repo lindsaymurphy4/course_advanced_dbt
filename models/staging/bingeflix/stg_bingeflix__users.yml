@@ -1,6 +1,6 @@
 models:
   - name: stg_bingeflix__users
-    description: "This is table contains information about Bingeflix users."
+    description: This is table contains information about Bingeflix users.
     columns:
       - name: user_id
         description: '{{ doc("bingeflix_column_user_id") }}'
@@ -36,7 +36,7 @@ models:
         data_tests:
           - not_null
           - accepted_values:
-              values: ['M','F']
+              values: [M, F]
 
       - name: email
         description: The user's email address.
