@@ -1,8 +1,8 @@
-name: 'course_advanced_dbt'
-version: '1.0.0'
+name: "course_advanced_dbt"
+version: "1.0.0"
 config-version: 2
 
-profile: 'course_advanced_dbt'
+profile: "course_advanced_dbt"
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
@@ -11,9 +11,9 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
-log-path: 'logs'
-target-path: 'target'
-packages-install-path: 'dbt_packages'
+log-path: "logs"
+target-path: "target"
+packages-install-path: "dbt_packages"
 
 clean-targets:
   - "target"
@@ -23,11 +23,11 @@ models:
   course_advanced_dbt:
     +materialized: view
     +grants:
-      select: ['transformer', 'reporter']
-    
+      select: ["transformer", "reporter"]
+
     staging:
       +schema: staging
-    
+
     intermediate:
       +schema: intermediate
 
@@ -44,4 +44,9 @@ seeds:
     dbt_project_evaluator_exceptions:
       +enabled: false
 
-# on-run-end: "{{ dbt_project_evaluator.print_dbt_project_evaluator_issues() }}"
+on-run-end: "{{ dbt_project_evaluator.print_dbt_project_evaluator_issues() }}"
+
+# set your model fanout threshold to 10 instead of 3
+vars:
+  dbt_project_evaluator:
+    models_fanout_threshold: 10

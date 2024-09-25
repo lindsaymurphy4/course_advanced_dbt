@@ -2,6 +2,45 @@ sources:
   - name: ads_platform
     schema: bingeflix
     database: raw
+    description: This source contains tables from the Bingeflix production database
+
+    freshness:
+      warn_after:
+        count: 10
+        period: day
+    loaded_at_field: date
+
     tables:
       - name: daily_ads
-        identifier: ads
+        description: This table contains information about the behavioral events of users while they interact with the Bingeflix platform.
+        columns:
+          - name: date
+            description: The calendar date of the campaign reporting period.
+            data_tests:
+              - not_null
+
+          - name: surrogate_key
+            description: A surrogate key for the table.
+            data_tests:
+              - not_null
+              - unique
+
+          - name: campaign_id
+            description: The unique identifier for the campaign.
+            data_tests:
+              - not_null
+
+          - name: spend
+            description: The amount spent on the campaign.
+            data_tests:
+              - not_null
+
+          - name: cpm
+            description: The cost charged by the ads platform per thousand impressions.
+            data_tests:
+              - not_null
+
+          - name: ctr
+            description: The click through rate on the campaign impressions.
+            data_tests:
+              - not_null

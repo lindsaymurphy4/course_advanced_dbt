@@ -1,7 +1,17 @@
 models:
-  - name: stg_bingeflix__events
-    description: This table contains information about the behavioral events.
+  - name: fct_events
+    description: This model contains information about Bingeflix users.
+    meta:
+      priority: high
+      owner:
+        - lindsay
     columns:
+      - name: event_id
+        description: '{{ doc("bingeflix_column_event_id") }}'
+        data_tests:
+          - not_null
+          - unique
+
       - name: session_id
         description: '{{ doc("bingeflix_column__events__session_id") }}'
         data_tests:
@@ -21,9 +31,3 @@ models:
         description: '{{ doc("bingeflix_column_event_name") }}'
         data_tests:
           - not_null
-
-      - name: event_id
-        description: '{{ doc("bingeflix_column_event_id") }}'
-        data_tests:
-          - not_null
-          - unique
